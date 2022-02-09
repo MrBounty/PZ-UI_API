@@ -14,6 +14,7 @@ UI:addText("", "Hello world !", "Small")
 [TODO] Add image
 ```lua
 UI = newUI()
+
 UI:addText("", "Title !", "Title")
 UI:nextLine()
 
