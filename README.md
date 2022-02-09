@@ -1,4 +1,4 @@
-# PZ-UI_API
+# PZ-Simple UI API
 Still under dev.  
 API for making simple UI for the game project zomboid
 
