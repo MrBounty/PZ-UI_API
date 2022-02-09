@@ -2,16 +2,33 @@
 Still under dev.  
 API for making simple UI for the game project zomboid
 
-# Hello world example
-## Make the UI
+# Examples
+### Hello world
 ```lua
 UI = newUI()
 UI:addText("", "Hello world !", "Small")
 ```
-## Open and close it
+
+### Intermediate
+[TODO] Add image
+```lua
+UI = newUI()
+UI:addText("", "Title !", "Title")
+UI:nextLine()
+UI:addRichText("", text, "Small")
+UI:nextLine()
+UI:addText("", "What to do:", "Small")
+UI:addEntry("entry", "", false)
+UI:nextLine()
+UI:addButton("button1", "No", UI:close())
+UI:addButton("button2", "Yes", UI:toogle())
+```
+
+### Open and close it
 ```lua
 UI:open() -- Display the UI
 UI:close() -- Hide the UI
+UI:toogle() -- Toogle the UI
 ```
 
 # Elements
