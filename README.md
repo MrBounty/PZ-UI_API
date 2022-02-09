@@ -47,6 +47,8 @@ UI:addText(name, text, font)
 
 -- Exemple: 
 UI:addText("title1", "My Title", "Title")
+-- Change the text: 
+UI["title1"]:changeText("My New Title")
 ```
 
 ### Rich Text
@@ -59,6 +61,8 @@ UI:addRichText(name, text, font)
 
 -- Exemple: 
 `UI:addRichText("rich1", text, "Small")
+-- Change the text: 
+UI["rich1"]:changeText("My new text")
 ```
 
 ### Button
@@ -71,6 +75,8 @@ UI:addButton(name, text, func)
 
 -- Exemple: 
 UI:addButton("button1", "", UI2:open())
+-- Change the text: 
+UI["button1"]:changeText("My new text")
 ```
 
 ### Tick box
@@ -81,7 +87,7 @@ UI:addTickBox(name)
 
 -- Exemple: 
 UI:addTickBox("tick1")
--- To get the value: 
+-- Get the value: 
 UI["tick1"]
 ```
 
@@ -94,8 +100,10 @@ UI:addComboBox(name, items)
 
 -- Exemple: 
 UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
--- To get the value: 
+-- Get the value: 
 UI["combo1"]
+-- Change items: 
+UI["combo1"]:changeItems({"item 4", "item 5", "item 6"})
 ```
 
 ### Entry
@@ -124,6 +132,8 @@ UI:addScrollList(name, items)
 UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
 -- To get the value: 
 UI["scroll1"]
+-- Change items: 
+UI["scroll1"]:changeItems({"item 4", "item 5", "item 6"})
 ```
 
 ### Image
@@ -136,6 +146,10 @@ UI:addImage(name, path, widht)
 
 -- Exemple: 
 UI:addImage("image1", "UI/myImage.png", 10)
+-- Change image: 
+UI["image1"]:changeImage("UI/myNewImage.png")
+-- Change widht: 
+UI["image1"]:changeWidht(20)
 ```
 
 ## Other functions
