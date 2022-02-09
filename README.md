@@ -2,7 +2,7 @@
 Still under dev.  
 API for making simple UI for the game project zomboid
 
-# Examples
+## Examples
 ### Hello world
 ```lua
 UI = newUI()
@@ -31,7 +31,7 @@ UI:close() -- Hide the UI
 UI:toogle() -- Toogle the UI
 ```
 
-# Elements
+## Elements
 ### Text
 ```lua
 -- @name: variable name of the element  
@@ -125,7 +125,7 @@ UI:addImage(name, path, widht)
 UI:addImage("image1", "UI/myImage.png", 10)
 ```
 
-# Other functions
+## Other functions
 ### Set position
 ```lua
 -- @x: position of the x axis of the top left corner of the window in % of the screen [0-100]
@@ -146,7 +146,7 @@ UI:setKey(21) -- Y key
 ```
 Find all key value here [Link](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
 
-# Variables
+## Variables
 ### Fonts
 - Small
 - Medium
