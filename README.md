@@ -4,6 +4,7 @@ API for making simple UI for the game project zomboid
 
 ## Examples
 ### Hello world
+[TODO] Add image
 ```lua
 UI = newUI()
 UI:addText("", "Hello world !", "Small")
@@ -33,6 +34,7 @@ UI:toogle() -- Toogle the UI
 
 ## Elements
 ### Text
+[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display  
@@ -44,6 +46,7 @@ UI:addText("title1", "My Title", "Title")
 ```
 
 ### Rich Text
+[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display  
@@ -55,6 +58,7 @@ UI:addRichText(name, text, font)
 ```
 
 ### Button
+[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display in the button  
@@ -66,6 +70,7 @@ UI:addButton("button1", "", UI2:open())
 ```
 
 ### Tick box
+[TODO] Add image
 ```lua
 -- @name: variable name of the element
 UI:addTickBox(name) 
@@ -77,6 +82,7 @@ UI["tick1"]
 ```
 
 ### Combo box
+[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @items`: List of items to add in the list  
@@ -89,6 +95,7 @@ UI["combo1"]
 ```
 
 ### Entry
+[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @defaul: Default text  
@@ -103,6 +110,7 @@ UI["entry1"]
 ```
 
 ### Scrolling list
+[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @items: List of items to add in the list  
@@ -115,6 +123,7 @@ UI["scroll1"]
 ```
 
 ### Image
+[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @path: Path of the image file
