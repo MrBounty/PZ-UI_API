@@ -16,11 +16,14 @@ UI:addText("", "Hello world !", "Small")
 UI = newUI()
 UI:addText("", "Title !", "Title")
 UI:nextLine()
+
 UI:addRichText("", text, "Small")
 UI:nextLine()
+
 UI:addText("", "What to do:", "Small")
 UI:addEntry("entry", "", false)
 UI:nextLine()
+
 UI:addButton("button1", "No", UI:close())
 UI:addButton("button2", "Yes", UI:toogle())
 ```
