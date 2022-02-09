@@ -32,7 +32,7 @@ UI:toogle() -- Toogle the UI
 ```
 
 # Elements
-## Text
+### Text
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display  
@@ -43,7 +43,7 @@ UI:addText(name, text, font)
 UI:addText("title1", "My Title", "Title")
 ```
 
-## Rich Text
+### Rich Text
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display  
@@ -54,7 +54,7 @@ UI:addRichText(name, text, font)
 `UI:addRichText("rich1", text, "Small")
 ```
 
-## Button
+### Button
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display in the button  
@@ -65,7 +65,7 @@ UI:addButton(name, text, func)
 UI:addButton("button1", "", UI2:open())
 ```
 
-## Tick box
+### Tick box
 ```lua
 -- @name: variable name of the element
 UI:addTickBox(name) 
@@ -76,7 +76,7 @@ UI:addTickBox("tick1")
 UI["tick1"]
 ```
 
-## Combo box
+### Combo box
 ```lua
 -- @name: variable name of the element  
 -- @items`: List of items to add in the list  
@@ -88,7 +88,7 @@ UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
 UI["combo1"]
 ```
 
-## Entry
+### Entry
 ```lua
 -- @name: variable name of the element  
 -- @defaul: Default text  
@@ -102,7 +102,7 @@ UI:addEntry("entry2", 100, true)
 UI["entry1"]
 ```
 
-## Scrolling list
+### Scrolling list
 ```lua
 -- @name: variable name of the element  
 -- @items: List of items to add in the list  
@@ -114,7 +114,7 @@ UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
 UI["scroll1"]
 ```
 
-## Image
+### Image
 ```lua
 -- @name: variable name of the element  
 -- @path: Path of the image file
@@ -126,7 +126,7 @@ UI:addImage("image1", "UI/myImage.png", 10)
 ```
 
 # Other functions
-## Set position
+### Set position
 ```lua
 -- @x: position of the x axis of the top left corner of the window in % of the screen [0-100]
 -- @y: position of the y axis of the top left corner of the window in % of the screen [0-100]
@@ -135,6 +135,16 @@ UI:setPosition(x, y)
 --Example:
 UI:setPosition(20, 20)
 ```
+
+### Add key too toggle the UI
+```lua
+-- @key: Key to use to toggle the UI
+UI:setKey(key)
+
+--Example:
+UI:setKey(21) -- Y key
+```
+Find all key value here [Link](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
 
 # Variables
 ### Fonts
