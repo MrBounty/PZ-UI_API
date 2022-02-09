@@ -1,5 +1,6 @@
 # PZ-UI_API
-UI API for the game project zomboid
+Still under dev.
+API for making simple UI for the game project zomboid
 
 # Hello world example
 ## Make the UI
