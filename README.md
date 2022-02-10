@@ -4,7 +4,7 @@ API for making simple UI for the game project zomboid
 
 ## Examples
 ### Hello world
-[TODO] Add gif
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
 ```lua
 UI = NewUI()
 UI:addText("", "Hello world !", "Small")
