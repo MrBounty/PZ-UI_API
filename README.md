@@ -8,6 +8,7 @@ API for making simple UI for the game project zomboid
 ```lua
 UI = newUI()
 UI:addText("", "Hello world !", "Small")
+UI:saveLayout()
 ```
 
 ### Intermediate
@@ -27,6 +28,8 @@ UI:nextLine()
 
 UI:addButton("button1", "No", UI:close())
 UI:addButton("button2", "Yes", UI:toogle())
+
+UI:saveLayout()
 ```
 
 ### Open and close it
