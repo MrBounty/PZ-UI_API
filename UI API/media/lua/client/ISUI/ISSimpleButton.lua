@@ -12,7 +12,7 @@ end
 
 function ISSimpleButton:setPositionAndSize()
     local nbElement = self.parentUI.lineColumnCount[self.line]
-    local x = 
+    local x = 1
 end
 
 function ISSimpleButton:new(parentUI, line, column)

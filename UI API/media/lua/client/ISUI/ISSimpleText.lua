@@ -34,6 +34,8 @@ function ISSimpleText:render(txt)
         self:drawTextRight(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
     elseif position == "Center" then
         self:drawTextCentre(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
+    else
+        print("The name of the position for one text is wrong, should be Left Right or Center")
     end
 end
 

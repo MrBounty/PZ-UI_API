@@ -16,19 +16,19 @@ end
 function ISSimpleUI:setPosition(pctX, pctY)
     self.pctX = pctX;
     self.pctY = pctY;
-    self.pxlX = pctX * getCore():getScreenWidht();
-    self.pxlY = pctY * getCore():getScreenpctHeight();
+    self.pxlX = pctX * getCore():getScreenWidth();
+    self.pxlY = pctY * getCore():getScreenHeight();
     self:setX(self.pxlX);
     self:setY(self.pxlY);
 end
 
 function ISSimpleUI:setWidth(pctW)
     self.pctW = pctW;
-    self.pxlW = pctW * getCore():getScreenWidht();
+    self.pxlW = pctW * getCore():getScreenWidth();
     self:setElementsPositionAndSize();
 end
 
-function ISSimpleUI:setElementsPositionAndSize(pctW)
+function ISSimpleUI:setElementsPositionAndSize()
     for index, value in ipairs(self.noNameElements) do
         value:setPositionAndSize()
     end
@@ -38,9 +38,9 @@ function ISSimpleUI:setElementsPositionAndSize(pctW)
 end
 
 function ISSimpleUI:new(pctX, pctY, pctW)
-    local x = getCore():getScreenWidht() * pctX
+    local x = getCore():getScreenWidth() * pctX
     local y = getCore():getScreenHeight() * pctY
-    local w = getCore():getScreenWidht() * pctW
+    local w = getCore():getScreenWidth() * pctW
     local o = {};
     o = ISCollapsableWindow:new(x, y, w, 1);
     setmetatable(o, self);
@@ -55,12 +55,12 @@ function ISSimpleUI:new(pctX, pctY, pctW)
     -- Position
     o.pctX = 20;
     o.pctY = 20;
-    o.pxlX = o.pctX * getCore():getScreenWidht();
-    o.pxlY = o.pctY * getCore():getScreenpctHeight();
+    o.pxlX = o.pctX * getCore():getScreenWidth();
+    o.pxlY = o.pctY * getCore():getScreenHeight();
 
     --Size
     o.pctW = 20;
-    o.pxlW = o.pctW * getCore():getScreenWidht();
+    o.pxlW = o.pctW * getCore():getScreenWidth();
 
     -- My stuff
     o.noNameElements = {}; -- List of elements with no name
@@ -78,18 +78,31 @@ function ISSimpleUI:new(pctX, pctY, pctW)
     -- ISCollapsableWindow stuff
     o.resizable = false;
     o.drawFrame = true;
-    o.char = getPlayer()
-    o.playerNum = car:getPlayerNum()
     return o;
 end
 
 function ISSimpleUI:open()
+    if not self.isUIVisible then
+        self:setVisible(true);
+        self:addToUIManager();
+    end
 end
 
 function ISSimpleUI:close()
+    if self.isUIVisible then
+        self:setVisible(false);
+        self:removeFromUIManager();
+    end
 end
 
 function ISSimpleUI:toogle()
+    if self.isUIVisible then
+        self:setVisible(false);
+        self:removeFromUIManager();
+    else
+        self:setVisible(true);
+        self:addToUIManager();
+    end
 end
 
 function ISSimpleUI:nextLine()
@@ -102,6 +115,7 @@ function ISSimpleUI:nextLine()
 end
 
 function ISSimpleUI:saveLayout()
+    self:setElementsPositionAndSize()
 end
 
 function ISSimpleUI:addText(name, txt, font)
