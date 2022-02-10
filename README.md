@@ -6,7 +6,7 @@ API for making simple UI for the game project zomboid
 ### Hello world
 [TODO] Add image
 ```lua
-UI = newUI()
+UI = NewUI()
 UI:addText("", "Hello world !", "Small")
 UI:saveLayout()
 ```
@@ -14,7 +14,7 @@ UI:saveLayout()
 ### Intermediate
 [TODO] Add image
 ```lua
-UI = newUI("My UI") -- String to add a title
+UI = NewUI("My UI") -- String to add a title
 
 UI:addText("", "Title !", "Title")
 UI:nextLine()
