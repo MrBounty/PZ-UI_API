@@ -14,7 +14,8 @@ UI:saveLayout()
 ### Intermediate
 [TODO] Add image
 ```lua
-UI = NewUI("My UI") -- String to add a title
+UI = NewUI()
+UI:setTitle("My UI")
 
 UI:addText("", "Title !", "Title")
 UI:nextLine()
@@ -37,6 +38,12 @@ UI:saveLayout()
 UI:open() -- Display the UI
 UI:close() -- Hide the UI
 UI:toogle() -- Toogle the UI
+```
+
+## UI functions
+```lua
+UI:isVisible() -- To know if the player see the UI
+UI:setTitle(string) -- Add a title to the top bar of the UI
 ```
 
 ## Elements
