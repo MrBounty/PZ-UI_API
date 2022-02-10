@@ -157,14 +157,13 @@ UI["image1"]:setWidht(20)
 ```
 
 ## Other functions
-### Set size
+### Set width
 ```lua
 -- @w: Widht of the x axis of the window in % of the screen [0-100]
--- @h: Height of the y axis of the window in % of the screen [0-100]
-UI:setSize(w, h)
+UI:setWidth(w)
 
 --Example:
-UI:setSize(20, 20)
+UI:setWidth(20)
 ```
 
 ### Set position
