@@ -149,11 +149,30 @@ UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 UI:addImage(name, path, widht) 
 
 -- Exemple: 
-UI:addImage("image1", "UI/myImage.png", 10)
+UI:addImage("image1", "ui/myImage.png", 10)
 -- Change image: 
-UI["image1"]:setImage("UI/myNewImage.png")
+UI["image1"]:setImage("ui/myNewImage.png")
 -- Change widht: 
 UI["image1"]:setWidht(20)
+```
+
+### Image button
+[TODO] Add image
+```lua
+-- @name: variable name of the element
+-- @text: Text to display in the button
+-- @func: Function to call when press
+-- @widht: widht of the image in % of the screen [0-100] (0 for normal button size)
+UI:addImageButton(name, path, func, widht)  
+
+-- Exemple: 
+UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
+-- Change the text: 
+UI["ibutton1"]:setText("My new text")
+-- Change image: 
+UI["ibutton1"]:setImage("ui/myNewImage.png")
+-- Change widht: 
+UI["ibutton1"]:setWidht(20)
 ```
 
 ## Other functions
