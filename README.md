@@ -54,6 +54,10 @@ UI:addText(name, text, font)
 UI:addText("title1", "My Title", "Title")
 -- Change the text: 
 UI["title1"]:setText("My New Title")
+-- Change position: 
+UI["title1"]:setPosition("Right")
+UI["title1"]:setPosition("Left")
+UI["title1"]:setPosition("Center")
 ```
 
 ### Rich Text
