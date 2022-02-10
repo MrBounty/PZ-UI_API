@@ -40,12 +40,6 @@ UI:close() -- Hide the UI
 UI:toogle() -- Toogle the UI
 ```
 
-## UI functions
-```lua
-UI:isVisible() -- To know if the player see the UI
-UI:setTitle(string) -- Add a title to the top bar of the UI
-```
-
 ## Elements
 ### Text
 [TODO] Add image
@@ -163,6 +157,16 @@ UI["image1"]:setWidht(20)
 ```
 
 ## Other functions
+### Set size
+```lua
+-- @w: Widht of the x axis of the window in % of the screen [0-100]
+-- @h: Height of the y axis of the window in % of the screen [0-100]
+UI:setSize(w, h)
+
+--Example:
+UI:setPosition(20, 20)
+```
+
 ### Set position
 ```lua
 -- @x: position of the x axis of the top left corner of the window in % of the screen [0-100]
@@ -183,6 +187,12 @@ UI:setBackColor(r, g, b, a)
 
 --Example:
 UI:setBackColor(0.1, 0.1, 0.1, 1)
+```
+
+### Others
+```lua
+UI:isVisible() -- To know if the player see the UI
+UI:setTitle(string) -- Add a title to the top bar of the UI
 ```
 
 ### Add key too toggle the UI
