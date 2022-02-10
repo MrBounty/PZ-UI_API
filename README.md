@@ -98,7 +98,7 @@ UI:addTickBox(name)
 -- Exemple: 
 UI:addTickBox("tick1")
 -- Get the value: 
-UI["tick1"]
+UI["tick1"]:getValue()
 ```
 
 ### Entry
