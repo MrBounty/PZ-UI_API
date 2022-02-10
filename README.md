@@ -51,13 +51,18 @@ UI:toogle() -- Toogle the UI
 UI:addText(name, text, font)
 
 -- Exemple: 
-UI:addText("title1", "My Title", "Title")
+UI:addText("text1", "My Title", "Title")
+
 -- Change the text: 
-UI["title1"]:setText("My New Title")
+UI["text1"]:setText("My New Title")
+-- Change the font: 
+UI["text1"]:setFont("Medium")
+-- Change the color: 
+UI["text1"]:setColor(a, r, g, b)
 -- Change position: 
-UI["title1"]:setPosition("Right")
-UI["title1"]:setPosition("Left")
-UI["title1"]:setPosition("Center")
+UI["text1"]:setPosition("Right")
+UI["text1"]:setPosition("Left")
+UI["text1"]:setPosition("Center")
 ```
 
 ### Rich Text
@@ -69,7 +74,8 @@ UI["title1"]:setPosition("Center")
 UI:addRichText(name, text, font)
 
 -- Exemple: 
-`UI:addRichText("rich1", text, "Small")
+UI:addRichText("rich1", text, "Small")
+
 -- Change the text: 
 UI["rich1"]:setText("My new text")
 ```
@@ -84,6 +90,7 @@ UI:addButton(name, text, func)
 
 -- Exemple: 
 UI:addButton("button1", "", UI2:open())
+
 -- Change the text: 
 UI["button1"]:setText("My new text")
 ```
@@ -96,6 +103,7 @@ UI:addTickBox(name)
 
 -- Exemple: 
 UI:addTickBox("tick1")
+
 -- Get the value: 
 UI["tick1"]:getValue()
 ```
@@ -111,6 +119,7 @@ UI:addEntry(name, text, isNumber)
 -- Exemples:  
 UI:addEntry("entry1", "", false)
 UI:addEntry("entry2", 100, true)
+
 -- To get the value: 
 UI["entry1"]:getValue()
 ```
@@ -124,6 +133,7 @@ UI:addComboBox(name, items)
 
 -- Exemple: 
 UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
+
 -- Get the value: 
 UI["combo1"]:getValue()
 -- Change items: 
@@ -139,6 +149,7 @@ UI:addScrollList(name, items)
 
 -- Exemple: 
 UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
+
 -- To get the value: 
 UI["scroll1"]:getValue()
 -- Change items: 
@@ -155,6 +166,7 @@ UI:addImage(name, path, size)
 
 -- Exemple: 
 UI:addImage("image1", "ui/myImage.png", 10)
+
 -- Change image: 
 UI["image1"]:setImage("ui/myNewImage.png")
 -- Change widht: 
@@ -172,6 +184,7 @@ UI:addImageButton(name, path, func, size)
 
 -- Exemple: 
 UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
+
 -- Change the text: 
 UI["ibutton1"]:setText("My new text")
 -- Change image: 

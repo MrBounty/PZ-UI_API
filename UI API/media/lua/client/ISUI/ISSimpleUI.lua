@@ -37,11 +37,16 @@ function ISSimpleUI:setElementsPositionAndSize(pctW)
     end
 end
 
-function ISSimpleUI:new()
+function ISSimpleUI:new(pctX, pctY, pctW)
+    local x = getCore():getScreenWidht() * pctX
+    local y = getCore():getScreenHeight() * pctY
+    local w = getCore():getScreenWidht() * pctW
     local o = {};
-    o = ISCollapsableWindow:new(0, 0, 1, 1);
+    o = ISCollapsableWindow:new(x, y, w, 1);
     setmetatable(o, self);
     self.__index = self;
+
+    o:setHeight(o:titleBarHeight());
 
     -- Offset
     o.dx = 5;
@@ -62,15 +67,19 @@ function ISSimpleUI:new()
     o.namedElements = {}; -- List of elements with name
     o.lineAct = 1; -- Actual line of the UI
     o.lineY = {}; -- y position for each line
+    o.lineH = {}; -- height for each line
     o.lineColumnCount = {}; -- Number of columns in a line
-    o.columnAct = 1; -- Actual columns of the UI
+    o.columnAct = 0; -- Actual columns of the UI
     o.yAct = o:titleBarHeight() + 1; -- Actual position
+    o.deltaY = 0;
     table.insert(o.lineY, o.yAct);
     table.insert(o.lineColumnCount, 0);
 
     -- ISCollapsableWindow stuff
     o.resizable = false;
     o.drawFrame = true;
+    o.char = getPlayer()
+    o.playerNum = car:getPlayerNum()
     return o;
 end
 
@@ -84,21 +93,42 @@ function ISSimpleUI:toogle()
 end
 
 function ISSimpleUI:nextLine()
+    self. o.columnAct = 1;
+    self.yAct = self.yAct + self.deltaY;
+    table.insert(self.lineH, self.dataY);
+    self.dataY = 0
+    table.insert(self.lineY, self.yAct);
+    table.insert(self.lineColumnCount, 0);
 end
 
 function ISSimpleUI:saveLayout()
 end
 
-function ISSimpleUI:addText(name, text, font)
+function ISSimpleUI:addText(name, txt, font)
+     -- Add a column
+    self.lineColumnCount[self.lineAct] = self.lineColumnCount[self.lineAct] + 1;
+    self.columnAct = self.columnAct + 1;
+
+     -- Create element
+    local newE = ISSimpleText:new(self, txt, font)
+    if name == "" then
+        table.insert(self.noNameElements, newE);
+    else
+        self.namedElements[name] = newE;
+    end
+
+    -- Add to yAct
+    local deltaY = getTextManager():getFontHeight(UIFont[font]) + self.dy;
+    if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
-function ISSimpleUI:addRichText(name, text, font)
+function ISSimpleUI:addRichText(name, txt, font)
 end
 
-function ISSimpleUI:addButton(name, text, func)
+function ISSimpleUI:addButton(name, txt, func)
     self.lineColumnCount[self.lineAct] = self.lineColumnCount[self.lineAct] + 1;
     local newE = ISSimpleButton:new(self)
-    newE:setTitle(text);
+    newE:setTitle(txt);
     newE:setOnClick(func);
     if name == "" then
         table.insert(self.noNameElements, newE);
@@ -110,7 +140,7 @@ end
 function ISSimpleUI:addTickBox(name)
 end
 
-function ISSimpleUI:addEntry(name, text, isNumber)
+function ISSimpleUI:addEntry(name, txt, isNumber)
 end
 
 function ISSimpleUI:addComboBox(name, items)

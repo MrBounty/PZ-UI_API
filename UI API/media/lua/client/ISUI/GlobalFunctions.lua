@@ -1,3 +1,3 @@
 function NewUI()
-    return ISSimpleUI:new(getPlayer():getPlayerNum(), getCore():getScreenWidht()/20, getCore():getScreenHeight(), width, height)
+    return ISSimpleUI:new(20, 20, 20)
 end
