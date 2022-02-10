@@ -13,7 +13,7 @@ UI:addText("", "Hello world !", "Small")
 ### Intermediate
 [TODO] Add image
 ```lua
-UI = newUI()
+UI = newUI("My UI") -- To add a title
 
 UI:addText("", "Title !", "Title")
 UI:nextLine()
