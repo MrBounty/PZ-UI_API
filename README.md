@@ -164,7 +164,7 @@ UI["image1"]:setWidht(20)
 UI:setSize(w, h)
 
 --Example:
-UI:setPosition(20, 20)
+UI:setSize(20, 20)
 ```
 
 ### Set position
