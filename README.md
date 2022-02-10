@@ -163,6 +163,18 @@ UI:setPosition(x, y)
 UI:setPosition(20, 20)
 ```
 
+### Set background color
+```lua
+-- @r: red value
+-- @g: green value
+-- @b: blue value
+-- @a: transparency
+UI:setBackColor(r, g, b, a)
+
+--Example:
+UI:setBackColor(0.1, 0.1, 0.1, 1)
+```
+
 ### Add key too toggle the UI
 ```lua
 -- @key: Key to use to toggle the UI
