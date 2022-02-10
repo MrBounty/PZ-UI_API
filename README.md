@@ -150,15 +150,15 @@ UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 ```lua
 -- @name: variable name of the element  
 -- @path: Path of the image file
--- @widht: widht of the image in % of the screen [0-100]
-UI:addImage(name, path, widht) 
+-- @size: widht of the image in % of the screen [0-100]
+UI:addImage(name, path, size) 
 
 -- Exemple: 
 UI:addImage("image1", "ui/myImage.png", 10)
 -- Change image: 
 UI["image1"]:setImage("ui/myNewImage.png")
 -- Change widht: 
-UI["image1"]:setWidht(20)
+UI["image1"]:setSize(20)
 ```
 
 ### Image button
@@ -167,8 +167,8 @@ UI["image1"]:setWidht(20)
 -- @name: variable name of the element
 -- @text: Text to display in the button
 -- @func: Function to call when press
--- @widht: widht of the image in % of the screen [0-100] (0 for normal button size)
-UI:addImageButton(name, path, func, widht)  
+-- @size: widht of the image in % of the screen [0-100] (0 for normal button size)
+UI:addImageButton(name, path, func, size)  
 
 -- Exemple: 
 UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
@@ -177,17 +177,17 @@ UI["ibutton1"]:setText("My new text")
 -- Change image: 
 UI["ibutton1"]:setImage("ui/myNewImage.png")
 -- Change widht: 
-UI["ibutton1"]:setWidht(20)
+UI["ibutton1"]:setSize(20)
 ```
 
 ## Other functions
 ### Set width
 ```lua
--- @w: Widht of the x axis of the window in % of the screen [0-100]
-UI:setWidth(w)
+-- @size: Widht of the x axis of the window in % of the screen [0-100]
+UI:setSize(size)
 
 --Example:
-UI:setWidth(20)
+UI:setSize(20)
 ```
 
 ### Set position
