@@ -113,7 +113,7 @@ UI:addEntry(name, text, isNumber)
 UI:addEntry("entry1", "", false)
 UI:addEntry("entry2", 100, true)
 -- To get the value: 
-UI["entry1"]
+UI["entry1"]:getValue()
 ```
 
 ### Combo box
@@ -126,7 +126,7 @@ UI:addComboBox(name, items)
 -- Exemple: 
 UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
 -- Get the value: 
-UI["combo1"]
+UI["combo1"]:getValue()
 -- Change items: 
 UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 ```
@@ -141,7 +141,7 @@ UI:addScrollList(name, items)
 -- Exemple: 
 UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
 -- To get the value: 
-UI["scroll1"]
+UI["scroll1"]:getValue()
 -- Change items: 
 UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 ```
