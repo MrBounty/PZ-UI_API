@@ -101,21 +101,6 @@ UI:addTickBox("tick1")
 UI["tick1"]
 ```
 
-### Combo box
-[TODO] Add image
-```lua
--- @name: variable name of the element  
--- @items`: List of items to add in the list  
-UI:addComboBox(name, items)
-
--- Exemple: 
-UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
--- Get the value: 
-UI["combo1"]
--- Change items: 
-UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
-```
-
 ### Entry
 [TODO] Add image
 ```lua
@@ -129,6 +114,21 @@ UI:addEntry("entry1", "", false)
 UI:addEntry("entry2", 100, true)
 -- To get the value: 
 UI["entry1"]
+```
+
+### Combo box
+[TODO] Add image
+```lua
+-- @name: variable name of the element  
+-- @items`: List of items to add in the list  
+UI:addComboBox(name, items)
+
+-- Exemple: 
+UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
+-- Get the value: 
+UI["combo1"]
+-- Change items: 
+UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 ```
 
 ### Scrolling list
