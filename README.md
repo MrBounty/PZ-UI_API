@@ -4,10 +4,11 @@ API for making simple UI for the game project zomboid
 
 ## Examples
 ### Hello world
-[TODO] Add image
+[TODO] Add gif
 ```lua
 UI = NewUI()
 UI:addText("", "Hello world !", "Small")
+UI:setKey(21) -- Y key
 UI:saveLayout()
 ```
 
