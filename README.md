@@ -72,12 +72,14 @@ UI:addEmpty()
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display  
--- @font: Font to use (see Variables/Fonts sections) (Optional)  
--- @position: "Left", "Right" or "Center" (Optional)
+-- @font: Font to use (see Variables/Fonts sections) (Optional, Small by default)  
+-- @position: "Left", "Right" or "Center" (Optional, Left by default)
 UI:addText(name, text, font, position)
 
 -- Exemple: 
-UI:addText("text1", "My Title", "Title")
+UI:addText("text1", "My Title", "Title", "Center")
+UI:addText("", "My text")
+
 
 -- Change the text: 
 UI["text1"]:setText("My New Title")
