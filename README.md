@@ -64,7 +64,8 @@ UI:toogle() -- Toogle the UI
 ## Elements
 ### Empty space
 ```lua
-UI:addEmpty()
+-- @size: S
+UI:addEmpty(size)
 ```
 
 ### Text
@@ -188,8 +189,8 @@ UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 [TODO] Add image
 ```lua
 -- @name: variable name of the element  
--- @path: Path of the image file
--- @size: widht of the image in % of the screen [0-100]
+-- @path: path of the image file
+-- @size: width of the image in % of the screen [0-100] (optional)
 UI:addImage(name, path, size) 
 
 -- Exemple: 
@@ -205,9 +206,9 @@ UI["image1"]:setSize(20)
 [TODO] Add image
 ```lua
 -- @name: variable name of the element
--- @text: Text to display in the button
--- @func: Function to call when press
--- @size: widht of the image in % of the screen [0-100] (0 for normal button size)
+-- @path: path of the image file
+-- @func: function to call when press
+-- @size: width of the image in % of the screen [0-100] (optional)
 UI:addImageButton(name, path, func, size)  
 
 -- Exemple: 
@@ -217,7 +218,7 @@ UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
 UI["ibutton1"]:setText("My new text")
 -- Change image: 
 UI["ibutton1"]:setImage("ui/myNewImage.png")
--- Change widht: 
+-- Change width: 
 UI["ibutton1"]:setSize(20)
 ```
 <br />
