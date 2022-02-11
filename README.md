@@ -4,9 +4,11 @@ API for making simple UI for the game project zomboid
 
 The principle is to add elements line by line. As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Shema.drawio.png)
-  
-  
-  
+<br />
+<br />
+<br />
+<br />
+<br />
 ## Examples
 ### Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
@@ -53,9 +55,11 @@ UI:open() -- Display the UI
 UI:close() -- Hide the UI
 UI:toogle() -- Toogle the UI
 ```
-  
-  
-  
+<br />
+<br />
+<br />
+<br />
+<br />
 ## Elements
 ### Empty space
 ```lua
@@ -212,9 +216,11 @@ UI["ibutton1"]:setImage("ui/myNewImage.png")
 -- Change widht: 
 UI["ibutton1"]:setSize(20)
 ```
-  
-  
-  
+<br />
+<br />
+<br />
+<br />
+<br />
 ## UI functions
 ### Set width
 ```lua
@@ -262,9 +268,11 @@ Find all key value here [Link](https://theindiestone.com/forums/index.php?/topic
 UI:isVisible() -- To know if the player see the UI
 UI:setTitle(string) -- Add a title to the top bar of the UI
 ```
-  
-  
-  
+<br />
+<br />
+<br />
+<br />
+<br />
 ## Variables
 ### Fonts
 - Small
