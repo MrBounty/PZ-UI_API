@@ -5,6 +5,8 @@ API for making simple UI for the game project zomboid
 The principle is to add elements line by line. As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Shema.drawio.png)
 
+
+
 ## Examples
 ### Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
@@ -51,6 +53,8 @@ UI:open() -- Display the UI
 UI:close() -- Hide the UI
 UI:toogle() -- Toogle the UI
 ```
+
+
 
 ## Elements
 ### Empty space
@@ -209,7 +213,9 @@ UI["ibutton1"]:setImage("ui/myNewImage.png")
 UI["ibutton1"]:setSize(20)
 ```
 
-## Other functions
+
+
+## UI functions
 ### Set width
 ```lua
 -- @size: Widht of the x axis of the window in % of the screen [0-100]
@@ -241,12 +247,6 @@ UI:setBackColor(r, g, b, a)
 UI:setBackColor(0.1, 0.1, 0.1, 1)
 ```
 
-### Others
-```lua
-UI:isVisible() -- To know if the player see the UI
-UI:setTitle(string) -- Add a title to the top bar of the UI
-```
-
 ### Add key too toggle the UI
 ```lua
 -- @key: Key to use to toggle the UI
@@ -256,6 +256,14 @@ UI:setKey(key)
 UI:setKey(21) -- Y key
 ```
 Find all key value here [Link](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
+
+### Others
+```lua
+UI:isVisible() -- To know if the player see the UI
+UI:setTitle(string) -- Add a title to the top bar of the UI
+```
+
+
 
 ## Variables
 ### Fonts
