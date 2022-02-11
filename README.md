@@ -2,14 +2,15 @@
 Still under dev.  
 API for making simple UI for the game project zomboid
 
-The principle is to add elements line by line. As in the following diagram:
+The principle is to add elements line by line.  
+As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Shema.drawio.png)
 <br />
 <br />
 <br />
 <br />
 <br />
-## Examples
+# Examples
 ### Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
 ```lua
@@ -221,7 +222,7 @@ UI["ibutton1"]:setSize(20)
 <br />
 <br />
 <br />
-## UI functions
+# UI functions
 ### Set width
 ```lua
 -- @size: Widht of the x axis of the window in % of the screen [0-100]
