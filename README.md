@@ -53,6 +53,11 @@ UI:toogle() -- Toogle the UI
 ```
 
 ## Elements
+### Empty space
+```lua
+UI:addEmpty()
+```
+
 ### Text
 [TODO] Add image
 ```lua
