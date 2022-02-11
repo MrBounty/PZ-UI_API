@@ -7,7 +7,7 @@ API for making simple UI for the game project zomboid
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
 ```lua
 function onCreateUI()
-	  local UI = NewUI();
+    local UI = NewUI();
     UI:addText("", "Hello world", "Small", "Center")
     UI:saveLayout()
     UI:toogle()
