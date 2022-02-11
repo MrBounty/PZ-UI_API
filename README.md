@@ -19,23 +19,27 @@ Events.OnCreateUI.Add(onCreateUI)
 ### Intermediate
 [TODO] Add image
 ```lua
-UI = NewUI()
-UI:setTitle("My UI")
+function onCreateUI()
+    UI = NewUI()
+    UI:setTitle("My UI")
 
-UI:addText("", "Title !", "Title")
-UI:nextLine()
+    UI:addText("", "Title !", "Title")
+    UI:nextLine()
 
-UI:addRichText("", text, "Small")
-UI:nextLine()
+    UI:addRichText("", text, "Small")
+    UI:nextLine()
 
-UI:addText("", "What to do:", "Small")
-UI:addEntry("entry", "", false)
-UI:nextLine()
+    UI:addText("", "What to do:", "Small")
+    UI:addEntry("entry", "", false)
+    UI:nextLine()
 
-UI:addButton("button1", "No", UI:close())
-UI:addButton("button2", "Yes", UI:toogle())
+    UI:addButton("button1", "No", UI:close())
+    UI:addButton("button2", "Yes", UI:toogle())
 
-UI:saveLayout()
+    UI:saveLayout()
+end
+
+Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ### Open and close it
