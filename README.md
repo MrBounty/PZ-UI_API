@@ -6,10 +6,14 @@ API for making simple UI for the game project zomboid
 ### Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
 ```lua
-UI = NewUI()
-UI:addText("", "Hello world !", "Small")
-UI:setKey(21) -- Y key
-UI:saveLayout()
+function onCreateUI()
+	  local UI = NewUI();
+    UI:addText("", "Hello world", "Small", "Center")
+    UI:saveLayout()
+    UI:toogle()
+end
+
+Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ### Intermediate
