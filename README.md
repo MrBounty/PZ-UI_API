@@ -2,6 +2,9 @@
 Still under dev.  
 API for making simple UI for the game project zomboid
 
+The principle is to add elements line by line. As in the following diagram:
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Shema.drawio.png)
+
 ## Examples
 ### Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
