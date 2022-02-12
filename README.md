@@ -61,8 +61,9 @@ UI:toogle() -- Toogle the UI
 <br />
 <br />
 <br />
+
 ## Elements
-### Empty space
+### Empty space  
 ```lua
 -- @size: S
 UI:addEmpty(size)
