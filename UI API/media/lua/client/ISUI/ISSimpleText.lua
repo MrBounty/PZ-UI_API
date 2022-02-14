@@ -4,10 +4,12 @@ ISSimpleText = ISUIElement:derive("ISSimpleText");
 
 function ISSimpleText:setText(txt)
     self.textToDisplay = txt;
+    self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
 end
 
 function ISSimpleText:setFont(font)
     self.font = UIFont[font]
+    self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
 end
 
 function ISSimpleText:setColor(a, r, g, b)
@@ -22,16 +24,14 @@ function ISSimpleText:setPosition(position)
 end
 
 function ISSimpleText:prerender()
-    local text, textW = cutTextToLong(self.textToDisplay, self.font, self:getWidth())
-
     if self.position == "Left" then
-        self:drawText(text, 0, 0, self.r, self.g, self.b, self.a, self.font);
+        self:drawText(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
     elseif self.position == "Right" then
-        self:drawTextRight(text, self:getWidth()-textW, 0, self.r, self.g, self.b, self.a, self.font);
+        self:drawTextRight(self.textToDisplay, self:getWidth()-self.textW, 0, self.r, self.g, self.b, self.a, self.font);
     elseif self.position == "Center" then
-        self:drawTextCentre(text, self:getWidth()/2, 0, self.r, self.g, self.b, self.a, self.font);
+        self:drawTextCentre(self.textToDisplay, self:getWidth()/2, 0, self.r, self.g, self.b, self.a, self.font);
     else
-        self:drawText(text, 0, 0, self.r, self.g, self.b, self.a, self.font);
+        self:drawText(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
     end
 
     if self.border then
@@ -48,6 +48,8 @@ function ISSimpleText:setPositionAndSize()
     self:setY(self.pxlY);
     self:setWidth(self.maxW);
     self:setHeight(self.parentUI.lineH[self.line])
+
+    self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
 end
 
 function ISSimpleText:new(parentUI, txt, font, position)
@@ -74,7 +76,7 @@ function ISSimpleText:new(parentUI, txt, font, position)
 	o.anchorBottom = false;
 
     -- For this element
-    o.textToDisplay = txt;
+    o.textOriginal = txt;
     if font then
         o.font = UIFont[font];
     else
@@ -86,6 +88,7 @@ function ISSimpleText:new(parentUI, txt, font, position)
     else
         o.position = "Left";
     end
+
     return o;
 end
 

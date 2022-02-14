@@ -16,7 +16,6 @@ function onCreateUI()
     local UI = NewUI();
     UI:addText("", "Hello world", "Small", "Center")
     UI:saveLayout()
-    UI:toggle()
 end
 
 Events.OnCreateUI.Add(onCreateUI)
@@ -38,8 +37,6 @@ function onCreateUI()
     UI["text1"]:setColor(1, 1, 0, 0);
     UI:addBorderToAllElements();
     UI:saveLayout();
-
-    UI:toggle();
 end
 
 Events.OnCreateUI.Add(onCreateUI)
