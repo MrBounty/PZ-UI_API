@@ -22,7 +22,6 @@ UI:addText(name, text, font, position)
 UI:addText("text1", "My Title", "Title", "Center")
 UI:addText("", "My text")
 
-
 -- Change the text: 
 UI["text1"]:setText("My New Title")
 -- Change the font: 
