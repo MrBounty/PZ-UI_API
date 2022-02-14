@@ -2,10 +2,6 @@ require "ISUI/ISUIElement"
 
 ISSimpleText = ISUIElement:derive("ISSimpleText");
 
-function ISSimpleText:update()
-    ISButton:update()
-end
-
 function ISSimpleText:setText(txt)
     self.textToDisplay = txt;
 end
@@ -25,50 +21,79 @@ function ISSimpleText:setPosition(position)
     self.position = position
 end
 
-function ISSimpleText:render(txt)
-    ISUIElement.render(self);
+function ISSimpleText:prerender()
+    local text, textW = cutTextToLong(self.textToDisplay, self.font, self:getWidth())
 
-    if position == "Left" then
-        self:drawText(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
-    elseif position == "Right" then
-        self:drawTextRight(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
-    elseif position == "Center" then
-        self:drawTextCentre(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
+    if self.position == "Left" then
+        self:drawText(text, 0, 0, self.r, self.g, self.b, self.a, self.font);
+    elseif self.position == "Right" then
+        self:drawTextRight(text, self:getWidth()-textW, 0, self.r, self.g, self.b, self.a, self.font);
+    elseif self.position == "Center" then
+        self:drawTextCentre(text, self:getWidth()/2, 0, self.r, self.g, self.b, self.a, self.font);
     else
-        print("The name of the position for one text is wrong, should be Left Right or Center")
+        self:drawText(text, 0, 0, self.r, self.g, self.b, self.a, self.font);
+    end
+
+    if self.border then
+        self:drawRectBorder(0, 0, self:getWidth(), self:getHeight(), 0.5, 1, 1, 1);
     end
 end
 
 function ISSimpleText:setPositionAndSize()
     local nbElement = self.parentUI.lineColumnCount[self.line]
-    self.maxW = (self.parentUI.pxlW - self.parentUI.dx * (nbElement+1)) / nbElement
+    self.maxW = self.parentUI.pxlW / nbElement;
     self.pxlX = self.maxW * (self.column - 1);
 
     self:setX(self.pxlX);
     self:setY(self.pxlY);
-    self.setWidth(self.maxW);
-    self.setHeight(self.parentUI.lineH[self.line])
+    self:setWidth(self.maxW);
+    self:setHeight(self.parentUI.lineH[self.line])
 end
 
-function ISSimpleText:new(parentUI, txt, font)
+function ISSimpleText:new(parentUI, txt, font, position)
     local o = {};
-    o = ISButton:new(0, 0, 1, 1);
+    o = ISUIElement:new(0, 0, 1, 1);
     setmetatable(o, self);
     self.__index = self;
 
+    -- Parent and position
     o.parentUI = parentUI;
     o.line = parentUI.lineAct;
     o.column = parentUI.columnAct;
     o.pxlY = parentUI.yAct;
-    o.position = "Left";
 
+    -- Color
     o.a = 1;
     o.r = 1;
     o.g = 1;
     o.b = 1;
 
-    o.textToDisplay = txt;
-    o.font = UIFont[font] 
+    o.anchorLeft = true;
+	o.anchorRight = false;
+	o.anchorTop = true;
+	o.anchorBottom = false;
 
+    -- For this element
+    o.textToDisplay = txt;
+    if font then
+        o.font = UIFont[font];
+    else
+        o.font = UIFont.Small;
+    end
+
+    if position then
+        o.position = position;
+    else
+        o.position = "Left";
+    end
     return o;
+end
+
+-- Commun function
+function ISSimpleText:addBorder()
+    self.border = true;
+end
+
+function ISSimpleText:removeBorder()
+    self.border = false;
 end

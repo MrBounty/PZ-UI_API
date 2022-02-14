@@ -25,7 +25,7 @@ end
 function ISSimpleUI:setWidth(pctW)
     self.pctW = pctW;
     self.pxlW = pctW * getCore():getScreenWidth();
-    self:setElementsPositionAndSize();
+    self:setWidth(self.pxlW);
 end
 
 function ISSimpleUI:setElementsPositionAndSize()
@@ -37,10 +37,19 @@ function ISSimpleUI:setElementsPositionAndSize()
     end
 end
 
+function ISSimpleUI:addBorderToAllElements()
+    for index, value in ipairs(self.noNameElements) do
+        value:addBorder()
+    end
+    for index, value in pairs(self.namedElements) do
+        value:addBorder()
+    end
+end
+
 function ISSimpleUI:new(pctX, pctY, pctW)
-    local x = getCore():getScreenWidth() * pctX
-    local y = getCore():getScreenHeight() * pctY
-    local w = getCore():getScreenWidth() * pctW
+    local x = getCore():getScreenWidth() * pctX;
+    local y = getCore():getScreenHeight() * pctY;
+    local w = getCore():getScreenWidth() * pctW;
     local o = {};
     o = ISCollapsableWindow:new(x, y, w, 1);
     setmetatable(o, self);
@@ -48,18 +57,14 @@ function ISSimpleUI:new(pctX, pctY, pctW)
 
     o:setHeight(o:titleBarHeight());
 
-    -- Offset
-    o.dx = 5;
-    o.dy = 5;
-
     -- Position
-    o.pctX = 20;
-    o.pctY = 20;
+    o.pctX = pctX;
+    o.pctY = pctY;
     o.pxlX = o.pctX * getCore():getScreenWidth();
     o.pxlY = o.pctY * getCore():getScreenHeight();
 
     --Size
-    o.pctW = 20;
+    o.pctW = pctW;
     o.pxlW = o.pctW * getCore():getScreenWidth();
 
     -- My stuff
@@ -70,8 +75,9 @@ function ISSimpleUI:new(pctX, pctY, pctW)
     o.lineH = {}; -- height for each line
     o.lineColumnCount = {}; -- Number of columns in a line
     o.columnAct = 0; -- Actual columns of the UI
-    o.yAct = o:titleBarHeight() + 1; -- Actual position
+    o.yAct = o:titleBarHeight(); -- Actual position
     o.deltaY = 0;
+    o.isUIVisible = true;
     table.insert(o.lineY, o.yAct);
     table.insert(o.lineColumnCount, 0);
 
@@ -84,71 +90,109 @@ end
 function ISSimpleUI:open()
     if not self.isUIVisible then
         self:setVisible(true);
-        self:addToUIManager();
+        self.isUIVisible = true;
     end
 end
 
 function ISSimpleUI:close()
     if self.isUIVisible then
         self:setVisible(false);
-        self:removeFromUIManager();
+        self.isUIVisible = false;
     end
 end
 
-function ISSimpleUI:toogle()
+function ISSimpleUI:toggle()
     if self.isUIVisible then
         self:setVisible(false);
-        self:removeFromUIManager();
+        self.isUIVisible = false;
     else
         self:setVisible(true);
-        self:addToUIManager();
+        self.isUIVisible = true;
     end
 end
 
 function ISSimpleUI:nextLine()
-    self. o.columnAct = 1;
+    self.columnAct = 0;
+    self.lineAct = self.lineAct + 1;
     self.yAct = self.yAct + self.deltaY;
-    table.insert(self.lineH, self.dataY);
-    self.dataY = 0
+    table.insert(self.lineH, self.deltaY);
+    self.dataY = 0;
     table.insert(self.lineY, self.yAct);
     table.insert(self.lineColumnCount, 0);
 end
 
-function ISSimpleUI:saveLayout()
-    self:setElementsPositionAndSize()
+function ISSimpleUI:nextColumn()
+     -- Add a column
+     self.lineColumnCount[self.lineAct] = self.lineColumnCount[self.lineAct] + 1;
+     self.columnAct = self.columnAct + 1;
 end
 
-function ISSimpleUI:addText(name, txt, font)
-     -- Add a column
-    self.lineColumnCount[self.lineAct] = self.lineColumnCount[self.lineAct] + 1;
-    self.columnAct = self.columnAct + 1;
+function ISSimpleUI:saveLayout()
+    self:nextLine();
+    self:setHeight(self.yAct);
+    self:setElementsPositionAndSize();
 
+    self:addToUIManager();
+end
+
+function ISSimpleUI:addText(name, txt, font, position)
+    self:nextColumn();
+    
      -- Create element
-    local newE = ISSimpleText:new(self, txt, font)
+    local newE = ISSimpleText:new(self, txt, font, position);
+    newE:initialise();
+    newE:instantiate();
+    self:addChild(newE);
     if name == "" then
         table.insert(self.noNameElements, newE);
     else
         self.namedElements[name] = newE;
+        self[name] = newE;
     end
 
     -- Add to yAct
-    local deltaY = getTextManager():getFontHeight(UIFont[font]) + self.dy;
+    local deltaY = getTextManager():getFontHeight(UIFont[font]);
     if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
-function ISSimpleUI:addRichText(name, txt, font)
+function ISSimpleUI:addRichText(name, txt)
+    self:nextColumn();
+    
+    -- Create element
+   local newE = ISSimpleRichText:new(self, text);
+   newE:initialise();
+   newE:instantiate();
+   self:addChild(newE);
+   if name == "" then
+       table.insert(self.noNameElements, newE);
+   else
+       self.namedElements[name] = newE;
+       self[name] = newE;
+   end
+
+   -- Add to yAct
+   local deltaY = getTextManager():getFontHeight(UIFont.small) * 8;
+   if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
 function ISSimpleUI:addButton(name, txt, func)
-    self.lineColumnCount[self.lineAct] = self.lineColumnCount[self.lineAct] + 1;
-    local newE = ISSimpleButton:new(self)
-    newE:setTitle(txt);
-    newE:setOnClick(func);
+    self:nextColumn();
+    
+     -- Create element
+    local newE = ISSimpleButton:new(self, text, func);
+    newE:initialise();
+    newE:instantiate();
+    self:addChild(newE);
     if name == "" then
         table.insert(self.noNameElements, newE);
     else
         self.namedElements[name] = newE;
+        self[name] = newE;
     end
+
+    -- Add to yAct
+    local deltaY = getTextManager():getFontHeight(UIFont[font]);
+    if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
 function ISSimpleUI:addTickBox(name)
@@ -164,4 +208,10 @@ function ISSimpleUI:addScrollList(name, items)
 end
 
 function ISSimpleUI:addImage(name, path, width)
+end
+
+function ISSimpleUI:addImageButton(name, path, width, func)
+end
+
+function ISSimpleUI:addEmpty(width)
 end

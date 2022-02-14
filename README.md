@@ -5,11 +5,9 @@ API for making simple UI for the game project zomboid
 The principle is to add elements line by line.  
 As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Shema.drawio.png)
+
 <br />
-<br />
-<br />
-<br />
-<br />
+
 # Examples
 ### Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
@@ -18,7 +16,30 @@ function onCreateUI()
     local UI = NewUI();
     UI:addText("", "Hello world", "Small", "Center")
     UI:saveLayout()
-    UI:toogle()
+    UI:toggle()
+end
+
+Events.OnCreateUI.Add(onCreateUI)
+```
+
+### Easy
+```lua
+local UI
+
+function onCreateUI()
+	UI = NewUI();
+    UI:addText("text1", "Hello world1", _, "Left");
+    UI:addText("", "Hello world2", "Medium", "Center");
+    UI:nextLine();
+
+    UI:addText("", "Hello worl3", _, "Right");
+    UI:addText("", "Hello world4");
+
+    UI["text1"]:setColor(1, 1, 0, 0);
+    UI:addBorderToAllElements();
+    UI:saveLayout();
+
+    UI:toggle();
 end
 
 Events.OnCreateUI.Add(onCreateUI)
@@ -42,7 +63,7 @@ function onCreateUI()
     UI:nextLine()
 
     UI:addButton("button1", "No", UI:close())
-    UI:addButton("button2", "Yes", UI:toogle())
+    UI:addButton("button2", "Yes", UI:toggle())
 
     UI:saveLayout()
 end
@@ -54,12 +75,9 @@ Events.OnCreateUI.Add(onCreateUI)
 ```lua
 UI:open() -- Display the UI
 UI:close() -- Hide the UI
-UI:toogle() -- Toogle the UI
+UI:toggle() -- toggle the UI
 ```
-<br />
-<br />
-<br />
-<br />
+
 <br />
 
 ## Elements
@@ -77,9 +95,9 @@ UI:addEmpty(size)
 ### Text
 [TODO] Add image
 ```lua
--- @name: variable name of the element  
--- @text: Text to display  
--- @font: Font to use (see Variables/Fonts sections) (Optional, Small by default)  
+-- @name:     variable name of the element  
+-- @text:     Text to display  
+-- @font:     Font to use (see Variables/Fonts sections) (Optional, Small by default)  
 -- @position: "Left", "Right" or "Center" (Optional, Left by default)
 UI:addText(name, text, font, position)
 
@@ -106,14 +124,15 @@ UI["text1"]:setPosition("Center")
 -- @name: variable name of the element  
 -- @text: Text to display  
 -- @font: Font to use (see Variables/Fonts sections)  
-UI:addRichText(name, text, font)
+UI:addRichText(name, text)
 
 -- Exemple: 
-UI:addRichText("rich1", text, "Small")
+UI:addRichText("rich1", text)
 
 -- Change the text: 
 UI["rich1"]:setText("My new text")
 ```
+[TODO] Add guide for texte formatting
 
 ### Button
 [TODO] Add image
@@ -146,8 +165,8 @@ UI["tick1"]:getValue()
 ### Entry
 [TODO] Add image
 ```lua
--- @name: variable name of the element  
--- @defaul: Default text  
+-- @name:     variable name of the element  
+-- @defaul:   Default text  
 -- @isNumber: true if use for a number  
 UI:addEntry(name, text, isNumber)
 
@@ -162,7 +181,7 @@ UI["entry1"]:getValue()
 ### Combo box
 [TODO] Add image
 ```lua
--- @name: variable name of the element  
+-- @name:   variable name of the element  
 -- @items`: List of items to add in the list  
 UI:addComboBox(name, items)
 
@@ -178,7 +197,7 @@ UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 ### Scrolling list
 [TODO] Add image
 ```lua
--- @name: variable name of the element  
+-- @name:  variable name of the element  
 -- @items: List of items to add in the list  
 UI:addScrollList(name, items) 
 
@@ -227,11 +246,9 @@ UI["ibutton1"]:setImage("ui/myNewImage.png")
 -- Change width: 
 UI["ibutton1"]:setSize(20)
 ```
+
 <br />
-<br />
-<br />
-<br />
-<br />
+
 # UI functions
 ### Set width
 ```lua
@@ -266,7 +283,7 @@ UI:setBackColor(0.1, 0.1, 0.1, 1)
 
 ### Add key too toggle the UI
 ```lua
--- @key: Key to use to toggle the UI
+-- @key: Key to toggle the UI
 UI:setKey(key)
 
 --Example:
@@ -276,14 +293,12 @@ Find all key value here [Link](https://theindiestone.com/forums/index.php?/topic
 
 ### Others
 ```lua
-UI:isVisible() -- To know if the player see the UI
-UI:setTitle(string) -- Add a title to the top bar of the UI
+UI:isVisible()                  -- To know if the player see the UI
+UI:setTitle(string)             -- Add a title to the top bar of the UI
+UI:addBorderToAllElements()     -- Add border to all elements of the ui
 ```
 <br />
-<br />
-<br />
-<br />
-<br />
+
 ## Variables
 ### Fonts
 - Small
