@@ -85,13 +85,6 @@ end
 Events.OnCreateUI.Add(onCreateUI)
 ```
 
-### Open and close it
-```lua
-UI:open() -- Display the UI
-UI:close() -- Hide the UI
-UI:toggle() -- toggle the UI
-```
-
 <br />
 
 ## Elements
@@ -307,10 +300,15 @@ Find all key value here [Link](https://theindiestone.com/forums/index.php?/topic
 
 ### Others
 ```lua
+UI:open()                       -- Display the UI
+UI:close()                      -- Hide the UI
+UI:toggle()                     -- toggle the UI
+
 UI:isVisible()                  -- To know if the player see the UI
 UI:setTitle(string)             -- Add a title to the top bar of the UI
 UI:addBorderToAllElements()     -- Add border to all elements of the ui
 ```
+
 <br />
 
 ## Variables
