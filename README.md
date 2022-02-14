@@ -63,6 +63,11 @@ UI:toogle() -- Toogle the UI
 <br />
 
 ## Elements
+### Common functions
+```lua
+UI["text1"]:addBorder()
+```
+
 ### Empty space  
 ```lua
 -- @size: S
