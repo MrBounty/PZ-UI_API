@@ -42,17 +42,27 @@ end
 Events.OnCreateUI.Add(onCreateUI)
 ```
 
-#### Button to make the player say something
+#### Button to make the player say something and close the UI
 [TODO] Add gif
 ```lua
+local UI
+
 local function say()
     getPlayer():Say("Hello");
 end
+
+local function close()
+    UI:toggle();
+end
     
 function onCreateUI()
-    local UI = NewUI();
-    UI:addText("text1", "Hello world1", _, "Left");
+    UI = NewUI();
+    UI:addText("", " Say:");
     UI:addButton("", "", say);
+    UI:nextLine();
+    
+    UI:addText("", " Close:");
+    UI:addButton("", "", close);
     UI:saveLayout();
 end
 
