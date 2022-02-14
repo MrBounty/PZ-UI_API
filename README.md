@@ -7,7 +7,7 @@ As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Shema.drawio.png)
 
 # Examples
-### Hello world
+## Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
 ```lua
 function onCreateUI()
@@ -19,8 +19,8 @@ end
 Events.OnCreateUI.Add(onCreateUI)
 ```
 
-### Easy
-#### 4 text
+## Easy
+### 4 text
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Hello%20x4.jpg)
 ```lua
 function onCreateUI()
@@ -40,7 +40,7 @@ end
 Events.OnCreateUI.Add(onCreateUI)
 ```
 
-#### Button to make the player say something and close the UI
+### Button to make the player say something and close the UI
 [TODO] Add gif
 ```lua
 local UI
@@ -67,7 +67,7 @@ end
 Events.OnCreateUI.Add(onCreateUI)
 ```
 
-### Intermediate
+## Intermediate
 [TODO] Add image
 ```lua
 function onCreateUI()
