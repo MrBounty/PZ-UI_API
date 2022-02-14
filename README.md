@@ -22,12 +22,11 @@ Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ### Easy
+#### 4 text
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Hello%20x4.jpg)
 ```lua
-local UI
-
 function onCreateUI()
-    UI = NewUI();
+    local UI = NewUI();
     UI:addText("text1", "Hello world1", _, "Left");
     UI:addText("", "Hello world2", "Medium", "Center");
     UI:nextLine();
@@ -37,6 +36,23 @@ function onCreateUI()
 
     UI["text1"]:setColor(1, 1, 0, 0);
     UI:addBorderToAllElements();
+    UI:saveLayout();
+end
+
+Events.OnCreateUI.Add(onCreateUI)
+```
+
+#### Button to make the player say something
+[TODO] Add gif
+```lua
+local function say()
+    getPlayer():Say("Hello");
+end
+    
+function onCreateUI()
+    local UI = NewUI();
+    UI:addText("text1", "Hello world1", _, "Left");
+    UI:addButton("", "", say);
     UI:saveLayout();
 end
 
