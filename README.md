@@ -22,11 +22,12 @@ Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ### Easy
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Hello%20x4.jpg)
 ```lua
 local UI
 
 function onCreateUI()
-	UI = NewUI();
+    UI = NewUI();
     UI:addText("text1", "Hello world1", _, "Left");
     UI:addText("", "Hello world2", "Medium", "Center");
     UI:nextLine();
