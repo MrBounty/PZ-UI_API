@@ -222,7 +222,7 @@ UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 ```lua
 -- @name: variable name of the element  
 -- @path: path of the image file
--- @size: width of the image in % of the screen [0-100] (optional)
+-- @size: width of the image in % of the screen [0-1] (optional)
 UI:addImage(name, path, size) 
 
 -- Exemple: 
@@ -240,7 +240,7 @@ UI["image1"]:setSize(20)
 -- @name: variable name of the element
 -- @path: path of the image file
 -- @func: function to call when press
--- @size: width of the image in % of the screen [0-100] (optional)
+-- @size: width of the image in % of the screen [0-1] (optional)
 UI:addImageButton(name, path, func, size)  
 
 -- Exemple: 
@@ -259,7 +259,7 @@ UI["ibutton1"]:setSize(20)
 # UI functions
 ### Set width
 ```lua
--- @size: Widht of the x axis of the window in % of the screen [0-100]
+-- @size: Widht of the x axis of the window in % of the screen [0-1]
 UI:setSize(size)
 
 --Example:
@@ -268,8 +268,8 @@ UI:setSize(20)
 
 ### Set position
 ```lua
--- @x: position of the x axis of the top left corner of the window in % of the screen [0-100]
--- @y: position of the y axis of the top left corner of the window in % of the screen [0-100]
+-- @x: position of the x axis of the top left corner of the window in % of the screen [0-1]
+-- @y: position of the y axis of the top left corner of the window in % of the screen [0-1]
 UI:setPosition(x, y)
 
 --Example:
