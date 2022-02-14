@@ -58,7 +58,7 @@ end
 function onCreateUI()
     UI = NewUI();
     UI:addText("", " Say:");
-    UI:addButton("", "say button", say);
+    UI:addButton("", "", say);
     UI:nextLine();
     
     UI:addText("", " Close:");
