@@ -1,12 +1,13 @@
 # Summary
-- [Empty](##-common-functions)
-- [Text](##-common-functions)
-- [Rich Text](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L45)
-- [Button](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L60)
-- [Tick box](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L80)
-- [Combo box](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L108)
-- [Scrolling list](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L123)
-- [Image button](##-image)
+- Empty
+- Text
+- Rich Text
+- Button
+- Tick box
+- Combo box
+- Scrolling list
+- Image
+- Image button
 
 ## Common functions
 ```lua
