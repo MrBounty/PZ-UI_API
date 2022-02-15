@@ -9,6 +9,23 @@
 - Image
 - Image button
 
+## Common functions
+### Before saveLayout()
+Need to be call before saveLayout()
+```lua
+UI["text1"]:setWidth(pctW)
+UI["text1"]:setWidthPixel(pxlW)
+```
+
+### After saveLayout()
+Can be call everywhere
+```lua
+UI["text1"]:addBorder()
+UI["text1"]:toggle()
+UI["text1"]:remove()
+UI["text1"]:putBack()
+```
+
 ## Empty space  
 ```lua
 UI:addText()
@@ -156,12 +173,4 @@ UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
 UI["ibutton1"]:setText("My new text")
 -- Change image: 
 UI["ibutton1"]:setImage("ui/myNewImage.png")
-```
-
-## Common functions
-```lua
-UI["text1"]:addBorder()
-UI["text1"]:toggle()
-UI["text1"]:remove()
-UI["text1"]:putBack()
 ```
