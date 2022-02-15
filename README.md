@@ -1,5 +1,13 @@
 # PZ-Simple UI API
-API for making simple UI for the game project zomboid.  
+Want to make a simple menu for your mod to :  
+- Ask the player to choose between two things?
+- Ask the player a nickname, age, height, weight, etc ?
+- Display a map ?
+- Display player-related information from your mod such as amount of money, time on server, etc ?
+- Show players the start of an event ?
+- And more ?
+
+This mod is fore you !  
 
 # Make my first window
 First you create a new UI with the `NewUI()` function.  
