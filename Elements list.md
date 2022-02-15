@@ -1,3 +1,13 @@
+# Summary
+- [Empty](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L14)
+- [Text](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L21)
+- [Rich Text](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L45)
+- [Button](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L60)
+- [Tick box](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L80)
+- [Combo box](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L108)
+- [Scrolling list](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L123)
+- [Image button](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L152)
+
 ## Common functions
 ```lua
 UI["text1"]:addBorder()
