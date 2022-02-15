@@ -15,4 +15,10 @@ UI:setKey(key)                  -- Key to toggle the UI
 UI:setPosition(x, y)            -- Position of the top left corner of the window in % of the screen [0-1]
 ```
 
+## Call before saveLayout()
+```lua
+UI:setWidth(pctW)
+UI:setWidthPixel(pxlW)
+```
+
 Find all key value [here](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
