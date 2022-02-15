@@ -1,5 +1,5 @@
 # Summary
-- [Empty](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list#L14)
+- [Empty]((##common-functions))
 - [Text](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md#L21)
 - [Rich Text](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L45)
 - [Button](https://github.com/MrBounty/PZ-UI_API/edit/main/Elements%20list.md?plain=1#L60)
