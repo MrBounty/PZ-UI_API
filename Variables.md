@@ -6,6 +6,13 @@
 - Title
 ```
 
+## Positions
+```
+- Left
+- Right
+- Center
+```
+
 ## Text formatting
 For the rich text element, you can use that to make complexe text.  
 It's in the vanilla game so maybe I miss some.  
