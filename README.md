@@ -7,7 +7,7 @@ Want to make a simple menu for your mod to :
 - Show players the start of an event ?
 - And more ?
 
-This mod is fore you !  
+This mod is for you !  
 
 # Make my first window
 First you create a new UI with the `NewUI()` function.  
