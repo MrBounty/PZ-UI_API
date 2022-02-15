@@ -134,16 +134,13 @@ UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 ```lua
 -- @name: variable name of the element  
 -- @path: path of the image file
--- @size: width of the image in % of the screen [0-1] (optional)
-UI:addImage(name, path, size) 
+UI:addImage(name, path) 
 
 -- Exemple: 
 UI:addImage("image1", "ui/myImage.png", 10)
 
 -- Change image: 
 UI["image1"]:setImage("ui/myNewImage.png")
--- Change widht: 
-UI["image1"]:setSize(20)
 ```
 
 ## Image button
@@ -151,8 +148,7 @@ UI["image1"]:setSize(20)
 -- @name: variable name of the element
 -- @path: path of the image file
 -- @func: function to call when press
--- @size: width of the image in % of the screen [0-1] (optional)
-UI:addImageButton(name, path, func, size)  
+UI:addImageButton(name, path, func)  
 
 -- Exemple: 
 UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
@@ -161,8 +157,6 @@ UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
 UI["ibutton1"]:setText("My new text")
 -- Change image: 
 UI["ibutton1"]:setImage("ui/myNewImage.png")
--- Change width: 
-UI["ibutton1"]:setSize(20)
 ```
 
 ## Common functions
