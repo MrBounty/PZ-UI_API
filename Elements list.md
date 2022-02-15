@@ -19,7 +19,7 @@ UI:addText(name, text, font, position)
 
 -- Exemple: 
 UI:addText("text1", "My Title", "Title", "Center")
-UI:addText("", "My text")
+UI:addText(_, "My text")
 
 -- Change the text: 
 UI["text1"]:setText("My New Title")
