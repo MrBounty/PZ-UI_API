@@ -38,48 +38,26 @@ end
 Events.OnCreateUI.Add(onCreateUI)
 ```
 
-## Easy
-### 4 text
-![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Hello%20x4.jpg)
-```lua
-function onCreateUI()
-    local UI = NewUI();
-    UI:addText("text1", "Hello world1", _, "Left");
-    UI:addText("", "Hello world2", "Medium", "Center");
-    UI:nextLine();
-
-    UI:addText("", "Hello worl3", _, "Right");
-    UI:addText("", "Hello world4");
-
-    UI["text1"]:setColor(1, 1, 0, 0);
-    UI:addBorderToAllElements();
-    UI:saveLayout();
-end
-
-Events.OnCreateUI.Add(onCreateUI)
-```
-
-### Button to make the player say something and close the UI
+## Choose your team
 [TODO] Add gif
 ```lua
 local UI
 
-local function say()
-    getPlayer():Say("Hello");
-end
-
-local function close()
-    UI:toggle();
+local function choose(button args)
+    getPlayer():Say("I'm in the " .. args.team .. " team now !");
+    UI:close();
 end
     
 function onCreateUI()
     UI = NewUI();
-    UI:addText("", " Say:");
-    UI:addButton("", "", say);
+    UI:addText("", "Choose your team", "Title", "Center");
     UI:nextLine();
     
-    UI:addText("", " Close:");
-    UI:addButton("", "close button", close);
+    UI:addButton("b1", "Blue", choose);
+    UI["b1"]:addArgument("team", "blue");
+    UI:addButton("b2", "Red", choose);;
+    UI["b1"]:addArgument("team", "red");
+    
     UI:saveLayout();
 end
 
