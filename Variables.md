@@ -7,7 +7,7 @@
 ```
 
 ## Text formatting
-For the rich text element, you can use that to make complexe texte.  
+For the rich text element, you can use that to make complexe text.  
 It's in the vanilla game so maybe I miss some.  
 If you put that in you text, the text that follow it will change.  
 Check example in `media/lua/shared/Translate`  
