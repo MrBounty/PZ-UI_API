@@ -45,7 +45,7 @@ Events.OnCreateUI.Add(onCreateUI)
 ```lua
 local UI
 
-local function choose(button args)
+local function choose(button, args)
     getPlayer():Say("I'm in the " .. args.team .. " team now !");
     UI:close();
 end
