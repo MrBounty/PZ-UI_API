@@ -9,11 +9,6 @@
 - Image
 - Image button
 
-## Common functions
-```lua
-UI["text1"]:addBorder()
-```
-
 ## Empty space  
 ```lua
 UI:addText()
@@ -168,4 +163,9 @@ UI["ibutton1"]:setText("My new text")
 UI["ibutton1"]:setImage("ui/myNewImage.png")
 -- Change width: 
 UI["ibutton1"]:setSize(20)
+```
+
+## Common functions
+```lua
+UI["text1"]:addBorder()
 ```
