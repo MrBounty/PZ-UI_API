@@ -4,7 +4,7 @@ API for making simple UI for the game project zomboid
 
 The principle is to add elements line by line.  
 As in the following diagram:
-![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/Shema.drawio.png)
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/preview%20perso.png)
 
 # Understand coordinates
 The menus are in 2d and the dimensions of a 2d object are its position in x and y as well as its size in width and height.  
