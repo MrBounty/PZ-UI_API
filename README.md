@@ -104,7 +104,7 @@ end
 
 -- Create the UI
 function onCreateUI()
-	UI = NewUI(0.15);
+	UI = NewUI();
 
     UI:addText("title1", "Choose you job !", "Title", "Center");
     UI["title1"]:addBorder();
@@ -130,7 +130,8 @@ function onCreateUI()
     UI:addButton("", "Button", ok);
     UI:nextLine();
 
-
+    
+    UI:setWidth(0.15);
     UI:saveLayout();
 end
 
