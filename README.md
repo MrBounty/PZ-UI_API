@@ -98,12 +98,3 @@ The menus are in 2d and the dimensions of a 2d object are its position in x and 
 To simplify and allow compatibility between different screen sizes. Positions and sizes are in percentage of screen for my mod. But in the vanilla game, all is in pixel.  
 For example a width of 0.2 will take 20% of the screen.  
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/schema2d%20(1).png)
-
-<br />
-
-## Variables
-### Fonts
-- Small
-- Medium
-- Large
-- Title
