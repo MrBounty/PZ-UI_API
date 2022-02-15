@@ -18,6 +18,8 @@ One all line create, you just call `ui:saveLayout()` to finish creating the ui.
 As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/preview%20perso.png)
 
+I highly recommend doing the UIs in event `OnCreateUI` but you can do it anywhere.  
+
 # Understand coordinates
 The menus are in 2d and dimensions of 2d object are its position in x and y as well as its size in width and height.  
 x and y are coordinates of the left top corner.  
