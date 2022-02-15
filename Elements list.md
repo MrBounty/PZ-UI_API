@@ -9,7 +9,6 @@ UI:addText()
 ```
 
 ## Text
-[TODO] Add image
 ```lua
 -- @name:     variable name of the element  
 -- @text:     Text to display  
@@ -34,7 +33,6 @@ UI["text1"]:setPosition("Center")
 ```
 
 ## Rich Text
-[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display  
@@ -50,7 +48,6 @@ UI["rich1"]:setText("My new text")
 [Text formating](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
 ## Button
-[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display in the button  
@@ -71,7 +68,6 @@ UI["button1"]:addArg("index", 1);
 ```
 
 ## Tick box
-[TODO] Add image
 ```lua
 -- @name: variable name of the element
 UI:addTickBox(name) 
@@ -84,7 +80,6 @@ UI["tick1"]:getValue()
 ```
 
 ## Entry
-[TODO] Add image
 ```lua
 -- @name:     variable name of the element  
 -- @defaul:   Default text  
@@ -100,7 +95,6 @@ UI["entry1"]:getValue()
 ```
 
 ## Combo box
-[TODO] Add image
 ```lua
 -- @name:   variable name of the element  
 -- @items`: List of items to add in the list  
@@ -116,7 +110,6 @@ UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 ```
 
 ## Scrolling list
-[TODO] Add image
 ```lua
 -- @name:  variable name of the element  
 -- @items: List of items to add in the list  
@@ -132,7 +125,6 @@ UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 ```
 
 ## Image
-[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @path: path of the image file
@@ -149,7 +141,6 @@ UI["image1"]:setSize(20)
 ```
 
 ## Image button
-[TODO] Add image
 ```lua
 -- @name: variable name of the element
 -- @path: path of the image file
