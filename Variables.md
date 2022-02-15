@@ -1,8 +1,10 @@
 ## Fonts
+```
 - Small
 - Medium
 - Large
 - Title
+```
 
 ## Text formatting
 For the rich text element, you can use that to make complexe texte.  
