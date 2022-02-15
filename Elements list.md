@@ -47,7 +47,7 @@ UI:addRichText("rich1", text)
 -- Change the text: 
 UI["rich1"]:setText("My new text")
 ```
-[TODO] Add guide for texte formatting
+[Text formating](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
 ## Button
 [TODO] Add image
