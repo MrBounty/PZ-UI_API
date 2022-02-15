@@ -49,4 +49,5 @@ UI:toggle()                     -- toggle the UI
 UI:isVisible()                  -- To know if the player see the UI
 UI:setTitle(string)             -- Add a title to the top bar of the UI
 UI:addBorderToAllElements()     -- Add border to all elements of the ui
+UI:canCollapse(bottom)          -- If the UI collapse when click outside. If bottom is true, collapse from the bottom.
 ```
