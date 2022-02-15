@@ -4,7 +4,7 @@ Want to make a simple menu for your mod to :
 - Ask the player a nickname, age, height, weight, etc ?
 - Display a map ?
 - Display player-related information from your mod such as amount of money, time on server, etc ?
-- Show players the start of an event ?
+- Warn players the start of an event ?
 - And more ?
 
 This mod is for you !  
