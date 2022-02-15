@@ -79,6 +79,7 @@ Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ## Intermediate
+### Choose a classe
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/exemple1.gif)
 ```lua
 local UI
