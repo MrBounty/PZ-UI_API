@@ -5,7 +5,6 @@ UI["text1"]:addBorder()
 
 ## Empty space  
 ```lua
--- @size: Height in % of the screen [0-1] (0 to use default)
 UI:addText()
 ```
 
