@@ -1,0 +1,23 @@
+---@class ErosionConfig.Season : zombie.erosion.ErosionConfig.Season
+---@field lat int
+---@field tempMax int
+---@field tempMin int
+---@field tempDiff int
+---@field seasonLag int
+---@field noon float
+---@field seedA int
+---@field seedB int
+---@field seedC int
+---@field jan float
+---@field feb float
+---@field mar float
+---@field apr float
+---@field may float
+---@field jun float
+---@field jul float
+---@field aug float
+---@field sep float
+---@field oct float
+---@field nov float
+---@field dec float
+ErosionConfig_Season = {}

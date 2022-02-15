@@ -1,0 +1,226 @@
+Moodles_CA = {
+	-- Moodle type :
+	-- Endurance
+	Moodles_endurance_lvl1 = "Cansament moderat",
+	Moodles_endurance_lvl2 = "Alt cansament",
+	Moodles_endurance_lvl3 = "Cansament excessiu",
+	Moodles_endurance_lvl4 = "Exhaust",
+	-- Heavy Load
+	Moodles_heavyload_lvl1 = "Càrrega alta",
+	Moodles_heavyload_lvl2 = "Càrrega pesada",
+	Moodles_heavyload_lvl3 = "Càrrega molt pesada",
+	Moodles_heavyload_lvl4 = "Càrrega extremadament pesada",
+	-- Angry
+	Moodles_angry_lvl1 = "Irritat",
+	Moodles_angry_lvl2 = "Molest",
+	Moodles_angry_lvl3 = "Cabrejat",
+	Moodles_angry_lvl4 = "Furiós",
+	-- Stress
+	Moodles_stress_lvl1 = "Ansiós",
+	Moodles_stress_lvl2 = "Agitat",
+	Moodles_stress_lvl3 = "Estressat",
+	Moodles_stress_lvl4 = "Crisi nerviosa",
+	-- Thirst
+	Moodles_thirst_lvl1 = "Set lleugera",
+	Moodles_thirst_lvl2 = "Assedegat",
+	Moodles_thirst_lvl3 = "Molta set",
+	Moodles_thirst_lvl4 = "Morint de set",
+	-- Tired
+	Moodles_tired_lvl1 = "Ensonegat",
+	Moodles_tired_lvl2 = "Adormint-te",
+	Moodles_tired_lvl3 = "Molta son",
+	Moodles_tired_lvl4 = "Son horrible",
+	-- Hungry
+	Moodles_hungry_lvl1 = "Amb gana",
+	Moodles_hungry_lvl2 = "Famolenc",
+	Moodles_hungry_lvl3 = "Molt famolenc",
+	Moodles_hungry_lvl4 = "Morint de fam",
+	-- Panic
+	Moodles_panic_lvl1 = "Pànic lleuger",
+	Moodles_panic_lvl2 = "Pànic",
+	Moodles_panic_lvl3 = "Pànic fort",
+	Moodles_panic_lvl4 = "Pànic extrem",
+	-- Sick
+	Moodles_sick_lvl1 = "Marejat",
+	Moodles_sick_lvl2 = "Amb nàusees",
+	Moodles_sick_lvl3 = "Malalt",
+	Moodles_sick_lvl4 = "Febra",
+	-- Bored
+	Moodles_bored_lvl1 = "Avorrint-te",
+	Moodles_bored_lvl2 = "Avorrit",
+	Moodles_bored_lvl3 = "Molt avorrit",
+	Moodles_bored_lvl4 = "Extremadament avorrit",
+	-- Unhappy
+	Moodles_unhappy_lvl1 = "Un poc trist",
+	Moodles_unhappy_lvl2 = "Calfant-te el cap",
+	Moodles_unhappy_lvl3 = "Deprimit",
+	Moodles_unhappy_lvl4 = "Severament deprimit",
+	-- Bleeding
+	Moodles_bleeding_lvl1 = "Sagnat menor",
+	Moodles_bleeding_lvl2 = "Sagnant",
+	Moodles_bleeding_lvl3 = "Sagnat sever",
+	Moodles_bleeding_lvl4 = "Pèrdua de sang massiva",
+	-- Wet
+	Moodles_wet_lvl1 = "Humit",
+	Moodles_wet_lvl2 = "Banyat",
+	Moodles_wet_lvl3 = "Mullat",
+	Moodles_wet_lvl4 = "Xopat",
+	-- Has a cold
+	Moodles_hascold_lvl1 = "Moquejant",
+	Moodles_hascold_lvl2 = "Fossant",
+	Moodles_hascold_lvl3 = "Refredat",
+	Moodles_hascold_lvl4 = "Engripat",
+	-- Injured
+	Moodles_injured_lvl1 = "Incòmode",
+	Moodles_injured_lvl2 = "Ferit",
+	Moodles_injured_lvl3 = "Ferides greus",
+	Moodles_injured_lvl4 = "Ferides crítiques",
+	-- Pain
+	Moodles_pain_lvl1 = "Dolor llegur",
+	Moodles_pain_lvl2 = "Endolorit",
+	Moodles_pain_lvl3 = "Dolor sever",
+	Moodles_pain_lvl4 = "Agonia",
+	-- Drunk
+	Moodles_drunk_lvl1 = "Contentet",
+	Moodles_drunk_lvl2 = "Ebri",
+	Moodles_drunk_lvl3 = "Begut",
+	Moodles_drunk_lvl4 = "Molt bufat",
+	-- Dead
+	Moodles_dead_lvl1 = "Mort",
+	-- Zombified
+	Moodles_zombie_lvl1 = "Zombificat",
+	-- Food eaten
+	Moodles_foodeaten_lvl1 = "Saciat",
+	Moodles_foodeaten_lvl2 = "Ben alimentat",
+	Moodles_foodeaten_lvl3 = "Ple",
+	Moodles_foodeaten_lvl4 = "A punt de rebentar",
+	-- Hyperthermia
+	Moodles_hyperthermia_lvl1 = "Calor incòmoda",
+	Moodles_hyperthermia_lvl2 = "Sobrecalfat",
+	Moodles_hyperthermia_lvl3 = "Colp de calor",
+	Moodles_hyperthermia_lvl4 = "Hipertèrmic",
+	-- Hypothermia
+	Moodles_hypothermia_lvl1 = "Fred",
+	Moodles_hypothermia_lvl2 = "Gelat",
+	Moodles_hypothermia_lvl3 = "Congelant-te",
+	Moodles_hypothermia_lvl4 = "Hipotèrmic",
+    -- Windchill
+    Moodles_windchill_lvl1 = "Un poc de vent",
+    Moodles_windchill_lvl2 = "Vent incòmode",
+    Moodles_windchill_lvl3 = "Vent molt gelat",
+    Moodles_windchill_lvl4 = "Vent horrible",
+
+	-- Description of moodle
+	-- Endurance
+	Moodles_endurance_desc_lvl1 = "Descansa.",
+	Moodles_endurance_desc_lvl2 = "Quasi no pots córrer.",
+	Moodles_endurance_desc_lvl3 = "Quasi no pots caminar.",
+	Moodles_endurance_desc_lvl4 = "Quasi no pots moure't.",
+	-- Angry
+	Moodles_angry_desc_lvl1 = "A bit narked off.",
+	Moodles_angry_desc_lvl2 = "Seriously bad mood.",
+	Moodles_angry_desc_lvl3 = "Ball of rage.",
+	Moodles_angry_desc_lvl4 = "Spoiling for a fight.",
+	-- Stress
+	Moodles_stress_desc_lvl1 = "Al límit.",
+	Moodles_stress_desc_lvl2 = "Nerviós i agitat.",
+	Moodles_stress_desc_lvl3 = "Mans suoses. Mort de por.",
+	Moodles_stress_desc_lvl4 = "Aterroritzat.",
+	-- Thirsty
+	Moodles_thirst_desc_lvl1 = "Boca seca.",
+	Moodles_thirst_desc_lvl2 = "Deshidratat.",
+	Moodles_thirst_desc_lvl3 = "Et sents dèbil i marejat.",
+	Moodles_thirst_desc_lvl4 = "Desesperat per l'aigua.",
+	-- Tired
+	Moodles_tired_desc_lvl1 = "Estaria bé gitar-se.",
+	Moodles_tired_desc_lvl2 = "Consciència reduïda.",
+	Moodles_tired_desc_lvl3 = "Consciència reduïda.",
+	Moodles_tired_desc_lvl4 = "Molt cansat. Molt desesperada i inhumanament cansat.",
+	-- Hungry
+	Moodles_hungry_desc_lvl1 = "Podria pegar un mosset.",
+	Moodles_hungry_desc_lvl2 = "Me menjaria un cavall.",
+	Moodles_hungry_desc_lvl3 = "Força i curació reduïdes.",
+	Moodles_hungry_desc_lvl4 = "Baixant en salut...",
+	-- Panic
+	Moodles_panic_desc_lvl1 = "Intenta calmar-te.",
+	Moodles_panic_desc_lvl2 = "Precisió reduïda.",
+	Moodles_panic_desc_lvl3 = "Precisió molt reduïda.",
+	Moodles_panic_desc_lvl4 = "Precisió i visió molt reduïdes.",
+	-- Sickness
+	Moodles_sick_desc_lvl1 = "No cal fer tant.",
+	Moodles_sick_desc_lvl2 = "Força i curació reduïdes.",
+	Moodles_sick_desc_lvl3 = "Força i curació molt reduïdes.",
+	Moodles_sick_desc_lvl4 = "En risc de mort.",
+	-- Bored
+	Moodles_bored_desc_lvl1 = "Fes alguna cosa o cerca entreteniment.",
+	Moodles_bored_desc_lvl2 = "En perill d'entristir.",
+	Moodles_bored_desc_lvl3 = "Alt risc d'entristir.",
+	Moodles_bored_desc_lvl4 = "Molta probabilitat de deprimir-te.",
+	-- Unhappy
+	Moodles_unhappy_desc_lvl1 = "Mira com animar-te.",
+	Moodles_unhappy_desc_lvl2 = "Cerca alguna emoció o contacte humà.",
+	Moodles_unhappy_desc_lvl3 = "Envoltat pel dol i la desesperació.",
+	Moodles_unhappy_desc_lvl4 = "Intenta oblidar la realitat.",
+	-- Bleeding
+	Moodles_bleed_desc_lvl1 = "Cal un embenat.",
+	Moodles_bleed_desc_lvl2 = "Força i velocitat reduïdes.",
+	Moodles_bleed_desc_lvl3 = "Força i velocitat molt reduïdes.",
+	Moodles_bleed_desc_lvl4 = "Mort imminent.",
+	-- Wet
+	Moodles_wet_desc_lvl1 = "Un poc humit. Pluja o suor?",
+	Moodles_wet_desc_lvl2 = "Més suor o és que continua plovent?",
+    Moodles_wet_desc_lvl3 = "És possible que et refredes.",
+    Moodles_wet_desc_lvl4 = "És molt probable que et refredes.",
+	-- Has a cold
+	Moodles_hasacold_desc_lvl1 = "Esternuts ocasionals.",
+	Moodles_hasacold_desc_lvl2 = "Procliu a esternudar.",
+	Moodles_hasacold_desc_lvl3 = "Esternuts i tos. Velocitat i curació reduïdes.",
+	Moodles_hasacold_desc_lvl4 = "Velocitat i curació molt reduïdes.",
+	-- Injured
+	Moodles_injured_desc_lvl1 = "Alguna cosa no va bé...",
+	Moodles_injured_desc_lvl2 = "Força i velocitat reduïdes.",
+	Moodles_injured_desc_lvl3 = "Força i velocitat molt reduïdes.",
+	Moodles_injured_desc_lvl4 = "A saber si passes la nit...",
+	-- Pain
+	Moodles_pain_desc_lvl1 = "Notes un xicotet dolor.",
+	Moodles_pain_desc_lvl2 = "Velocitat i precisió un poc reduïdes.",
+	Moodles_pain_desc_lvl3 = "Velocitat i precisió reduïdes.",
+	Moodles_pain_desc_lvl4 = "Velocitat i precisió severament reduïdes.",
+	-- Heavy load
+	Moodles_heavyload_desc_lvl1 = "Portes un poc massa.",
+	Moodles_heavyload_desc_lvl2 = "Velocitat de moviment reduïda.",
+	Moodles_heavyload_desc_lvl3 = "Velocitat de moviment molt reduïda.",
+	Moodles_heavyload_desc_lvl4 = "No aguantaràs molt més! Moviment compromés.",
+	-- Drunk
+	Moodles_drunk_desc_lvl1 = "Un glopet o dos.",
+	Moodles_drunk_desc_lvl2 = "Pitjor coordinació.",
+	Moodles_drunk_desc_lvl3 = "Problemes greus de coordinació.",
+	Moodles_drunk_desc_lvl4 = "A aquest pas acabaràs morrejant-te amb un zombi.",
+	-- Dead
+	Moodles_dead_desc_lvl1 = "Convertit en menjar per a rates.",
+	-- Zombified
+	Moodles_zombified_desc_lvl1 = "Ara tens ganes de menjar persones.",
+	-- Food eaten
+	Moodles_foodeaten_desc_lvl1 = "Fam completament absent.",
+	Moodles_foodeaten_desc_lvl2 = "Panxa plena. Notes l'aliment entrant-te al cos.",
+	Moodles_foodeaten_desc_lvl3 = "Estómac content. Salut i força majors.",
+	Moodles_foodeaten_desc_lvl4 = "Si menge un mos més vomite.",
+	-- Hyperthermia
+	Moodles_hyperthermia_desc_lvl1 = "Pensa a llevar-te roba. Set augmentada.",
+	Moodles_hyperthermia_desc_lvl2 = "Set. Suor. Fent massa.",
+	Moodles_hyperthermia_desc_lvl3 = "Marejat, no et pots concentrar més que en cercar líquid.",
+	Moodles_hyperthermia_desc_lvl4 = "Delirant pel colp de calor. En perill.",
+	-- Hypothermia
+	Moodles_hypothermia_desc_lvl1 = "Fa frescor per ací...",
+	Moodles_hypothermia_desc_lvl2 = "Mira com abrigar-te.",
+	Moodles_hypothermia_desc_lvl3 = "Mare meua. Quin fred que fa."
+	Moodles_hypothermia_desc_lvl4 = "Cos i ment entumits pel fred.",
+    -- Windchill
+    Moodles_windchill_desc_lvl1 = "Sensació tèrmica entre 2 i 5 graus menys que la temperatura.",
+    Moodles_windchill_desc_lvl2 = "Sensació tèrmica entre 5 i 7 graus menys que la temperatura.",
+    Moodles_windchill_desc_lvl3 = "Sensació tèrmica entre 7 i 10 graus menys que la temperatura.",
+    Moodles_windchill_desc_lvl4 = "Sensació tèrmica de més de 10 graus menys que la temperatura real.",
+    -- CantSprint
+    Moodles_CantSprint = "Dificultats de moviment"
+    Moodles_CantSprint_desc = "La roba pesada, les motxilles plenes i els objectes grans t'enlenteixen!"
+}

@@ -1,0 +1,27 @@
+MultiStageBuild_CS = {
+    -- Wooden Wall
+    MultiStageBuild_CreateWoodenWall_1 = "Vyrobit Døevìnou Zeï Lvl 1",
+    MultiStageBuild_UpgradeWoodenWall_1To2 = "Vylepšit Na Døevìnou Zeï Lvl 2",
+    MultiStageBuild_CreateWoodenWall_2 = "Vyrobit Døevìnou Zeï Lvl 2",
+    MultiStageBuild_UpgradeWoodenWall_1To3 = "Vylepšit Na Døevìnou Zeï Lvl 3",
+    MultiStageBuild_UpgradeWoodenWall_2To3 = "Vylepšit Na Døevìnou Zeï Lvl 3",
+    MultiStageBuild_CreateWoodenWall_3 = "Vyrobit Døevìnou Zeï Lvl 3",
+	-- Wooden Window
+    MultiStageBuild_CreateWoodenWindow_1 = "Vyrobit Døevìné Okno Lvl 1",
+    MultiStageBuild_UpgradeWoodenWindow_1To2 = "Vylepšit Na Døevìné Okno Lvl 2",
+    MultiStageBuild_CreateWoodenWindow_2 = "Vyrobit Døevìné Okno Lvl 2",
+    MultiStageBuild_UpgradeWoodenWindow_1To3 = "Vylepšit Na Døevìné Okno Lvl 3",
+    MultiStageBuild_UpgradeWoodenWindow_2To3 = "Vylepšit Na Døevìné Okno Lvl 3",
+	MultiStageBuild_CreateWoodenWindow_3 = "Vyrobit Døevìné Okno Lvl 3",
+	-- Metal Wall
+    MultiStageBuild_CreateMetalWall_1 = "Vyrobit Ocelovou Zeï Lvl 1",
+    MultiStageBuild_UpgradeMetalWall_1To2 = "Vylepšit Na Ocelovou Zeï Lvl 2",
+    MultiStageBuild_CreateMetalWall_2 = "Vyrobit Ocelovou Zeï Lvl 2",
+	-- Metal Window
+    MultiStageBuild_CreateMetalWindow_1 = "Vyrobit Ocelové Okno Lvl 1",
+    MultiStageBuild_UpgradeMetalWindow_1To2 = "Vylepšit Na Ocelové Okno Lvl 2",
+    MultiStageBuild_CreateMetalWindow_2 = "Vyrobit Ocelové Okno Lvl 2",
+	-- wooden door frame
+    MultiStageBuild_UpgradeWoodenDoorFrame_1To2 = "Vylepšit Na Døevìný Dveøní Rám Lvl 2",
+    MultiStageBuild_UpgradeWoodenDoorFrame_2To3 = "Vylepšit Na Døevìný Dveøní Rám Lvl 3",
+}

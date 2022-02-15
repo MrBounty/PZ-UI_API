@@ -14,5 +14,5 @@ function cutTextToLong(text, width, font, zoom)
 		text = string.sub(text, 1, #text-1);
 		if text == "" then break end
 	end
-    return text, getTextManager():MeasureStringX(font, text) * zoom
+    return text, getTextManager():MeasureStringX(font, text) * zoom;
 end

@@ -1,0 +1,14 @@
+---@class ErosionConfig.Seeds : zombie.erosion.ErosionConfig.Seeds
+---@field seedMain_0 int
+---@field seedMain_1 int
+---@field seedMain_2 int
+---@field seedMoisture_0 int
+---@field seedMoisture_1 int
+---@field seedMoisture_2 int
+---@field seedMinerals_0 int
+---@field seedMinerals_1 int
+---@field seedMinerals_2 int
+---@field seedKudzu_0 int
+---@field seedKudzu_1 int
+---@field seedKudzu_2 int
+ErosionConfig_Seeds = {}

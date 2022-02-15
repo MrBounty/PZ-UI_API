@@ -1,0 +1,37 @@
+MakeUp_CA = {
+    MakeUpCategory_Eyes = "Ulls",
+    MakeUpCategory_EyesShadow = "Ombra d'ulls",
+    MakeUpCategory_FullFace = "Cara completa",
+    MakeUpCategory_Lips = "Llavis",
+
+    MakeUpType_EyesCrow = "Corb",
+    MakeUpType_EyesRedStripes1 = "Ratlles roges 1",
+    MakeUpType_EyesRedStripes2 = "Ratlles roges 2",
+    MakeUpType_EyesCamo1 = "Camuflatge 1",
+    MakeUpType_EyesCamo2 = "Camuflatge 2",
+    MakeUpType_EyesCamoStripes = "Ratlles",
+    MakeUpType_EyesFootball = "Futbol americà",
+
+    MakeUpType_EyeShadowWhite = "Ombra d'ulls blanca",
+    MakeUpType_EyeShadowLightBlue = "Ombra d'ulls blava clara",
+    MakeUpType_EyeShadowBlue = "Ombra d'ulls blava",
+    MakeUpType_EyeShadowRed = "Ombra d'ulls roja",
+    MakeUpType_EyeShadowPink = "Ombra d'ulls rosa",
+    MakeUpType_EyeShadowGreen = "Ombra d'ulls verda",
+    MakeUpType_EyeShadowYellow = "Ombra d'ulls groga",
+
+    MakeUpType_FullFaceCamo1 = "Camuflatge complet 1",
+    MakeUpType_FullFaceCamo2 = "Camuflatge complet 2",
+    MakeUpType_FullFaceWarrior = "Guerrer",
+    MakeUpType_FullFaceClown1 = "Pallasso 1",
+    MakeUpType_FullFaceClown2 = "Pallasso 2",
+    MakeUpType_FullFaceSkull1 = "Calavera 1",
+    MakeUpType_FullFaceSkull2 = "Calavera 2",
+
+    MakeUpType_LipsRed = "Pintallavis roig",
+    MakeUpType_LipsLightBlue = "Pintallavis blau clar",
+    MakeUpType_LipsBlue = "Pintallavis blau",
+    MakeUpType_LipsBlack = "Pintallavis negre",
+    MakeUpType_LipsGreen = "Pintallavis verd",
+    MakeUpType_LipsPink = "Pintallavis rosa",
+}

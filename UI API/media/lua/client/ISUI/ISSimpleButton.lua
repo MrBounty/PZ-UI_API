@@ -6,6 +6,25 @@ function ISSimpleButton:setText(text)
     self:setTitle(text);
 end
 
+function ISSimpleButton:onMouseUp(x, y)
+
+    if not self:getIsVisible() then
+        return;
+    end
+    local process = false;
+    if self.pressed == true then
+        process = true;
+    end
+    self.pressed = false;
+     if self.onclick == nil then
+        return;
+    end
+    if self.enable and (process or self.allowMouseUpProcessing) then
+        getSoundManager():playUISound(self.sounds.activate)
+        self.onclick(self, self.args);
+    end
+end
+
 function ISSimpleButton:setPositionAndSize()
     local nbElement = self.parentUI.lineColumnCount[self.line]
     self.maxW = self.parentUI.pxlW / nbElement;
@@ -15,14 +34,19 @@ function ISSimpleButton:setPositionAndSize()
     self:setY(self.pxlY);
     self:setWidth(self.maxW);
     self:setHeight(self.parentUI.lineH[self.line])
-
-    self:setTitle(self.text);
     self:setOnClick(self.func);
 end
 
-function ISSimpleButton:new(parentUI, text, func)
+function ISSimpleButton:render()
+    ISButton.render(self)
+    if self.border then
+        self:drawRectBorder(0, 0, self:getWidth(), self:getHeight(), 0.5, 1, 1, 1);
+    end
+end
+
+function ISSimpleButton:new(parentUI, title, func)
     local o = {};
-    o = ISButton:new(0, 0, 1, 1);
+    o = ISButton:new(0, 0, 1, 1, title);
     setmetatable(o, self);
     self.__index = self;
 
@@ -37,7 +61,7 @@ function ISSimpleButton:new(parentUI, text, func)
     o.pxlY = parentUI.yAct;
 
     o.func = func;
-    o.text = text;
+    o.args = {};
 
     return o;
 end
@@ -50,4 +74,8 @@ end
 
 function ISSimpleButton:removeBorder()
     self.border = false;
+end
+
+function ISSimpleButton:addArg(name, value)
+    self.args[name] = value;
 end

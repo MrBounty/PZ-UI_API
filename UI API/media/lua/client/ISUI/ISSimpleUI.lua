@@ -1,5 +1,7 @@
 require "ISUI/ISCollapsableWindow"
 
+local UI_HEIGHT_SMALL = getTextManager():getFontHeight(UIFont.Small);
+
 ISSimpleUI = ISCollapsableWindow:derive("ISSimpleUI");
 
 function ISSimpleUI:initialise()
@@ -116,9 +118,30 @@ function ISSimpleUI:nextLine()
     self.lineAct = self.lineAct + 1;
     self.yAct = self.yAct + self.deltaY;
     table.insert(self.lineH, self.deltaY);
-    self.dataY = 0;
+    self.deltaY = 0;
     table.insert(self.lineY, self.yAct);
     table.insert(self.lineColumnCount, 0);
+end
+
+function ISSimpleUI:initAndAddToTable(newE, name)
+    newE:initialise();
+    newE:instantiate();
+    self:addChild(newE);
+
+    if name and self[name] ~= nil then 
+        print("UI API - ERROR: element name '" .. name .. "' is already a variable name. Change the name !")
+    end
+
+    if name == "" or not name then
+        table.insert(self.noNameElements, newE);
+    else
+        self.namedElements[name] = newE;
+        self[name] = newE;
+    end
+end
+
+function ISSimpleUI:setLineHeight(pctH)
+    self.deltaY = h * getCore():getScreenHeight();
 end
 
 function ISSimpleUI:nextColumn()
@@ -140,65 +163,59 @@ function ISSimpleUI:addText(name, txt, font, position)
     
      -- Create element
     local newE = ISSimpleText:new(self, txt, font, position);
-    newE:initialise();
-    newE:instantiate();
-    self:addChild(newE);
-    if name == "" then
-        table.insert(self.noNameElements, newE);
-    else
-        self.namedElements[name] = newE;
-        self[name] = newE;
-    end
+    self:initAndAddToTable(newE, name);
 
     -- Add to yAct
-    local deltaY = getTextManager():getFontHeight(UIFont[font]);
+    local deltaY = getTextManager():getFontHeight(newE.font);
     if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
-function ISSimpleUI:addRichText(name, txt)
+function ISSimpleUI:addRichText(name, text)
     self:nextColumn();
     
     -- Create element
-   local newE = ISSimpleRichText:new(self, text);
-   newE:initialise();
-   newE:instantiate();
-   self:addChild(newE);
-   if name == "" then
-       table.insert(self.noNameElements, newE);
-   else
-       self.namedElements[name] = newE;
-       self[name] = newE;
-   end
+    local newE = ISSimpleRichText:new(self, text);
+    self:initAndAddToTable(newE, name);
 
    -- Add to yAct
-   local deltaY = getTextManager():getFontHeight(UIFont.small) * 8;
+   local deltaY = UI_HEIGHT_SMALL * 8;
    if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
-function ISSimpleUI:addButton(name, txt, func)
+function ISSimpleUI:addButton(name, text, func)
     self:nextColumn();
     
      -- Create element
     local newE = ISSimpleButton:new(self, text, func);
-    newE:initialise();
-    newE:instantiate();
-    self:addChild(newE);
-    if name == "" then
-        table.insert(self.noNameElements, newE);
-    else
-        self.namedElements[name] = newE;
-        self[name] = newE;
-    end
+    self:initAndAddToTable(newE, name);
 
     -- Add to yAct
-    local deltaY = getTextManager():getFontHeight(UIFont[font]);
+    local deltaY = getTextManager():getFontHeight(newE.font);
     if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
 function ISSimpleUI:addTickBox(name)
+    self:nextColumn();
+    
+     -- Create element
+    local newE = ISSimpleTickBox:new(self);
+    self:initAndAddToTable(newE, name);
+
+    -- Add to yAct
+    local deltaY = UI_HEIGHT_SMALL;
+    if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
-function ISSimpleUI:addEntry(name, txt, isNumber)
+function ISSimpleUI:addEntry(name, text, isNumber)
+    self:nextColumn();
+    
+     -- Create element
+    local newE = ISSimpleEntry:new(self, text, isNumber);
+    self:initAndAddToTable(newE, name);
+
+    -- Add to yAct
+    local deltaY = UI_HEIGHT_SMALL;
+    if self.deltaY < deltaY then self.deltaY = deltaY end
 end
 
 function ISSimpleUI:addComboBox(name, items)

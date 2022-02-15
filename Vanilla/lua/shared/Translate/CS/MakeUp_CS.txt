@@ -1,0 +1,37 @@
+MakeUp_CS = {
+    MakeUpCategory_Eyes = "Oèi",
+    MakeUpCategory_EyesShadow = "Oèní stín",
+    MakeUpCategory_FullFace = "Plný Oblièej",
+    MakeUpCategory_Lips = "Rty",
+	
+	MakeUpType_Crow = "Vrána",
+    MakeUpType_EyesRedStripes1 = "Èervené pruhy 1",
+	MakeUpType_EyesRedStripes2 = "Èervené pruhy 2",
+    MakeUpType_EyesCamo1 = "Maskování 1",
+    MakeUpType_EyesCamo2 = "Maskování 2",
+    MakeUpType_EyesCamoStripes = "Proužky",
+    MakeUpType_EyesFootball = "Fotbal"
+	
+    MakeUpType_EyeShadowWhite = "Bílý oèní stín",
+    MakeUpType_EyeShadowLightBlue = "Svìtle modrý oèní stín",
+    MakeUpType_EyeShadowBlue = "Modrý oèní stín",
+	MakeUpType_EyeShadowRed = "Èervený oèní stín",
+    MakeUpType_EyeShadowPink = "Rùžový oèní stín",
+    MakeUpType_EyeShadowGreen = "Zelený oèní stín",
+    MakeUpType_EyeShadowYellow = "Žlutý oèní stín",
+	
+    MakeUpType_FullFaceCamo1 = "Celkové Maskování 1",
+    MakeUpType_FullFaceCamo2 = "Celkové Maskování 2",
+    MakeUpType_FullFaceWarrior = "Váleèník",
+	MakeUpType_FullFaceClown2 = "Klaun 2",
+    MakeUpType_FullFaceClown1 = "Klaun 1",
+    MakeUpType_FullFaceSkull1 = "Lebka 1",
+    MakeUpType_FullFaceSkull2 = "Lebka 2",
+	
+    MakeUpType_LipsRed = "Èervená Rtìnka",
+    MakeUpType_LipsLightBlue = "Svìtle Modrá Rtìnka",
+    MakeUpType_LipsBlack = "Modrá Rtìnka",
+    MakeUpType_LipsBlack = "Èerná Rtìnka",
+    MakeUpType_LipsGreen = "Zelená Rtìnka",
+    MakeUpType_LipsPink = "Rùžová Rtìnka",
+}

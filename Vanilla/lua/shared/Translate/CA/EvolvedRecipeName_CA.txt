@@ -1,0 +1,12 @@
+EvolvedRecipeName_CA = {
+	EvolvedRecipeName_Base.CannedBologneseOpen = "Pot de bolonyesa obert",
+	EvolvedRecipeName_Base.CannedCarrotsOpen = "Pot de carlotes obert",
+	EvolvedRecipeName_Base.CannedChiliOpen = "Pot de xili obert",
+	EvolvedRecipeName_Base.CannedCornOpen = "Pot de dacsa obert",
+	EvolvedRecipeName_Base.CannedCornedBeefOpen = "Llauna de carn de vedella oberta",
+	EvolvedRecipeName_Base.CannedPeasOpen = "Pot de pésols obert",
+	EvolvedRecipeName_Base.CannedPotatoOpen = "Pot de creïlles obert",
+	EvolvedRecipeName_Base.CannedSardinesOpen = "Llauna de sardines oberta",
+	EvolvedRecipeName_Base.CannedTomatoOpen = "Pot de tomaca obert",
+	EvolvedRecipeName_Base.Teabag2 = "Té",
+}

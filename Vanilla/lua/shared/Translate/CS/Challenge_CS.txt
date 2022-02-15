@@ -1,0 +1,74 @@
+Challenge_CS = {
+    Challenge_YouHaveOneDay_name = "Máš Jeden Den",
+	Challenge_YouHaveOneDay_desc = "Jsi zpìt v Knox County. Jsi zpìt na mapì, kde infekce Project Zomboid zaèala. <LINE> <LINE> Jeden den jsi relativnì v bezpeèí. Zombie dorazí ve vysokıch èíslech a najdou tì. Kde jsi naposledy byl? Kde jsi naposledy byl ve svıch starıch èasech? Radši to hned najdi. <LINE> <LINE> [Naše díky komunitnímu maperovi BobHeckling za pøetvoøení staré 0.15 mapy se souèasnımi nástroji.]]",
+    
+    Challenge_WinterIsComing_name = "Pøichází Zima",
+	Challenge_WinterIsComing_desc = "Je polovina èervence, ale znièehonic je tu chladnı vánek. Ve tøech nech zde bude zima taková, jako ádná pøedtím. <LINE> <LINE> Probudíš se na izolovaném místì. Máš tenké zásoby a hordy nemrtvıch mohou bıt zpomaleny intenzivním chladem - ale nejsou o nic ménì smrtelní. <LINE> <LINE> Zahøej se, pøeivší...",
+    
+        Challenge_OpeningHours_name = "Otevírací Hodiny",
+    Challenge_OpeningHours_desc = "Obchod je obklíèenı. Døíve to bylo dùleité místo pro jejich ivoty. Instinkt je vedl k jeho dveøím. Myšlenky toho co mìli udìlat... <LINE> <LINE> Jsi sám, ale ne na dlouho. V 9:00 bude obchod pøipravenı na otevøení: dveøe se otevøou a hordy vstoupí. <LINE> <LINE> Buï na nì pøipravenı.",
+    
+	Challenge_AReallyCDDAy_name = "Opravdu Špatnı Den",
+	Challenge_AReallyCDDAy_desc = "Vylezeš ze sprchy a nepøíjemnì upadneš. Jsi namol a je ti zima. <LINE> <LINE> Na vrcholu toho všeho ti hoøí dùm! Dnešek rozhodnì není tvùj den. <LINE> <LINE> [Vızva inspirovaná hrou A Really Bad Day Cataclysm: Dark Days Ahead] ",
+    
+	Challenge_Challenge1_name = "Chata v Lese - Poslední Vzdor",
+	Challenge_Challenge1_desc = "Mùeš je slyšet pøicházet. Hordy mrtvohlavù, pøibliujících se k tvojí izolované chatce z kadého úhlu. Smrt je nevyhnutelná, ale po ruce máš brokovnici. <LINE> <LINE> Poslední vzdor zprostøedkovává nekoneèné vlny zombie ve zvyšujících se èíslech. Pøeí tak dlouho, jak je to jen moné napøíè šancím, které jsou silnì proti tobì.",
+    
+	Challenge_Challenge2_name = "Chata v Lese - Poslední Vzdor Akumulace",
+	Challenge_Challenge2_desc = "Další den, další chata pøipravená na krveprolití. Hordy ti jdou vstøíc a tvoje smrt bude tak bloestivá jako bude pøíšerná. Tak bì bojovat... <LINE> <LINE> Poslední vzdor â€“ Akumulátor zprostøedkovává nekoneèné hordy zombie ve zvyšujících se èíslech. Pouí vydìlané peníze, které jsi vydìlal zabíjením k nákupu vybavení, získávej zkušenosti a opravuj svoje krví nasáklé zbranì.",
+    
+    Challenge_AStormIsComing_name = "Pøichází Bouøe",
+        Challenge_AStormIsComing_desc = "Na Kentucky se stahují mraky. Zvuk hromù je slyšet v dáli. <LINE> <LINE> Jak tmavne obloha, mrtví klopıtají bezúnavnì po zemi. <LINE> <LINE> Toto je bouøe, která se bude zvìtšovat a sniovat v její divokosti, ale nikdy neskonèí.",
+    
+    Challenge_TheDescendingFog_name = "Mizející Mlha",
+    Challenge_TheDescendingFog_desc = "Lidé to nejprve vidìli na vodì. Chabá bílá deka nad øekou Ohio. <LINE> <LINE> Zaèalo to jako mlha. Pak se to pøesunulo do mìsta. Mìšané zemøeli køièíc v šeru. Teï tam chodí. <LINE> <LINE> Nevidìni, neslyšeni a neoblobní ve stíhání ivıch.",
+    
+    Challenge_Kingsmouth_name = "Kingsmouth",
+    Challenge_Kingsmouth_desc = "Uí si návštìvu na ostrovu Kingsmouth!",
+    
+    Challenge_Studio_name = "Studio",
+    Challenge_Studio_desc = "Místo, kde jsou toèeny ty nejlepší filmy!",
+	-- On-screen UI
+        Challenge_Challenge2_PressKey = "Zmáèkni o pro permanentní boost a k utracení nìjakıch penìz.",
+        Challenge_Challenge2_WaveStart = "Vlna %1 za : %2 (Zmáèkni ENTER pro pøeskoèení)",
+        Challenge_Challenge2_WaveDuration = "Vlna %1 : %2",
+        Challenge_Challenge2_ZombiesLeft = "Zbıvá Zombie : %1",
+        Challenge_Challenge2_Money = "Peníze : %1",
+        Challenge_Challenge2_Money2 = "Hráè %1 Peníze : %2",
+        Challenge_Challenge2_WaveFinished = "Vlna %1 Konèí za : %2",
+        Challenge_Challenge2_MoneyGained = "Získanıch Penìz : %1",
+        Challenge_Challenge2_XPGained = "Získanıch Zkušeností : %1",
+        -- Window
+	Challenge_Challenge2_WindowTitle = "Poslední Vzdor",
+        Challenge_Challenge2_TabPlayer = "Hráè",
+        Challenge_Challenge2_Weapons = "Zbranì",
+        Challenge_Challenge2_TabItems = "Pøedmìty",
+        Challenge_Challenge2_TabRepair = "Opravit",
+        Challenge_Challenge2_CurrentXp = "ZK. : %1",
+        Challenge_Challenge2_ButtonSkill = "%1 Lvl %2 - %3 XP",
+        Challenge_Challenge2_ButtonSkillMax = "%1 Lvl Max",
+        Challenge_Challenge2_GoldBonus = "Zlatı Bonus",
+        Challenge_Challenge2_XpBonus = "Zk. Bonus",
+        Challenge_Challenge2_ButtonBonus = "%1% %2 - %3 XP",
+        Challenge_Challenge2_ButtonBonusMax = "%1 Max",
+        Challenge_Challenge2_ButtonStartGold = "+%1 Starting Gold - %2 XP",
+        Challenge_Challenge2_ButtonStartGoldMax = "Nejvyšší Startovací Zlato %1",
+	-- PlayerUpWindow
+	Challenge_Challenge2_Skills = "Schopnosti",
+        Challenge_Challenge2_PermanentBonus = "Permanentní Bonus",
+        -- VariousItemWindow
+	Challenge_Challenge2_Carpentry = "Tesaøství",
+        Challenge_Challenge2_Health = "Zdraví",
+        Challenge_Challenge2_ItemButton = "%1 - %2",
+        Challenge_Challenge2_ItemButton2 = "%1 x%2 - %3",
+	-- WeaponRepairWindow
+        Challenge_Challenge2_RepairWeapon = "Opravit Zbraò",
+	-- WeaponUpWindow
+        Challenge_Challenge2_Health = "Zdraví",
+	
+        Challenge_OpeningHoursInfoBox = " <CENTRE> Obchod se otevøe v 9:00. <LINE> <LINE> Pøiprav se na davy...",
+        Challenge_WinterIsComingInfoBox = " <CENTRE>Za tøi dny zaèíná nekoneèná zima. <LINE> <LINE> Teple se obleè...",
+        Challenge_YouHaveOneDayInfoBox = " <CENTRE> Za 24 hodin bude tvoje cesta zpìt do Knox County peklo na zemi...",
+        Challenge_AStormIsComingInfoBox = " <CENTRE> Nekoneèné špatné poèasí pøed námi...",
+        Challenge_TheDescendingFogInfoBox = " <CENTRE> Zaèíná tu bıt docela mlno...",
+}

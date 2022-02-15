@@ -3,7 +3,7 @@ require "ISUI/ISUIElement"
 ISSimpleText = ISUIElement:derive("ISSimpleText");
 
 function ISSimpleText:setText(txt)
-    self.textToDisplay = txt;
+    self.textOriginal = txt;
     self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
 end
 
@@ -23,7 +23,9 @@ function ISSimpleText:setPosition(position)
     self.position = position
 end
 
-function ISSimpleText:prerender()
+function ISSimpleText:render()
+    self:drawRect(0, 0, self.width, self.height, self.backgroundColor.a, self.backgroundColor.r, self.backgroundColor.g, self.backgroundColor.b);
+
     if self.position == "Left" then
         self:drawText(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
     elseif self.position == "Right" then
@@ -43,16 +45,18 @@ function ISSimpleText:setPositionAndSize()
     local nbElement = self.parentUI.lineColumnCount[self.line]
     self.maxW = self.parentUI.pxlW / nbElement;
     self.pxlX = self.maxW * (self.column - 1);
+    self.pxlH = self.parentUI.lineH[self.line];
+    self.textH = getTextManager():getFontHeight(self.font);
 
     self:setX(self.pxlX);
-    self:setY(self.pxlY);
+    self:setY(self.pxlY - (self.pxlH - self.textH)/2);
     self:setWidth(self.maxW);
-    self:setHeight(self.parentUI.lineH[self.line])
+    self:setHeight(self.pxlH)
 
     self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
 end
 
-function ISSimpleText:new(parentUI, txt, font, position)
+function ISSimpleText:new(parentUI, text, font, position)
     local o = {};
     o = ISUIElement:new(0, 0, 1, 1);
     setmetatable(o, self);
@@ -69,6 +73,7 @@ function ISSimpleText:new(parentUI, txt, font, position)
     o.r = 1;
     o.g = 1;
     o.b = 1;
+    o.backgroundColor = {r=0, g=0, b=0, a=1};
 
     o.anchorLeft = true;
 	o.anchorRight = false;
@@ -76,7 +81,12 @@ function ISSimpleText:new(parentUI, txt, font, position)
 	o.anchorBottom = false;
 
     -- For this element
-    o.textOriginal = txt;
+    if text then
+        o.textOriginal = text;
+    else
+        o.textOriginal = "";
+    end
+
     if font then
         o.font = UIFont[font];
     else

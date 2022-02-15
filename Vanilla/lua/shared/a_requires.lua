@@ -1,0 +1,2 @@
+-- Not sure what a_requires.lua is for, but this file is in server/ now.
+-- require "NPCs/SadisticAIDirector/SadisticAIDirector"
