@@ -54,7 +54,7 @@ UI["rich1"]:setText("My new text")
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display in the button  
--- @func: Function to call when press  
+-- @func: Function to call when press.   
 UI:addButton(name, text, func)  
 
 -- Exemple: 
@@ -62,6 +62,12 @@ UI:addButton("button1", "", UI2:open())
 
 -- Change the text: 
 UI["button1"]:setText("My new text")
+
+-- Change the function: 
+UI["button1"]:setFunc(func)
+
+-- Add an argument for the function
+UI["button1"]:addArg("index", 1);
 ```
 
 ## Tick box
