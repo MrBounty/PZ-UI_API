@@ -10,6 +10,7 @@
 For the rich text element, you can use that to make complexe texte.  
 It's in the vanilla game so maybe I miss some.  
 If you put that in you text, the text that follow it will change. 
+Check example in `media/lua/server/translate`  
 ```
 - <LEFT>, <RIGHT>, <CENTER>: Position.
 - <SIZE:font>: Font.
