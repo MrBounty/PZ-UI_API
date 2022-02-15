@@ -161,4 +161,7 @@ UI["ibutton1"]:setImage("ui/myNewImage.png")
 ## Common functions
 ```lua
 UI["text1"]:addBorder()
+UI["text1"]:toggle()
+UI["text1"]:remove()
+UI["text1"]:putBack()
 ```
