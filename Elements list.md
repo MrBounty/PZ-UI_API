@@ -19,7 +19,7 @@ UI:addText()
 -- @name:     variable name of the element  
 -- @text:     Text to display  
 -- @font:     Font to use (see Variables/Fonts sections) (Optional, Small by default)  
--- @position: "Left", "Right" or "Center" (Optional, Left by default)
+-- @position: Position of text in the box (Optional, Left by default)
 UI:addText(name, text, font, position)
 
 -- Exemple: 
@@ -34,10 +34,8 @@ UI["text1"]:setFont("Medium")
 UI["text1"]:setColor(a, r, g, b)
 -- Change position: 
 UI["text1"]:setPosition("Right")
-UI["text1"]:setPosition("Left")
-UI["text1"]:setPosition("Center")
 ```
-[All fonts](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
+[All fonts and position](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
 ## Rich Text
 ```lua
