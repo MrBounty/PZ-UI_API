@@ -37,6 +37,7 @@ UI["text1"]:setPosition("Right")
 UI["text1"]:setPosition("Left")
 UI["text1"]:setPosition("Center")
 ```
+[All fonts](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
 ## Rich Text
 ```lua
