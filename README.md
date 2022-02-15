@@ -109,7 +109,7 @@ end
 
 -- Create the UI
 function onCreateUI()
-	UI = NewUI();
+    UI = NewUI();
 
     UI:addText("title1", "Choose you job !", "Title", "Center");
     UI["title1"]:addBorder();
