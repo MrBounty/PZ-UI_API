@@ -4,6 +4,8 @@ UI:open()                       -- Display the UI
 UI:close()                      -- Hide the UI
 UI:toggle()                     -- toggle the UI
 
+UI:isSubOf(UI2)                 -- If the UI is a sub UI. Like that if the parent is close, the sub UI is close too. And you can acces the parentUI with the variable
+
 UI:nextLine()                   -- To jump to an other line
 
 UI:isVisible()                  -- To know if the player see the UI
