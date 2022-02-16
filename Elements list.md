@@ -1,13 +1,15 @@
 # Summary
-- Empty
-- Text
-- Rich Text
-- Button
-- Tick box
-- Combo box
-- Scrolling list
-- Image
-- Image button
+- [Common functions](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#common-functions)
+- [Empty](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#empty-space)
+- [Text](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#text)
+- [Rich Text](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#rich-text)
+- [Button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#button)
+- [Tick box](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#tick-box)
+- [Entry](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#entry)
+- [Combo box](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#combo-box)
+- [Scrolling list](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#scrolling-list)
+- [Image](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image)
+- [Image button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image-button)
 
 ## Common functions
 ### Before saveLayout()
