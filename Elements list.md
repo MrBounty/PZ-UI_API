@@ -13,6 +13,7 @@
 ### Before saveLayout()
 Need to be call before saveLayout()
 ```lua
+-- To force the width of an element. Can make an error if width total is higher that with of window
 UI["text1"]:setWidthPercent(pctW)
 UI["text1"]:setWidthPixel(pxlW)
 ```
@@ -20,7 +21,10 @@ UI["text1"]:setWidthPixel(pxlW)
 ### After saveLayout()
 Can be call everywhere
 ```lua
+-- Add a border to the element
 UI["text1"]:addBorder()
+
+-- To show it or hide it, disable button, list, ect.
 UI["text1"]:toggle()
 UI["text1"]:remove()
 UI["text1"]:putBack()
