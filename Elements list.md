@@ -155,9 +155,6 @@ UI:addImage(name, path)
 
 -- Exemple: 
 UI:addImage("image1", "ui/myImage.png", 10)
-
--- Change image: 
-UI["image1"]:setImage("ui/myNewImage.png")
 ```
 
 ## Image button
@@ -169,7 +166,4 @@ UI:addImageButton(name, path, func)
 
 -- Exemple: 
 UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
-
--- Change image:
-UI["ibutton1"]:setImage("ui/myNewImage.png")
 ```
