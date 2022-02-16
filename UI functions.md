@@ -18,13 +18,13 @@ UI:setPosition(x, y)            -- Position of the top left corner of the window
 
 ## Call before saveLayout()
 ```lua
-UI:setWidthPercent(pctW)               -- Set width of actual line in % of the screen [0-1]
+UI:setWidthPercent(pctW)        -- Set width of actual line in % of the screen [0-1]
 UI:setWidthPixel(pxlW)          -- Set width of actual line in pixel
 ```
 
 ## Call before nextLine()
 ```lua
-UI:setLineHeightPercent(pctH)          -- Force height of actual line in % of the screen [0-1]
+UI:setLineHeightPercent(pctH)   -- Force height of actual line in % of the screen [0-1]
 UI:setLineHeightPixel(pxlH)     -- Force height of actual line in pixel
 ```
 
