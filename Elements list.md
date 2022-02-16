@@ -47,8 +47,6 @@ UI:addText(_, "My text")
 
 -- Change the text: 
 UI["text1"]:setText("My New Title")
--- Change the font: 
-UI["text1"]:setFont("Medium")
 -- Change the color: 
 UI["text1"]:setColor(a, r, g, b)
 -- Change position: 
@@ -59,15 +57,14 @@ UI["text1"]:setPosition("Right")
 ## Rich Text
 ```lua
 -- @name: variable name of the element  
--- @text: Text to display  
--- @font: Font to use (see Variables/Fonts sections)  
+-- @text: Text to display   
 UI:addRichText(name, text)
 
 -- Exemple: 
 UI:addRichText("rich1", text)
 
 -- Change the text: 
-UI["rich1"]:setText("My new text")
+UI["rich1"]:setText("", "My new text")
 ```
 [Text formating](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
@@ -79,25 +76,27 @@ UI["rich1"]:setText("My new text")
 UI:addButton(name, text, func)  
 
 -- Exemple: 
-UI:addButton("button1", "", UI2:open())
+UI:addButton("button1", "", close)
+local close(button, args)
+  --Code
+end
 
 -- Change the text: 
 UI["button1"]:setText("My new text")
-
 -- Change the function: 
 UI["button1"]:setFunc(func)
-
--- Add an argument for the function
+-- Add an argument to the args table to use in the function
 UI["button1"]:addArg("index", 1);
 ```
 
 ## Tick box
 ```lua
 -- @name: variable name of the element
-UI:addTickBox(name) 
+-- @position: variable name of the element (Optional, Centre by default)
+UI:addTickBox(name, position)
 
 -- Exemple: 
-UI:addTickBox("tick1")
+UI:addTickBox("tick1", "Left")
 
 -- Get the value: 
 UI["tick1"]:getValue()
@@ -106,9 +105,9 @@ UI["tick1"]:getValue()
 ## Entry
 ```lua
 -- @name:     variable name of the element  
--- @defaul:   Default text  
+-- @default:  Default text/value
 -- @isNumber: true if use for a number  
-UI:addEntry(name, text, isNumber)
+UI:addEntry(name, default, isNumber)
 
 -- Exemples:  
 UI:addEntry("entry1", "", false)
@@ -121,13 +120,13 @@ UI["entry1"]:getValue()
 ## Combo box
 ```lua
 -- @name:   variable name of the element  
--- @items`: List of items to add in the list  
+-- @items:  List of items to add in the list, need to be string
 UI:addComboBox(name, items)
 
 -- Exemple: 
 UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
 
--- Get the value: 
+-- Get selected value: 
 UI["combo1"]:getValue()
 -- Change items: 
 UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
@@ -136,13 +135,13 @@ UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 ## Scrolling list
 ```lua
 -- @name:  variable name of the element  
--- @items: List of items to add in the list  
+-- @items: List of items to add in the list, need to be string  
 UI:addScrollList(name, items) 
 
 -- Exemple: 
 UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
 
--- To get the value: 
+-- Get selected value or false if not selected: 
 UI["scroll1"]:getValue()
 -- Change items: 
 UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
@@ -169,10 +168,8 @@ UI["image1"]:setImage("ui/myNewImage.png")
 UI:addImageButton(name, path, func)  
 
 -- Exemple: 
-UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
+UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
 
--- Change the text: 
-UI["ibutton1"]:setText("My new text")
--- Change image: 
+-- Change image:
 UI["ibutton1"]:setImage("ui/myNewImage.png")
 ```
