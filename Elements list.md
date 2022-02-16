@@ -28,8 +28,9 @@ UI["text1"]:putBack()
 
 ## Empty space  
 ```lua
--- @nb: Number of empty space to make (Optional, 1 by default)
-UI:addEmpty(nb)
+-- @name: Variable name of the element, if nb > 1, name gonna be name1, name2, name3, ect
+-- @nb:   Number of empty space to make (Optional, 1 by default)
+UI:addEmpty(name, nb)
 ```
 
 ## Text
