@@ -12,6 +12,7 @@ This mod is for you !
 # Make my first window
 First you create a new UI with the `NewUI()` function.  
 After that it's easy, you just add [elements](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md) for the first line.  
+Find all useable function of UI [where](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20functions.md).  
 When you added your elements, you jump to the next line with the function `ui:nextLine()` and you continu like that.  
 One all line create, you just call `ui:saveLayout()` to finish creating the ui.  
 
