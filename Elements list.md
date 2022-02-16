@@ -1,90 +1,119 @@
+# Summary
+- [Common functions](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#common-functions)
+- [Empty](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#empty-space)
+- [Text](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#text)
+- [Rich Text](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#rich-text)
+- [Button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#button)
+- [Tick box](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#tick-box)
+- [Entry](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#entry)
+- [Combo box](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#combo-box)
+- [Scrolling list](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#scrolling-list)
+- [Image](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image)
+- [Image button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image-button)
+
 ## Common functions
+### Before saveLayout()
+Need to be call before saveLayout()
 ```lua
+-- To force the width of an element. Can make an error if width total is higher that with of window
+UI["text1"]:setWidthPercent(pctW)
+UI["text1"]:setWidthPixel(pxlW)
+```
+
+### After saveLayout()
+Can be call everywhere
+```lua
+-- Add a border to the element
 UI["text1"]:addBorder()
+
+-- To show it or hide it, disable button, list, ect.
+UI["text1"]:toggle()
+UI["text1"]:remove()
+UI["text1"]:putBack()
 ```
 
 ## Empty space  
 ```lua
--- @size: Height in % of the screen [0-1] (0 to use default)
-UI:addEmpty(size)
+-- @name: Variable name of the element, if nb > 1, name gonna be name1, name2, name3, ect
+-- @nb:   Number of empty space to make (Optional, 1 by default)
+UI:addEmpty(name, nb)
 ```
 
 ## Text
-[TODO] Add image
 ```lua
 -- @name:     variable name of the element  
 -- @text:     Text to display  
 -- @font:     Font to use (see Variables/Fonts sections) (Optional, Small by default)  
--- @position: "Left", "Right" or "Center" (Optional, Left by default)
+-- @position: Position of text in the box (Optional, Left by default)
 UI:addText(name, text, font, position)
 
 -- Exemple: 
 UI:addText("text1", "My Title", "Title", "Center")
-UI:addText("", "My text")
+UI:addText(_, "My text")
 
 -- Change the text: 
 UI["text1"]:setText("My New Title")
--- Change the font: 
-UI["text1"]:setFont("Medium")
 -- Change the color: 
 UI["text1"]:setColor(a, r, g, b)
 -- Change position: 
 UI["text1"]:setPosition("Right")
-UI["text1"]:setPosition("Left")
-UI["text1"]:setPosition("Center")
 ```
+[All fonts and position](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
 ## Rich Text
-[TODO] Add image
 ```lua
 -- @name: variable name of the element  
--- @text: Text to display  
--- @font: Font to use (see Variables/Fonts sections)  
+-- @text: Text to display   
 UI:addRichText(name, text)
 
 -- Exemple: 
 UI:addRichText("rich1", text)
 
 -- Change the text: 
-UI["rich1"]:setText("My new text")
+UI["rich1"]:setText("", "My new text")
 ```
-[TODO] Add guide for texte formatting
+[Text formating](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
 ## Button
-[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display in the button  
--- @func: Function to call when press  
+-- @func: Function to call when press.   
 UI:addButton(name, text, func)  
 
 -- Exemple: 
-UI:addButton("button1", "", UI2:open())
+UI:addButton("button1", "", close)
+local close(button, args)
+  --Code
+end
 
 -- Change the text: 
 UI["button1"]:setText("My new text")
+-- Change the function: 
+UI["button1"]:setFunc(func)
+-- Add an argument to the args table to use in the function
+UI["button1"]:addArg("index", 1);
 ```
 
 ## Tick box
-[TODO] Add image
 ```lua
 -- @name: variable name of the element
-UI:addTickBox(name) 
+-- @position: variable name of the element (Optional, Centre by default)
+UI:addTickBox(name, position)
 
 -- Exemple: 
-UI:addTickBox("tick1")
+UI:addTickBox("tick1", "Left")
 
 -- Get the value: 
 UI["tick1"]:getValue()
 ```
 
 ## Entry
-[TODO] Add image
 ```lua
 -- @name:     variable name of the element  
--- @defaul:   Default text  
+-- @default:  Default text/value
 -- @isNumber: true if use for a number  
-UI:addEntry(name, text, isNumber)
+UI:addEntry(name, default, isNumber)
 
 -- Exemples:  
 UI:addEntry("entry1", "", false)
@@ -95,70 +124,52 @@ UI["entry1"]:getValue()
 ```
 
 ## Combo box
-[TODO] Add image
 ```lua
 -- @name:   variable name of the element  
--- @items`: List of items to add in the list  
+-- @items:  List of items to add in the list, need to be string
 UI:addComboBox(name, items)
 
 -- Exemple: 
 UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
 
--- Get the value: 
+-- Get selected value: 
 UI["combo1"]:getValue()
 -- Change items: 
 UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 ```
 
 ## Scrolling list
-[TODO] Add image
 ```lua
 -- @name:  variable name of the element  
--- @items: List of items to add in the list  
+-- @items: List of items to add in the list, need to be string  
 UI:addScrollList(name, items) 
 
 -- Exemple: 
 UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
 
--- To get the value: 
+-- Get selected value or false if not selected: 
 UI["scroll1"]:getValue()
 -- Change items: 
 UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 ```
 
 ## Image
-[TODO] Add image
 ```lua
 -- @name: variable name of the element  
 -- @path: path of the image file
--- @size: width of the image in % of the screen [0-1] (optional)
-UI:addImage(name, path, size) 
+UI:addImage(name, path) 
 
 -- Exemple: 
 UI:addImage("image1", "ui/myImage.png", 10)
-
--- Change image: 
-UI["image1"]:setImage("ui/myNewImage.png")
--- Change widht: 
-UI["image1"]:setSize(20)
 ```
 
 ## Image button
-[TODO] Add image
 ```lua
 -- @name: variable name of the element
 -- @path: path of the image file
 -- @func: function to call when press
--- @size: width of the image in % of the screen [0-1] (optional)
-UI:addImageButton(name, path, func, size)  
+UI:addImageButton(name, path, func)  
 
 -- Exemple: 
-UI:addImageButton("ibutton1", "ui/myImage.png", UI2:open(), 0)
-
--- Change the text: 
-UI["ibutton1"]:setText("My new text")
--- Change image: 
-UI["ibutton1"]:setImage("ui/myNewImage.png")
--- Change width: 
-UI["ibutton1"]:setSize(20)
+UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
 ```
