@@ -13,7 +13,7 @@
 ### Before saveLayout()
 Need to be call before saveLayout()
 ```lua
-UI["text1"]:setWidth(pctW)
+UI["text1"]:setWidthPercent(pctW)
 UI["text1"]:setWidthPixel(pxlW)
 ```
 
