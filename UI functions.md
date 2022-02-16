@@ -1,19 +1,23 @@
 # UI functions
 ```lua
-UI:open()                       -- Display the UI
-UI:close()                      -- Hide the UI
-UI:toggle()                     -- toggle the UI
-
-UI:isSubOf(UI2)                 -- If the UI is a sub UI. Like that if the parent is close, the sub UI is close too. And you can acces the parentUI with the variable
+UI:isSubUIOf(UI2)               -- If the UI is a sub UI. Like that if the parent is close, the sub UI is close too. And you can acces the parentUI with the variable
 
 UI:nextLine()                   -- To jump to an other line
 
 UI:isVisible()                  -- To know if the player see the UI
+
 UI:addBorderToAllElements()     -- Add border to all elements of the ui
 UI:setTitle(string)             -- Add a title to the top bar of the UI
 UI:setKey(key)                  -- Key to toggle the UI
 ```
 Find all key value [here](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
+
+## Toggle
+```lua
+UI:open()                       -- Display the UI
+UI:close()                      -- Hide the UI
+UI:toggle()                     -- toggle the UI
+```
 
 ## Position
 ```lua
