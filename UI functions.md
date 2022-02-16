@@ -11,9 +11,19 @@ UI:nextLine()                   -- To jump to an other line
 UI:isVisible()                  -- To know if the player see the UI
 UI:addBorderToAllElements()     -- Add border to all elements of the ui
 UI:setTitle(string)             -- Add a title to the top bar of the UI
-UI:setCanCollapse(bottom)       -- If the UI collapse when click outside. If bottom is true, collapse from the bottom.
 UI:setKey(key)                  -- Key to toggle the UI
-UI:setPosition(x, y)            -- Position of the top left corner of the window in % of the screen [0-1]
+```
+
+## Position
+```lua
+UI:setPositionPercent(x, y)     -- Position of the top left corner of the window in % of the screen [0-1]
+UI:setPositionPixel(x, y)       -- Position of the top left corner of the window in pixel
+
+UI:setXPercent(x, y)            -- Position of x of the top left corner of the window in % of the screen [0-1]
+UI:setXPixel(x, y)              -- Position of x of the top left corner of the window in pixel
+
+UI:setYPercent(x, y)            -- Position of y of the top left corner of the window in % of the screen [0-1]
+UI:setYPixel(x, y)              -- Position of y of the top left corner of the window in pixel
 ```
 
 ## Call before saveLayout()
