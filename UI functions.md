@@ -19,11 +19,11 @@ UI:setKey(key)                  -- Key to toggle the UI
 UI:setPositionPercent(x, y)     -- Position of the top left corner of the window in % of the screen [0-1]
 UI:setPositionPixel(x, y)       -- Position of the top left corner of the window in pixel
 
-UI:setXPercent(x, y)            -- Position of x of the top left corner of the window in % of the screen [0-1]
-UI:setXPixel(x, y)              -- Position of x of the top left corner of the window in pixel
+UI:setXPercent(x)               -- Position of x of the top left corner of the window in % of the screen [0-1]
+UI:setXPixel(x)                 -- Position of x of the top left corner of the window in pixel
 
-UI:setYPercent(x, y)            -- Position of y of the top left corner of the window in % of the screen [0-1]
-UI:setYPixel(x, y)              -- Position of y of the top left corner of the window in pixel
+UI:setYPercent(y)               -- Position of y of the top left corner of the window in % of the screen [0-1]
+UI:setYPixel(y)                 -- Position of y of the top left corner of the window in pixel
 ```
 
 ## Call before saveLayout()
