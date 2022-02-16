@@ -13,6 +13,7 @@ UI:addBorderToAllElements()     -- Add border to all elements of the ui
 UI:setTitle(string)             -- Add a title to the top bar of the UI
 UI:setKey(key)                  -- Key to toggle the UI
 ```
+Find all key value [here](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
 
 ## Position
 ```lua
@@ -37,5 +38,3 @@ UI:setWidthPixel(pxlW)          -- Set width of window in pixel
 UI:setLineHeightPercent(pctH)   -- Force height of actual line in % of the screen [0-1]
 UI:setLineHeightPixel(pxlH)     -- Force height of actual line in pixel
 ```
-
-Find all key value [here](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
