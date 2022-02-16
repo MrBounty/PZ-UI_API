@@ -28,7 +28,8 @@ UI["text1"]:putBack()
 
 ## Empty space  
 ```lua
-UI:addText()
+-- @nb: Number of empty space to make (Optional, 1 by default)
+UI:addEmpty(nb)
 ```
 
 ## Text
