@@ -41,10 +41,44 @@ end
 Events.OnCreateUI.Add(onCreateUI)
 ```
 
-## Choose your team
-[TODO] Add gif
+## Quest
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/quest.jpg)
 ```lua
 local UI
+local text1 = "<H1> The longest night <BR> <SIZE:small> In this mission, you gonna need to survivre all night. <BR> <LEFT> Reward: <LINE> - M14 <LINE> - 20 ammo <BR> Failure Conditions: <LINE> -Death"
+
+local function choose(button, args)
+    getPlayer():Say(args.choice);
+    UI:close();
+end
+    
+function onCreateUI()
+    UI = NewUI();
+
+    UI:addRichText("rtext", text1); 
+    UI:setLineHeightPercent(0.2);            
+    UI:nextLine();
+    
+    UI:addText("t1", "Accept ?", _, "Center");
+    UI["t1"]:addBorder();
+    UI:addButton("b1", "Yes", choose);
+    UI["b1"]:addArg("choice", "yes");
+    UI:addButton("b2", "No", choose);
+    UI["b2"]:addArg("choice", "no");
+    
+    UI:saveLayout();
+end
+
+Events.OnCreateUI.Add(onCreateUI)
+```
+
+## Choose your team
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/team.jpg)
+```lua
+local UI
+
+local text1 = "Players: <LINE> - MrBounty <LINE> - Dane <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx"
+local text2 = "Players: <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx <LINE> - xx"
 
 local function choose(button, args)
     getPlayer():Say("I'm in the " .. args.team .. " team now !");
@@ -53,14 +87,27 @@ end
     
 function onCreateUI()
     UI = NewUI();
-    UI:addText("", "Choose your team", "Title", "Center");
+    UI:addText("", "Choose your team", "Large", "Center");
+    UI:nextLine();
+
+    UI:addRichText("", text1);
+    UI:addRichText("", text2);
+    UI:setLineHeightPercent(0.2);
+    UI:nextLine();
+
+    UI:addText("t1", "11/12", _, "Center");
+    UI:addText("t2", "9/12", _, "Center");
+    UI["t1"]:setColor(1, 0, 0, 1);
+    UI["t2"]:setColor(1, 1, 0, 0);
     UI:nextLine();
     
     UI:addButton("b1", "Blue", choose);
-    UI["b1"]:addArgument("team", "blue");
-    UI:addButton("b2", "Red", choose);;
-    UI["b1"]:addArgument("team", "red");
+    UI:addButton("b2", "Red", choose);
+    UI["b1"]:addArg("team", "blue");
+    UI["b2"]:addArg("team", "red");
     
+    UI:addBorderToAllElements();
+    UI:setWidthPercent(0.15);
     UI:saveLayout();
 end
 
