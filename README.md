@@ -43,13 +43,13 @@ Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ## Quest
+[code](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20API/media/lua/client/Exemples/QuestChoiceUI.lua)  
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/quest.jpg)
-[code](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20API/media/lua/client/Exemples/QuestChoiceUI.lua)
 
 ## Choose your team
+[code](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20API/media/lua/client/Exemples/TeamChoiceUI.lua)  
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/team.jpg)
-[code](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20API/media/lua/client/Exemples/TeamChoiceUI.lua)
 
 ## Choose a job
+[code](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20API/media/lua/client/Exemples/JobChoiceUI.lua)  
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/exemple1.gif)
-[code](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20API/media/lua/client/Exemples/JobChoiceUI.lua)
