@@ -7,7 +7,6 @@ function ISSimpleButton:setText(text)
 end
 
 function ISSimpleButton:onMouseUp(x, y)
-
     if not self:getIsVisible() then
         return;
     end
@@ -26,14 +25,14 @@ function ISSimpleButton:onMouseUp(x, y)
 end
 
 function ISSimpleButton:setPositionAndSize()
-    local nbElement = self.parentUI.lineColumnCount[self.line]
-    self.maxW = self.parentUI.pxlW / nbElement;
-    self.pxlX = self.maxW * (self.column - 1);
+    self.pxlW = self.parentUI.elemW[self.line][self.column];
+    self.pxlX = self.parentUI.elemX[self.line][self.column];
+    self.pxlH = self.parentUI.elemH[self.line];
 
     self:setX(self.pxlX);
     self:setY(self.pxlY);
-    self:setWidth(self.maxW);
-    self:setHeight(self.parentUI.lineH[self.line])
+    self:setWidth(self.pxlW);
+    self:setHeight(self.pxlH);
     self:setOnClick(self.func);
 end
 
@@ -78,4 +77,30 @@ end
 
 function ISSimpleButton:addArg(name, value)
     self.args[name] = value;
+end
+
+function ISSimpleButton:putBack()
+    self:setVisible(true);
+end
+
+function ISSimpleButton:remove()
+    self:setVisible(false);
+end
+
+function ISSimpleButton:toggle()
+    if self:getIsVisible() then
+        self:setVisible(true);
+    else
+        self:setVisible(false);
+    end;
+end
+
+function ISSimpleButton:setWidthPercent(w)
+    self.isWidthForce = true;
+    self.pxlW = w * getCore():getScreenWidth();
+end
+
+function ISSimpleButton:setWidthPixel(w)
+    self.isWidthForce = true;
+    self.pxlW = w;
 end

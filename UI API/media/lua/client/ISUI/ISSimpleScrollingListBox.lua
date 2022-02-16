@@ -1,8 +1,8 @@
-require "ISUI/ISComboBox"
+require "ISUI/ISScrollingListBox"
 
-ISSimpleComboBox = ISComboBox:derive("ISSimpleComboBox");
+ISSimpleScrollingListBox = ISScrollingListBox:derive("ISSimpleScrollingListBox");
 
-function ISSimpleComboBox:setPositionAndSize()
+function ISSimpleScrollingListBox:setPositionAndSize()
     self.pxlW = self.parentUI.elemW[self.line][self.column];
     self.pxlX = self.parentUI.elemX[self.line][self.column];
     self.pxlH = self.parentUI.elemH[self.line];
@@ -17,14 +17,14 @@ function ISSimpleComboBox:setPositionAndSize()
     end
 end
 
-function ISSimpleComboBox:render()
+function ISSimpleScrollingListBox:render()
     ISComboBox.render(self)
     if self.border then
         self:drawRectBorder(0, 0, self:getWidth(), self:getHeight(), 0.5, 1, 1, 1);
     end
 end
 
-function ISSimpleComboBox:new(parentUI, simpleItems)
+function ISSimpleScrollingListBox:new(parentUI, simpleItems)
     local o = {};
     o = ISComboBox:new(text, 0, 0, 1, 1);
     setmetatable(o, self);
@@ -46,20 +46,20 @@ end
 
 -- Commun function
 
-function ISSimpleComboBox:addBorder()
+function ISSimpleScrollingListBox:addBorder()
     self.border = true;
 end
 
-function ISSimpleComboBox:removeBorder()
+function ISSimpleScrollingListBox:removeBorder()
     self.border = false;
 end
 
 -- Simple element function
-function ISSimpleComboBox:getValue()
+function ISSimpleScrollingListBox:getValue()
     return self:getSelectedText();
 end
 
-function ISSimpleComboBox:setitems(v)
+function ISSimpleScrollingListBox:setitems(v)
     self:clear();
     self.simpleItems = v;
     for index, value in ipairs(self.simpleItems) do
@@ -67,15 +67,15 @@ function ISSimpleComboBox:setitems(v)
     end
 end
 
-function ISSimpleComboBox:putBack()
+function ISSimpleScrollingListBox:putBack()
     self:setVisible(true);
 end
 
-function ISSimpleComboBox:remove()
+function ISSimpleScrollingListBox:remove()
     self:setVisible(false);
 end
 
-function ISSimpleComboBox:toggle()
+function ISSimpleScrollingListBox:toggle()
     if self:getIsVisible() then
         self:setVisible(true);
     else
@@ -83,12 +83,12 @@ function ISSimpleComboBox:toggle()
     end;
 end
 
-function ISSimpleComboBox:setWidthPercent(w)
+function ISSimpleScrollingListBox:setWidthPercent(w)
     self.isWidthForce = true;
     self.pxlW = w * getCore():getScreenWidth();
 end
 
-function ISSimpleComboBox:setWidthPixel(w)
+function ISSimpleScrollingListBox:setWidthPixel(w)
     self.isWidthForce = true;
     self.pxlW = w;
 end

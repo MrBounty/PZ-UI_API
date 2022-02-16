@@ -11,14 +11,13 @@ function ISSimpleEmpty:render()
 end
 
 function ISSimpleEmpty:setPositionAndSize()
-    local nbElement = self.parentUI.lineColumnCount[self.line]
-    self.maxW = self.parentUI.pxlW / nbElement;
-    self.pxlX = self.maxW * (self.column - 1);
-    self.pxlH = self.parentUI.lineH[self.line];
+    self.pxlW = self.parentUI.elemW[self.line][self.column];
+    self.pxlX = self.parentUI.elemX[self.line][self.column];
+    self.pxlH = self.parentUI.elemH[self.line];
 
     self:setX(self.pxlX);
     self:setY(self.pxlY);
-    self:setWidth(self.maxW);
+    self:setWidth(self.pxlW);
     self:setHeight(self.pxlH);
 end
 
@@ -45,4 +44,14 @@ end
 
 function ISSimpleEmpty:removeBorder()
     self.border = false;
+end
+
+function ISSimpleEmpty:setWidthPercent(w)
+    self.isWidthForce = true;
+    self.pxlW = w * getCore():getScreenWidth();
+end
+
+function ISSimpleEmpty:setWidthPixel(w)
+    self.isWidthForce = true;
+    self.pxlW = w;
 end

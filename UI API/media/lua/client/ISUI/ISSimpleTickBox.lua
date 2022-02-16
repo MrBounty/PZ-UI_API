@@ -4,20 +4,17 @@ ISSimpleTickBox = ISUIElement:derive("ISSimpleTickBox");
 
 -- Vanilla element function
 function ISSimpleTickBox:setPositionAndSize()
-    local nbElement = self.parentUI.lineColumnCount[self.line]
-    self.maxW = self.parentUI.pxlW / nbElement;
-    self.pxlX = self.maxW * (self.column - 1);
-    self.tickSize = self.parentUI.lineH[self.line]
-    if self.tickSize > self.maxW then self.tickSize = self.maxW end
+    self.pxlW = self.parentUI.elemW[self.line][self.column];
+    self.pxlX = self.parentUI.elemX[self.line][self.column];
+    self.pxlH = self.parentUI.elemH[self.line];
 
     self:setX(self.pxlX);
     self:setY(self.pxlY);
-    self:setWidth(self.maxW);
-    self:setHeight(self.parentUI.lineH[self.line]);
-    self:setScrollHeight(self.richText.lineY[#self.richText.lineY]-self:getHeight());
+    self:setWidth(self.pxlW);
+    self:setHeight(self.pxlH);
 
-    self.tickBox:setX(self.pxlX + (self.tickSize+self.maxW)/2);
-    self.tickBox:setY(self.pxlY + (self.tickSize+self.parentUI.lineH[self.line])/2);
+    self.tickBox:setX(self.pxlX + (self.tickSize+self.pxlW)/2);
+    self.tickBox:setY(self.pxlY + (self.tickSize+pxlH)/2);
     self.tickBox:setWidth(self.tickSize);
     self.tickBox:setHeight(self.tickSize);
 end
@@ -75,4 +72,30 @@ end
 
 function ISSimpleTickBox:setValue(v)
     self.tickBox.selected[1] = v;
+end
+
+function ISSimpleTickBox:putBack()
+    self:setVisible(true);
+end
+
+function ISSimpleTickBox:remove()
+    self:setVisible(false);
+end
+
+function ISSimpleTickBox:toggle()
+    if self:getIsVisible() then
+        self:setVisible(true);
+    else
+        self:setVisible(false);
+    end;
+end
+
+function ISSimpleTickBox:setWidthPercent(w)
+    self.isWidthForce = true;
+    self.pxlW = w * getCore():getScreenWidth();
+end
+
+function ISSimpleTickBox:setWidthPixel(w)
+    self.isWidthForce = true;
+    self.pxlW = w;
 end

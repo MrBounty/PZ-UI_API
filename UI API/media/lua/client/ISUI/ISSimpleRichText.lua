@@ -3,20 +3,19 @@ require "ISUI/ISUIElement"
 ISSimpleRichText = ISUIElement:derive("ISSimpleRichText");
 
 function ISSimpleRichText:setPositionAndSize()
-    local nbElement = self.parentUI.lineColumnCount[self.line]
-    self.maxW = self.parentUI.pxlW / nbElement;
-    self.pxlX = self.maxW * (self.column - 1);
+    self.pxlW = self.parentUI.elemW[self.line][self.column];
+    self.pxlX = self.parentUI.elemX[self.line][self.column];
+    self.pxlH = self.parentUI.elemH[self.line];
 
-    self.richText:setWidth(self.maxW);
+    self.richText:setWidth(self.pxlW);
     self.richText:setText(self.text);
     self.richText:initialise();
     self.richText:paginate();
-    
+
     self:setX(self.pxlX);
     self:setY(self.pxlY);
-    self:setWidth(self.maxW);
-    self:setHeight(self.parentUI.lineH[self.line]);
-    self:setScrollHeight(self.richText.lineY[#self.richText.lineY]-self:getHeight());
+    self:setWidth(self.pxlW);
+    self:setHeight(self.pxlH);
 end
 
 function ISSimpleRichText:initialise()
@@ -69,4 +68,30 @@ end
 function ISSimpleRichText:setText(text)
     self.richText:setText(text);
     self.richText:paginate();
+end
+
+function ISSimpleRichText:putBack()
+    self:setVisible(true);
+end
+
+function ISSimpleRichText:remove()
+    self:setVisible(false);
+end
+
+function ISSimpleRichText:toggle()
+    if self:getIsVisible() then
+        self:setVisible(true);
+    else
+        self:setVisible(false);
+    end;
+end
+
+function ISSimpleRichText:setWidthPercent(w)
+    self.isWidthForce = true;
+    self.pxlW = w * getCore():getScreenWidth();
+end
+
+function ISSimpleRichText:setWidthPixel(w)
+    self.isWidthForce = true;
+    self.pxlW = w;
 end

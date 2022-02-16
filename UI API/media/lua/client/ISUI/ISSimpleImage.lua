@@ -1,8 +1,8 @@
-require "ISUI/ISComboBox"
+require "ISUI/ISImage"
 
-ISSimpleComboBox = ISComboBox:derive("ISSimpleComboBox");
+ISSimpleImage = ISImage:derive("ISSimpleImage");
 
-function ISSimpleComboBox:setPositionAndSize()
+function ISSimpleImage:setPositionAndSize()
     self.pxlW = self.parentUI.elemW[self.line][self.column];
     self.pxlX = self.parentUI.elemX[self.line][self.column];
     self.pxlH = self.parentUI.elemH[self.line];
@@ -11,22 +11,22 @@ function ISSimpleComboBox:setPositionAndSize()
     self:setY(self.pxlY);
     self:setWidth(self.pxlW);
     self:setHeight(self.pxlH);
-
-    for index, value in ipairs(self.simpleItems) do
-        self:addItem(value);
-    end
 end
 
-function ISSimpleComboBox:render()
-    ISComboBox.render(self)
+function ISSimpleImage:render()
+    ISSimpleImage.render(self)
     if self.border then
         self:drawRectBorder(0, 0, self:getWidth(), self:getHeight(), 0.5, 1, 1, 1);
     end
 end
 
-function ISSimpleComboBox:new(parentUI, simpleItems)
+function ISSimpleImage:new(parentUI, path)
     local o = {};
-    o = ISComboBox:new(text, 0, 0, 1, 1);
+    if not getTexture(path) then
+        print("UI API - ERROR : Texture at the path "..path.." not found for image. Changed to default texture.")
+        path = "ui/emotes/no.png";
+    end
+    o = ISImage:new(0, 0, 1, 1, getTexture(path));
     setmetatable(o, self);
     self.__index = self;
 
@@ -39,43 +39,31 @@ function ISSimpleComboBox:new(parentUI, simpleItems)
     o.line = parentUI.lineAct;
     o.column = parentUI.columnAct;
     o.pxlY = parentUI.yAct;
-    o.simpleItems = simpleItems;
+    o.textOriginal = text;
+    o.isNumber = isNumber;
 
     return o;
 end
 
 -- Commun function
 
-function ISSimpleComboBox:addBorder()
+function ISSimpleImage:addBorder()
     self.border = true;
 end
 
-function ISSimpleComboBox:removeBorder()
+function ISSimpleImage:removeBorder()
     self.border = false;
 end
 
--- Simple element function
-function ISSimpleComboBox:getValue()
-    return self:getSelectedText();
-end
-
-function ISSimpleComboBox:setitems(v)
-    self:clear();
-    self.simpleItems = v;
-    for index, value in ipairs(self.simpleItems) do
-        self:addItem(value);
-    end
-end
-
-function ISSimpleComboBox:putBack()
+function ISSimpleImage:putBack()
     self:setVisible(true);
 end
 
-function ISSimpleComboBox:remove()
+function ISSimpleImage:remove()
     self:setVisible(false);
 end
 
-function ISSimpleComboBox:toggle()
+function ISSimpleImage:toggle()
     if self:getIsVisible() then
         self:setVisible(true);
     else
@@ -83,12 +71,12 @@ function ISSimpleComboBox:toggle()
     end;
 end
 
-function ISSimpleComboBox:setWidthPercent(w)
+function ISSimpleImage:setWidthPercent(w)
     self.isWidthForce = true;
     self.pxlW = w * getCore():getScreenWidth();
 end
 
-function ISSimpleComboBox:setWidthPixel(w)
+function ISSimpleImage:setWidthPixel(w)
     self.isWidthForce = true;
     self.pxlW = w;
 end

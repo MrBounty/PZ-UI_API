@@ -7,14 +7,14 @@ function ISSimpleEntry:setText(text)
 end
 
 function ISSimpleEntry:setPositionAndSize()
-    local nbElement = self.parentUI.lineColumnCount[self.line]
-    self.maxW = self.parentUI.pxlW / nbElement;
-    self.pxlX = self.maxW * (self.column - 1);
+    self.pxlW = self.parentUI.elemW[self.line][self.column];
+    self.pxlX = self.parentUI.elemX[self.line][self.column];
+    self.pxlH = self.parentUI.elemH[self.line];
 
     self:setX(self.pxlX);
     self:setY(self.pxlY);
-    self:setWidth(self.maxW);
-    self:setHeight(self.parentUI.lineH[self.line])
+    self:setWidth(self.pxlW);
+    self:setHeight(self.pxlH);
 end
 
 function ISSimpleEntry:render()
@@ -70,4 +70,30 @@ function ISSimpleEntry:setValue(v)
     else
         self:setText(v);
     end
+end
+
+function ISSimpleEntry:putBack()
+    self:setVisible(true);
+end
+
+function ISSimpleEntry:remove()
+    self:setVisible(false);
+end
+
+function ISSimpleEntry:toggle()
+    if self:getIsVisible() then
+        self:setVisible(true);
+    else
+        self:setVisible(false);
+    end;
+end
+
+function ISSimpleEntry:setWidthPercent(w)
+    self.isWidthForce = true;
+    self.pxlW = w * getCore():getScreenWidth();
+end
+
+function ISSimpleEntry:setWidthPixel(w)
+    self.isWidthForce = true;
+    self.pxlW = w;
 end

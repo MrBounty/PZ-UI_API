@@ -1,10 +1,10 @@
-function NewUI(width, x, y)
-    if not width then width = 0.2 end
-    if not x then x = 0.5 - width/2 end
-    if not y then y = 0.5 - width/2 end
-    local ui = ISSimpleUI:new(x, y, width)
+local allUI = {};
+
+function NewUI()
+    local ui = ISSimpleUI:new(0.4, 0.4, 0.2)
     ui:initialise();
     ui:instantiate();
+    table.insert(allUI, ui);
     return ui
 end
 
@@ -16,3 +16,13 @@ function cutTextToLong(text, width, font, zoom)
 	end
     return text, getTextManager():MeasureStringX(font, text) * zoom;
 end
+
+function onCustomUIKeyPressed(key)
+    for i, ui in ipairs(allUI) do
+        if ui.key and key == ui.key then
+            ui:toggle();
+        end
+    end
+end
+
+Events.OnCustomUIKeyPressed.Add(onCustomUIKeyPressed)

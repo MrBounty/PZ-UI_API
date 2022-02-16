@@ -27,15 +27,16 @@ end
 function onCreateUI()
 	UI = NewUI(0.15);
 
+    -- Add window title
     UI:addText("title1", "Choose you job !", "Title", "Center");
     UI["title1"]:addBorder();
     UI:nextLine();
 
-
+    -- Add job description
     UI:addRichText("rtext", text1);               
     UI:nextLine();
 
-
+    -- Add buttons
     UI:addButton("button1", jobs[1], press);
     UI["button1"]:addArg("index", 1);
 
@@ -51,8 +52,8 @@ function onCreateUI()
     UI:addButton("", "Button", ok);
     UI:nextLine();
 
-
+    -- Save window
     UI:saveLayout();
 end
 
-Events.OnCreateUI.Add(onCreateUI)
+--Events.OnCreateUI.Add(onCreateUI)

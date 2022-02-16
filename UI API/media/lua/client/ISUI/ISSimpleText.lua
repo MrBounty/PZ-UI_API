@@ -2,23 +2,6 @@ require "ISUI/ISUIElement"
 
 ISSimpleText = ISUIElement:derive("ISSimpleText");
 
-function ISSimpleText:setText(txt)
-    self.textOriginal = txt;
-    self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
-end
-
-function ISSimpleText:setFont(font)
-    self.font = UIFont[font]
-    self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
-end
-
-function ISSimpleText:setColor(a, r, g, b)
-    self.a = a;
-    self.r = r;
-    self.g = g;
-    self.b = b;
-end
-
 function ISSimpleText:setPosition(position)
     self.position = position
 end
@@ -42,16 +25,15 @@ function ISSimpleText:render()
 end
 
 function ISSimpleText:setPositionAndSize()
-    local nbElement = self.parentUI.lineColumnCount[self.line]
-    self.maxW = self.parentUI.pxlW / nbElement;
-    self.pxlX = self.maxW * (self.column - 1);
-    self.pxlH = self.parentUI.lineH[self.line];
+    self.pxlW = self.parentUI.elemW[self.line][self.column];
+    self.pxlX = self.parentUI.elemX[self.line][self.column];
+    self.pxlH = self.parentUI.elemH[self.line];
     self.textH = getTextManager():getFontHeight(self.font);
 
     self:setX(self.pxlX);
     self:setY(self.pxlY - (self.pxlH - self.textH)/2);
-    self:setWidth(self.maxW);
-    self:setHeight(self.pxlH)
+    self:setWidth(self.pxlW);
+    self:setHeight(self.pxlH);
 
     self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
 end
@@ -109,4 +91,43 @@ end
 
 function ISSimpleText:removeBorder()
     self.border = false;
+end
+
+function ISSimpleText:putBack()
+    self:setVisible(true);
+end
+
+function ISSimpleText:remove()
+    self:setVisible(false);
+end
+
+function ISSimpleText:toggle()
+    if self:getIsVisible() then
+        self:setVisible(true);
+    else
+        self:setVisible(false);
+    end;
+end
+
+function ISSimpleText:setWidthPercent(w)
+    self.isWidthForce = true;
+    self.pxlW = w * getCore():getScreenWidth();
+end
+
+function ISSimpleText:setWidthPixel(w)
+    self.isWidthForce = true;
+    self.pxlW = w;
+end
+
+-- For element
+function ISSimpleText:setText(txt)
+    self.textOriginal = txt;
+    self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
+end
+
+function ISSimpleText:setColor(a, r, g, b)
+    self.a = a;
+    self.r = r;
+    self.g = g;
+    self.b = b;
 end
