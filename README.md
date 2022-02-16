@@ -21,11 +21,11 @@ As in the following diagram:
 I highly recommend doing the UIs in event `OnCreateUI` but you can do it anywhere.  
 
 # Understand coordinates
-The menus are in 2d. Dimensions of 2d object are its **position in x and y** as well as its **size in width and height**.  
+Menus are in 2d.  
+Dimensions of 2d object are its **position in x and y** as well as its **size in width and height**.  
 x and y are coordinates of the left top corner.  
-To simplify and allow compatibility between different screen sizes. Positions and sizes are in percentage of screen for my mod. But in the vanilla game, all is in pixel.  
-For example a width of 0.2 will take 20% of the screen.  
-You can force the size in pixel if needed.  
+Positions and sizes are in percentage of screen or in pixel.   
+Percent is to simplify and allow compatibility between different screen sizes. For example a width of 0.2 will take 20% of the screen.    
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/schema2d%20(1).png)
 
 # Examples
