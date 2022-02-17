@@ -10,9 +10,9 @@ UI:addBorderToAllElements()       -- Add border to all elements of the ui
 UI:setTitle(string)               -- Add a title to the top bar of the UI
 UI:setKey(key)                    -- Key to toggle the UI
 
-UI:setDefaultLineHeightPercent(h) -- Set default size of elements that follow this function (can be call at the beginning or in the middle of an UI)
+UI:setDefaultLineHeightPercent(h) -- Set default height of elements that follow this function (can be call at the beginning or in the middle of an UI)
 UI:setDefaultLineHeightPixel(h)
-UI:getDefaultLineHeightPercent()
+UI:getDefaultLineHeightPercent()  -- Can be usefull for rich text and list like that UI:setLineHeightPixel(UI:getDefaultLineHeightPixel())
 UI:getDefaultLineHeightPixel()
 ```
 Find all key value [here](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
