@@ -1,19 +1,19 @@
 # UI functions
 ```lua
-UI:isSubUIOf(UI2)               -- If the UI is a sub UI. Like that if the parent is close, the sub UI is close too. And you can acces the parentUI with the variable
+UI:isSubUIOf(UI2)                 -- If the UI is a sub UI. Like that if the parent is close, the sub UI is close too. And you can acces the parentUI with the variable
 
-UI:nextLine()                   -- To jump to an other line
+UI:nextLine()                     -- To jump to an other line
 
-UI:isVisible()                  -- To know if the player see the UI
+UI:isVisible()                    -- To know if the player see the UI
 
-UI:addBorderToAllElements()     -- Add border to all elements of the ui
-UI:setTitle(string)             -- Add a title to the top bar of the UI
-UI:setKey(key)                  -- Key to toggle the UI
+UI:addBorderToAllElements()       -- Add border to all elements of the ui
+UI:setTitle(string)               -- Add a title to the top bar of the UI
+UI:setKey(key)                    -- Key to toggle the UI
 
-UI:setDefaultHeightPercent(h)   -- Set default size of elements that follow this function (can be call at the beginning or in the middle of an UI)
-UI:setDefaultHeightPixel(h)
-UI:getDefaultHeightPercent()
-UI:getDefaultHeightPixel()
+UI:setDefaultLineHeightPercent(h) -- Set default size of elements that follow this function (can be call at the beginning or in the middle of an UI)
+UI:setDefaultLineHeightPixel(h)
+UI:getDefaultLineHeightPercent()
+UI:getDefaultLineHeightPixel()
 ```
 Find all key value [here](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
 
