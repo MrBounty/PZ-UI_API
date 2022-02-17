@@ -23,6 +23,8 @@ Check example in `media/lua/shared/Translate`
 - <SIZE:font>: Font.
 - <H1>, <H2>, <TEXT>: To make title, start with h1 or h2, text to back to normal text.
 - <IMAGECENTER:media/ui/myFolder/myImage.png>: Add an image to the text.
+- <IMAGE:media/ui/backbutton.png,28,28>: Add an image to the text.
 - <LINE>: New line
-- <BR>: Jump line (Not sure what it does compare to <LINE>)
+- <BR>: 2x <LINE> ? (not sure)
+- <bzzt>, <fzzt>, <wzzt>
 ```
