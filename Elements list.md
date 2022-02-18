@@ -124,6 +124,7 @@ UI["entry1"]:getValue()
 ```
 
 ## Combo box
+Combo box use a numerical table. All value need to be text and getValue return the selected text.  
 ```lua
 -- @name:   variable name of the element  
 -- @items:  List of items to add in the list, need to be string
@@ -133,22 +134,27 @@ UI:addComboBox(name, items)
 UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
 
 -- Get selected value: 
-UI["combo1"]:getValue()
+text = UI["combo1"]:getValue()
 -- Change items: 
 UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 ```
 
 ## Scrolling list
+Scrolling list use a table with string as key and anything as item. GetValue return the selected text and item.  
 ```lua
 -- @name:  variable name of the element  
--- @items: List of items to add in the list, need to be string  
+-- @items: List of items to add in the list, key need to be string
 UI:addScrollList(name, items) 
 
 -- Exemple: 
-UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
+local items = {}
+items["name1"] = "item1"
+items["name2"] = "item2"
+items["name3"] = "item3"
+UI:addScrollList("scroll1", items)
 
 -- Get selected value or false if not selected: 
-UI["scroll1"]:getValue()
+text, item = UI["scroll1"]:getValue()
 -- Change items: 
 UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 ```
