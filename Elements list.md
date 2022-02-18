@@ -27,9 +27,7 @@ Can be call everywhere
 UI["text1"]:addBorder()
 
 -- To show it or hide it, disable button, list, ect.
-UI["text1"]:toggle()
-UI["text1"]:remove()
-UI["text1"]:putBack()
+UI["text1"]:setVisible(bool);
 ```
 
 ## Empty space  
