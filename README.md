@@ -62,9 +62,11 @@ function onCreateUI()
 
     UI:addText("t1", "Accept ?", _, "Center");
     UI["t1"]:addBorder();
+    
     UI:addButton("b1", "Yes", choose);
-    UI["b1"]:addArg("choice", "yes");
     UI:addButton("b2", "No", choose);
+    
+    UI["b1"]:addArg("choice", "yes");
     UI["b2"]:addArg("choice", "no");
 
     UI:saveLayout();
