@@ -14,7 +14,7 @@ First you create a new UI with the `NewUI()` function.
 Find all useable function of UI [here](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20functions.md).  
 After that it's easy, you just add [elements](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md) for the first line.  
 When you added your elements, you jump to the next line with the function `ui:nextLine()` and you continu like that.  
-One all line create, you just call `ui:saveLayout()` to finish creating the ui.  
+Once all line create, you just call `ui:saveLayout()` to finish creating the ui.  
 
 As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/preview%20perso.png)
@@ -142,10 +142,9 @@ local function ok()
     UI:close();
 end
 
-
 -- Create the UI
 function onCreateUI()
-	UI = NewUI(0.15);
+    UI = NewUI(0.15);
 
     -- Add window title
     UI:addText("title1", "Choose you job !", "Title", "Center");
@@ -158,15 +157,13 @@ function onCreateUI()
 
     -- Add buttons
     UI:addButton("button1", jobs[1], press);
-    UI["button1"]:addArg("index", 1);
-
     UI:addButton("button2", jobs[2], press);
-    UI["button2"]:addArg("index", 2);
-
     UI:addButton("button3", jobs[3], press);
-    UI["button3"]:addArg("index", 3);
-
     UI:addButton("button4", jobs[4], press);
+    
+    UI["button1"]:addArg("index", 1);
+    UI["button2"]:addArg("index", 2);
+    UI["button3"]:addArg("index", 3);
     UI["button4"]:addArg("index", 4);
 
     UI:addButton("", "Button", ok);
