@@ -3,7 +3,7 @@
 ```lua
 UI:open()                       -- Display the UI
 UI:close()                      -- Hide the UI
-UI:toggle()                     -- toggle the UI
+UI:toggle()                     -- Toggle the UI
 ```
 
 ## Position
