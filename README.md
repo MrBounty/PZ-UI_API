@@ -154,7 +154,7 @@ function onCreateUI()
 
     -- Add window title
     UI:addText("title1", "Choose you job !", "Title", "Center");
-    UI["title1"]:addBorder();
+    UI["title1"]:setBorder(true);
     UI:nextLine();
 
     -- Add job description
