@@ -10,6 +10,7 @@
 - [Scrolling list](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#scrolling-list)
 - [Image](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image)
 - [Image button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image-button)
+- [Progress bar](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#progress-bar)
 
 ## Common functions
 ### Before saveLayout()
@@ -187,7 +188,7 @@ UI:addImageButton(name, path, func)
 UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
 ```
 
-## Image button
+## Progress bar
 Derived from `ISUIElement`  
 ```lua
 -- @name:   variable name of the element
