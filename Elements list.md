@@ -135,11 +135,17 @@ UI["entry1"]:getValue()
 Derived from `ISComboBox`  
 ```lua
 -- @name:   variable name of the element  
--- @items:  List of items to add in the list, need to be string
+-- @items:  List of items to add in the list, can be a list of string or a table with string as key and everything as value
 UI:addComboBox(name, items)
 
 -- Exemple: 
 UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
+
+local items = {}
+items["name1"] = "item1"
+items["name2"] = "item2"
+items["name3"] = "item3"
+UI:addComboBox("combo2", items)
 
 -- Get selected value: 
 text = UI["combo1"]:getValue()
@@ -151,15 +157,17 @@ UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 Derived from `ISScrollingListBox`  
 ```lua
 -- @name:  variable name of the element  
--- @items: List of items to add in the list, key need to be string
+-- @items: List of items to add in the list, can be a list of string or a table with string as key and everything as value
 UI:addScrollList(name, items) 
 
 -- Exemple: 
+UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
+
 local items = {}
 items["name1"] = "item1"
 items["name2"] = "item2"
 items["name3"] = "item3"
-UI:addScrollList("scroll1", items)
+UI:addScrollList("scroll2", items)
 
 -- Get selected value or false if not selected: 
 text, item = UI["scroll1"]:getValue()
