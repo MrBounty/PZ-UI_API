@@ -187,4 +187,22 @@ UI:addImageButton(name, path, func)
 UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
 ```
 
+## Image button
+Derived from `ISUIElement`  
+```lua
+-- @name:   variable name of the element
+-- @value:  value to display
+-- @min:    min of the value
+-- @max:    max of the value
+UI:addProgressBar(name, value, min, max)  
+
+-- Exemple: 
+UI:addProgressBar("pbar1", 20, 0, 50)
+
+-- Change the value
+UI["pbar1"]:setValue(v)
+-- Change the color
+UI["pbar1"]:setColor(a, r, g, b)
+```
+
 All original class can be found in `media/lua/client/ISUI`
