@@ -10,7 +10,8 @@ Want to make a simple menu for your mod to :
 This mod is for you !  
 
 My mod is only an overlay of what the base game does to simplify placement, initializations and the most useful functions of UIs.  
-This means that all elements are vanilla elements. So for example, the button has access to all the functions of `ISButton` and `ISUIElement`.
+This means that all elements are vanilla elements. So for example, the button has access to all the functions of `ISButton` and `ISUIElement`.  
+The windows itself is a derivate of `ISCollapsableWindow`. Files in `media/lua/client/ISUI`  
 
 # Make my first window
 First you create a new UI with the `NewUI()` function.  
