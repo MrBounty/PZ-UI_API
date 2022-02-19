@@ -65,7 +65,7 @@ function onCreateUI()
     UI:nextLine();
 
     UI:addText("t1", "Accept ?", _, "Center");
-    UI["t1"]:addBorder();
+    UI["t1"]:setBorder(true);
     
     UI:addButton("b1", "Yes", choose);
     UI:addButton("b2", "No", choose);
@@ -113,7 +113,7 @@ function onCreateUI()
     UI["b1"]:addArg("team", "blue");
     UI["b2"]:addArg("team", "red");
     
-    UI:addBorderToAllElements();
+    UI:setBorderToAllElements(true);
     UI:setWidthPercent(0.15);
     UI:saveLayout();
 end
