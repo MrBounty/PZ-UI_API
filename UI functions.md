@@ -31,7 +31,7 @@ UI:setLineHeightPixel(pxlH)     -- Force height of actual line in pixel
 UI:setWidthPercent(pctW)                -- Set width of window in % of the screen [0-1]
 UI:setWidthPixel(pxlW)                  -- Set width of window in pixel
 
-UI:setColumnWidthPercent(column, pctW)  -- Set the default width of elements for a column
+UI:setColumnWidthPercent(column, pctW)  -- Set the default width of elements for a column. column is an int
 UI:setColumnWidthPixel(column, pxlW)
 
 UI:setDefaultLineHeightPercent(h)       -- Set default height of elements that follow this function (can be call at the beginning or in the middle of an UI)
@@ -51,6 +51,6 @@ UI:getIsVisible()                       -- To know if the player see the UI
 UI:addBorderToAllElements()             -- Add border to all elements of the ui
 UI:setTitle(string)                     -- Add a title to the top bar of the UI
 UI:setKey(key)                          -- Key to toggle the UI
-UI:setCollapse(boolean)                 -- If the window can collapse, default false
+UI:setCollapse(boolean)                 -- If the window can collapse when click outside of it, default false
 ```
 Find all key value [here](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
