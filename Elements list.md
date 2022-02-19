@@ -95,6 +95,9 @@ UI:addProgressBar("pbar1", 20, 0, 50)
 UI["pbar1"]:setValue(v)
 -- Change min max
 UI["pbar1"]:setMinMax(min, max)
+-- Change margin of the bar
+UI["pbar1"]:setMarginPercent(pctW, pctH)
+UI["pbar1"]:setMarginPixel(pxlW, pxlH)
 -- Change the color (white by default)
 UI["pbar1"]:setColor(a, r, g, b)
 ```
