@@ -119,7 +119,7 @@ end
 -- Change the text: 
 UI["button1"]:setText("My new text")
 -- Change the function: 
-UI["button1"]:setFunc(func)
+UI["button1"]:setOnClick(func)
 -- Add an argument to the args table to use in the function
 UI["button1"]:addArg("index", 1);
 ```
@@ -226,7 +226,7 @@ UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
 -- Change image
 UI["ibutton1"]:setPath(path)
 -- Change function
-UI["ibutton1"]:setFunc(func)
+UI["ibutton1"]:setOnClick(func)
 -- Add an argument to the args table to use in the function
 UI["ibutton1"]:addArg("index", 1);
 ```
