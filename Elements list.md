@@ -207,6 +207,9 @@ UI:addImage(name, path)
 
 -- Exemple: 
 UI:addImage("image1", "ui/myImage.png", 10)
+
+-- Change image
+UI["image1"]:setPath(path)
 ```
 
 ## Image button
@@ -219,6 +222,13 @@ UI:addImageButton(name, path, func)
 
 -- Exemple: 
 UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
+
+-- Change image
+UI["ibutton1"]:setPath(path)
+-- Change function
+UI["ibutton1"]:setFunc(func)
+-- Add an argument to the args table to use in the function
+UI["ibutton1"]:addArg("index", 1);
 ```
 
 All original class can be found in `media/lua/client/ISUI`
