@@ -79,6 +79,26 @@ UI["rich1"]:setText("", "My new text")
 ```
 [Text formating](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
+## Progress bar
+Derived from `ISUIElement`  
+```lua
+-- @name:   variable name of the element
+-- @value:  value to display
+-- @min:    min of the value
+-- @max:    max of the value
+UI:addProgressBar(name, value, min, max)  
+
+-- Exemple: 
+UI:addProgressBar("pbar1", 20, 0, 50)
+
+-- Change the value
+UI["pbar1"]:setValue(v)
+-- Change min max
+UI["pbar1"]:setMinMax(min, max)
+-- Change the color (white by default)
+UI["pbar1"]:setColor(a, r, g, b)
+```
+
 ## Button
 Derived from `ISButton`  
 ```lua
@@ -196,24 +216,6 @@ UI:addImageButton(name, path, func)
 
 -- Exemple: 
 UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
-```
-
-## Progress bar
-Derived from `ISUIElement`  
-```lua
--- @name:   variable name of the element
--- @value:  value to display
--- @min:    min of the value
--- @max:    max of the value
-UI:addProgressBar(name, value, min, max)  
-
--- Exemple: 
-UI:addProgressBar("pbar1", 20, 0, 50)
-
--- Change the value
-UI["pbar1"]:setValue(v)
--- Change the color (white by default)
-UI["pbar1"]:setColor(a, r, g, b)
 ```
 
 All original class can be found in `media/lua/client/ISUI`
