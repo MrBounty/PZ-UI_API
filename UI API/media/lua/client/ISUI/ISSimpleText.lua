@@ -2,21 +2,18 @@ require "ISUI/ISUIElement"
 
 ISSimpleText = ISUIElement:derive("ISSimpleText");
 
-function ISSimpleText:setPosition(position)
-    self.position = position
-end
-
 function ISSimpleText:render()
     self:drawRect(0, 0, self.width, self.height, self.backgroundColor.a, self.backgroundColor.r, self.backgroundColor.g, self.backgroundColor.b);
+    local y = (self.pxlH - self.textH)/2;
 
     if self.position == "Left" then
-        self:drawText(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
+        self:drawText(self.textToDisplay, 0, y, self.r, self.g, self.b, self.a, self.font);
     elseif self.position == "Right" then
-        self:drawTextRight(self.textToDisplay, self:getWidth()-self.textW, 0, self.r, self.g, self.b, self.a, self.font);
+        self:drawTextRight(self.textToDisplay, self:getWidth()-self.textW, y, self.r, self.g, self.b, self.a, self.font);
     elseif self.position == "Center" then
-        self:drawTextCentre(self.textToDisplay, self:getWidth()/2, 0, self.r, self.g, self.b, self.a, self.font);
+        self:drawTextCentre(self.textToDisplay, self:getWidth()/2, y, self.r, self.g, self.b, self.a, self.font);
     else
-        self:drawText(self.textToDisplay, 0, 0, self.r, self.g, self.b, self.a, self.font);
+        self:drawText(self.textToDisplay, 0, y, self.r, self.g, self.b, self.a, self.font);
     end
 
     if self.border then
@@ -31,7 +28,7 @@ function ISSimpleText:setPositionAndSize()
     self.textH = getTextManager():getFontHeight(self.font);
 
     self:setX(self.pxlX);
-    self:setY(self.pxlY - (self.pxlH - self.textH)/2);
+    self:setY(self.pxlY);
     self:setWidth(self.pxlW);
     self:setHeight(self.pxlH);
 
@@ -85,28 +82,8 @@ function ISSimpleText:new(parentUI, text, font, position)
 end
 
 -- Commun function
-function ISSimpleText:addBorder()
-    self.border = true;
-end
-
-function ISSimpleText:removeBorder()
-    self.border = false;
-end
-
-function ISSimpleText:putBack()
-    self:setVisible(true);
-end
-
-function ISSimpleText:remove()
-    self:setVisible(false);
-end
-
-function ISSimpleText:toggle()
-    if self:getIsVisible() then
-        self:setVisible(true);
-    else
-        self:setVisible(false);
-    end;
+function ISSimpleText:setBorder(v)
+    self.border = v;
 end
 
 function ISSimpleText:setWidthPercent(w)
@@ -123,6 +100,10 @@ end
 function ISSimpleText:setText(txt)
     self.textOriginal = txt;
     self.textToDisplay, self.textW = cutTextToLong(self.textOriginal, self:getWidth(), self.font);
+end
+
+function ISSimpleText:setPosition(position)
+    self.position = position
 end
 
 function ISSimpleText:setColor(a, r, g, b)

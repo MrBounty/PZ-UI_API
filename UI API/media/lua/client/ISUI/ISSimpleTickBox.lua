@@ -12,19 +12,32 @@ function ISSimpleTickBox:setPositionAndSize()
     self:setY(self.pxlY);
     self:setWidth(self.pxlW);
     self:setHeight(self.pxlH);
+    local x, y
 
-    self.tickBox:setX(self.pxlX + (self.tickSize+self.pxlW)/2);
-    self.tickBox:setY(self.pxlY + (self.tickSize+pxlH)/2);
+    if self.pxlW > self.pxlH then
+        self.tickSize = self.pxlH;
+        x = (self.pxlW - self.tickSize)/2;
+        y = 0;
+    else
+        self.tickSize = self.pxlW;
+        x = 0;
+        y = (self.pxlH - self.tickSize)/2;
+    end
+
+    self.tickBox:setX(x);
+    self.tickBox:setY(y);
     self.tickBox:setWidth(self.tickSize);
     self.tickBox:setHeight(self.tickSize);
+    self.tickBox.borderColor = {r=1, g=1, b=1, a=1};
+    self.tickBox:bringToTop();
 end
 
 function ISSimpleTickBox:createChildren()
-    self.tickBox = ISTickBox(0, 0, 1, 1);
-    self.tickBox:initialize();
+    self.tickBox = ISTickBox:new(0, 0, 1, 1);
+    self.tickBox:initialise();
     self.tickBox:instantiate();
     self.tickBox:addOption("");
-    self.addChild(self.tickBox);
+    self:addChild(self.tickBox);
 end
 
 function ISSimpleTickBox:onMouseWheel(del)
@@ -57,12 +70,8 @@ function ISSimpleTickBox:new(parentUI)
 end
 
 -- Commun function
-function ISSimpleTickBox:addBorder()
-    self.border = true;
-end
-
-function ISSimpleTickBox:removeBorder()
-    self.border = false;
+function ISSimpleTickBox:setBorder(v)
+    self.border = v;
 end
 
 -- Simple element function
@@ -72,22 +81,6 @@ end
 
 function ISSimpleTickBox:setValue(v)
     self.tickBox.selected[1] = v;
-end
-
-function ISSimpleTickBox:putBack()
-    self:setVisible(true);
-end
-
-function ISSimpleTickBox:remove()
-    self:setVisible(false);
-end
-
-function ISSimpleTickBox:toggle()
-    if self:getIsVisible() then
-        self:setVisible(true);
-    else
-        self:setVisible(false);
-    end;
 end
 
 function ISSimpleTickBox:setWidthPercent(w)

@@ -11,10 +11,11 @@ function ISSimpleImage:setPositionAndSize()
     self:setY(self.pxlY);
     self:setWidth(self.pxlW);
     self:setHeight(self.pxlH);
+    self.scaledWidth = self.pxlW;
+    self.scaledHeight = self.pxlH;
 end
 
 function ISSimpleImage:render()
-    ISSimpleImage.render(self)
     if self.border then
         self:drawRectBorder(0, 0, self:getWidth(), self:getHeight(), 0.5, 1, 1, 1);
     end
@@ -23,16 +24,12 @@ end
 function ISSimpleImage:new(parentUI, path)
     local o = {};
     if not getTexture(path) then
-        print("UI API - ERROR : Texture at the path "..path.." not found for image. Changed to default texture.")
+        print("UI API - ERROR : Texture at the path ".. path .." not found for image. Changed to default texture.")
         path = "ui/emotes/no.png";
     end
     o = ISImage:new(0, 0, 1, 1, getTexture(path));
     setmetatable(o, self);
     self.__index = self;
-
-    o.parentUI = parentUI;
-    o.line = line;
-    o.column = column;
 
     -- Parent and position
     o.parentUI = parentUI;
@@ -40,35 +37,21 @@ function ISSimpleImage:new(parentUI, path)
     o.column = parentUI.columnAct;
     o.pxlY = parentUI.yAct;
     o.textOriginal = text;
-    o.isNumber = isNumber;
+    o.path = path;
+    o.isImage = true;
+
+    o.origW = o.texture:getWidthOrig();
+    o.origH = o.texture:getWidthOrig();
+    o.ratio = o.origH / o.origW;
+    o.border = false;
 
     return o;
 end
 
 -- Commun function
 
-function ISSimpleImage:addBorder()
-    self.border = true;
-end
-
-function ISSimpleImage:removeBorder()
-    self.border = false;
-end
-
-function ISSimpleImage:putBack()
-    self:setVisible(true);
-end
-
-function ISSimpleImage:remove()
-    self:setVisible(false);
-end
-
-function ISSimpleImage:toggle()
-    if self:getIsVisible() then
-        self:setVisible(true);
-    else
-        self:setVisible(false);
-    end;
+function ISSimpleImage:setBorder(v)
+    self.border = v;
 end
 
 function ISSimpleImage:setWidthPercent(w)
@@ -79,4 +62,13 @@ end
 function ISSimpleImage:setWidthPixel(w)
     self.isWidthForce = true;
     self.pxlW = w;
+end
+
+function ISSimpleImage:setPath(path)
+    self.path = path;
+    if not getTexture(path) then
+        print("UI API - ERROR : Texture at the path ".. path .." not found for image. Changed to default texture.")
+        self.path = "ui/emotes/no.png";
+    end
+    self.texture = getTexture(path);
 end

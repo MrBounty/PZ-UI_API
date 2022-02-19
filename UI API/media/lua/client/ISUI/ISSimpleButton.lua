@@ -67,32 +67,12 @@ end
 
 -- Commun function
 
-function ISSimpleButton:addBorder()
-    self.border = true;
-end
-
-function ISSimpleButton:removeBorder()
-    self.border = false;
+function ISSimpleButton:setBorder(v)
+    self.border = v;
 end
 
 function ISSimpleButton:addArg(name, value)
     self.args[name] = value;
-end
-
-function ISSimpleButton:putBack()
-    self:setVisible(true);
-end
-
-function ISSimpleButton:remove()
-    self:setVisible(false);
-end
-
-function ISSimpleButton:toggle()
-    if self:getIsVisible() then
-        self:setVisible(true);
-    else
-        self:setVisible(false);
-    end;
 end
 
 function ISSimpleButton:setWidthPercent(w)

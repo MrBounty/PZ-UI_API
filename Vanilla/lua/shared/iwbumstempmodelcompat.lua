@@ -1,3 +1,0 @@
-function getDir()
-	return "";
-end

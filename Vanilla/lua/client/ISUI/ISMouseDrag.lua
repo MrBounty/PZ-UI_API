@@ -1,4 +1,0 @@
-
-ISMouseDrag = {}
-
-ISMouseDrag.dragView = nil;

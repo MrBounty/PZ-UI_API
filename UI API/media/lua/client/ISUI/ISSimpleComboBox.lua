@@ -11,9 +11,16 @@ function ISSimpleComboBox:setPositionAndSize()
     self:setY(self.pxlY);
     self:setWidth(self.pxlW);
     self:setHeight(self.pxlH);
+    self.baseHeight = self.pxlH;
 
-    for index, value in ipairs(self.simpleItems) do
-        self:addItem(value);
+    if self.simpleItems[1] ~= nil then
+        for name, item in ipairs(self.simpleItems) do
+            self:addOption(item);
+        end
+    else
+        for name, item in pairs(self.simpleItems) do
+            self:addOptionWithData(name, item);
+        end
     end
 end
 
@@ -26,7 +33,7 @@ end
 
 function ISSimpleComboBox:new(parentUI, simpleItems)
     local o = {};
-    o = ISComboBox:new(text, 0, 0, 1, 1);
+    o = ISComboBox:new(0, 0, 1, 1);
     setmetatable(o, self);
     self.__index = self;
 
@@ -46,12 +53,8 @@ end
 
 -- Commun function
 
-function ISSimpleComboBox:addBorder()
-    self.border = true;
-end
-
-function ISSimpleComboBox:removeBorder()
-    self.border = false;
+function ISSimpleComboBox:setBorder(v)
+    self.border = v;
 end
 
 -- Simple element function
@@ -65,22 +68,6 @@ function ISSimpleComboBox:setitems(v)
     for index, value in ipairs(self.simpleItems) do
         self:addItem(value);
     end
-end
-
-function ISSimpleComboBox:putBack()
-    self:setVisible(true);
-end
-
-function ISSimpleComboBox:remove()
-    self:setVisible(false);
-end
-
-function ISSimpleComboBox:toggle()
-    if self:getIsVisible() then
-        self:setVisible(true);
-    else
-        self:setVisible(false);
-    end;
 end
 
 function ISSimpleComboBox:setWidthPercent(w)

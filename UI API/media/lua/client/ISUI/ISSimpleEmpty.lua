@@ -34,16 +34,14 @@ function ISSimpleEmpty:new(parentUI)
     o.pxlY = parentUI.yAct;
     o.isEmptyElement = true;
 
+    o.backgroundColor = {r=0, g=0, b=0, a=1};
+
     return o;
 end
 
 -- Commun function
-function ISSimpleEmpty:addBorder()
-    self.border = true;
-end
-
-function ISSimpleEmpty:removeBorder()
-    self.border = false;
+function ISSimpleEmpty:setBorder(v)
+    self.border = v;
 end
 
 function ISSimpleEmpty:setWidthPercent(w)

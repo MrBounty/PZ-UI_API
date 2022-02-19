@@ -35,6 +35,7 @@ function ISSimpleImageButton:setPositionAndSize()
     self:setHeight(self.pxlH);
     self:setOnClick(self.func);
     self:setImage(self.texture);
+    self:forceImageSize(self.pxlW, self.pxlH);
 end
 
 function ISSimpleImageButton:render()
@@ -46,7 +47,7 @@ end
 
 function ISSimpleImageButton:new(parentUI, path, func)
     local o = {};
-    o = ISButton:new(0, 0, 1, 1, title);
+    o = ISButton:new(0, 0, 1, 1, "");
     setmetatable(o, self);
     self.__index = self;
 
@@ -57,7 +58,6 @@ function ISSimpleImageButton:new(parentUI, path, func)
         print("UI API - ERROR : Texture at the path "..path.." not found for image button. Changed to default texture.")
         path = "ui/emotes/no.png";
     end
-    o.path = path;
     o.texture = getTexture(path);
 
     -- Parent and position
@@ -65,6 +65,13 @@ function ISSimpleImageButton:new(parentUI, path, func)
     o.line = parentUI.lineAct;
     o.column = parentUI.columnAct;
     o.pxlY = parentUI.yAct;
+    o.path = path;
+    o.isImage = true;
+
+    o.origW = o.texture:getWidthOrig();
+    o.origH = o.texture:getWidthOrig();
+    o.ratio = o.origH / o.origW;
+    o.border = false;
 
     o.func = func;
     o.args = {};
@@ -74,32 +81,22 @@ end
 
 -- Commun function
 
-function ISSimpleImageButton:addBorder()
-    self.border = true;
+function ISSimpleImageButton:setBorder(v)
+    self.border = v;
 end
 
-function ISSimpleImageButton:removeBorder()
-    self.border = false;
+function ISSimpleImage:setPath(path)
+    self.path = path;
+    if not getTexture(path) then
+        print("UI API - ERROR : Texture at the path ".. path .." not found for image. Changed to default texture.")
+        self.path = "ui/emotes/no.png";
+    end
+    self.texture = getTexture(path);
+    self:setImage(self.texture);
 end
 
 function ISSimpleImageButton:addArg(name, value)
     self.args[name] = value;
-end
-
-function ISSimpleImageButton:putBack()
-    self:setVisible(true);
-end
-
-function ISSimpleImageButton:remove()
-    self:setVisible(false);
-end
-
-function ISSimpleImageButton:toggle()
-    if self:getIsVisible() then
-        self:setVisible(true);
-    else
-        self:setVisible(false);
-    end;
 end
 
 function ISSimpleImageButton:setWidthPercent(w)

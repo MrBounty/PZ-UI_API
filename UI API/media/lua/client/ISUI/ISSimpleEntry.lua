@@ -47,12 +47,8 @@ end
 
 -- Commun function
 
-function ISSimpleEntry:addBorder()
-    self.border = true;
-end
-
-function ISSimpleEntry:removeBorder()
-    self.border = false;
+function ISSimpleEntry:setBorder(v)
+    self.border = v;
 end
 
 -- Simple element function
@@ -70,22 +66,6 @@ function ISSimpleEntry:setValue(v)
     else
         self:setText(v);
     end
-end
-
-function ISSimpleEntry:putBack()
-    self:setVisible(true);
-end
-
-function ISSimpleEntry:remove()
-    self:setVisible(false);
-end
-
-function ISSimpleEntry:toggle()
-    if self:getIsVisible() then
-        self:setVisible(true);
-    else
-        self:setVisible(false);
-    end;
 end
 
 function ISSimpleEntry:setWidthPercent(w)

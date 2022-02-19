@@ -57,33 +57,13 @@ function ISSimpleRichText:new(parentUI, text)
 end
 
 -- Commun function
-function ISSimpleRichText:addBorder()
-    self.border = true;
-end
-
-function ISSimpleRichText:removeBorder()
-    self.border = false;
+function ISSimpleRichText:setBorder(v)
+    self.border = v;
 end
 
 function ISSimpleRichText:setText(text)
     self.richText:setText(text);
     self.richText:paginate();
-end
-
-function ISSimpleRichText:putBack()
-    self:setVisible(true);
-end
-
-function ISSimpleRichText:remove()
-    self:setVisible(false);
-end
-
-function ISSimpleRichText:toggle()
-    if self:getIsVisible() then
-        self:setVisible(true);
-    else
-        self:setVisible(false);
-    end;
 end
 
 function ISSimpleRichText:setWidthPercent(w)
