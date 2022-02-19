@@ -9,12 +9,16 @@ Want to make a simple menu for your mod to :
 
 This mod is for you !  
 
+My mod is only an overlay of what the base game does to simplify placement, initializations and the most useful functions of UIs.  
+This means that all elements are vanilla elements. So for example, the button has access to all the functions of `ISButton` and `ISUIElement`.  
+The windows itself is a derivate of `ISCollapsableWindow`. Files in `media/lua/client/ISUI`  
+
 # Make my first window
 First you create a new UI with the `NewUI()` function.  
 Find all useable function of UI [here](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20functions.md).  
 After that it's easy, you just add [elements](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md) for the first line.  
 When you added your elements, you jump to the next line with the function `ui:nextLine()` and you continu like that.  
-One all line create, you just call `ui:saveLayout()` to finish creating the ui.  
+Once all line create, you just call `ui:saveLayout()` to finish creating the ui.  
 
 As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/preview%20perso.png)
@@ -43,7 +47,7 @@ Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ## Quest
-![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/quest.jpg)
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/quest.jpg)  
 ```lua
 local UI
 local text1 = "<H1> The longest night <BR> <SIZE:small> In this mission, you gonna need to survivre all night. <BR> <LEFT> Reward: <LINE> - M14 <LINE> - 20 ammo <BR> Failure Conditions: <LINE> -Death"
@@ -59,14 +63,16 @@ function onCreateUI()
     UI:addRichText("rtext", text1); 
     UI:setLineHeightPercent(0.2);            
     UI:nextLine();
-    
+
     UI:addText("t1", "Accept ?", _, "Center");
-    UI["t1"]:addBorder();
-    UI:addButton("b1", "Yes", choose);
-    UI["b1"]:addArg("choice", "yes");
-    UI:addButton("b2", "No", choose);
-    UI["b2"]:addArg("choice", "no");
+    UI["t1"]:setBorder(true);
     
+    UI:addButton("b1", "Yes", choose);
+    UI:addButton("b2", "No", choose);
+    
+    UI["b1"]:addArg("choice", "yes");
+    UI["b2"]:addArg("choice", "no");
+
     UI:saveLayout();
 end
 
@@ -74,7 +80,7 @@ Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ## Choose your team
-![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/team.jpg)
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/team.jpg)  
 ```lua
 local UI
 
@@ -107,7 +113,7 @@ function onCreateUI()
     UI["b1"]:addArg("team", "blue");
     UI["b2"]:addArg("team", "red");
     
-    UI:addBorderToAllElements();
+    UI:setBorderToAllElements(true);
     UI:setWidthPercent(0.15);
     UI:saveLayout();
 end
@@ -116,7 +122,7 @@ Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ## Choose a job
-![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/exemple1.gif)
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/jobChoice.gif)  
 ```lua
 local UI
 local jobSelect = "";
@@ -142,38 +148,101 @@ local function ok()
     UI:close();
 end
 
-
 -- Create the UI
 function onCreateUI()
-    UI = NewUI();
+    UI = NewUI(0.15);
 
+    -- Add window title
     UI:addText("title1", "Choose you job !", "Title", "Center");
-    UI["title1"]:addBorder();
+    UI["title1"]:setBorder(true);
     UI:nextLine();
 
-
+    -- Add job description
     UI:addRichText("rtext", text1);               
     UI:nextLine();
 
-
+    -- Add buttons
     UI:addButton("button1", jobs[1], press);
-    UI["button1"]:addArg("index", 1);
-
     UI:addButton("button2", jobs[2], press);
-    UI["button2"]:addArg("index", 2);
-
     UI:addButton("button3", jobs[3], press);
-    UI["button3"]:addArg("index", 3);
-
     UI:addButton("button4", jobs[4], press);
+    
+    UI["button1"]:addArg("index", 1);
+    UI["button2"]:addArg("index", 2);
+    UI["button3"]:addArg("index", 3);
     UI["button4"]:addArg("index", 4);
 
     UI:addButton("", "Button", ok);
     UI:nextLine();
 
-    
-    UI:setWidth(0.15);
+    -- Save window
     UI:saveLayout();
+end
+
+Events.OnCreateUI.Add(onCreateUI)
+```
+
+## Job list
+Example with 2 UI  
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/jobBoard.gif)
+```lua
+local listUI, descUI
+local text1 = "<H1> The longest night <BR> <SIZE:small> In this mission, you gonna need to survivre all night. <BR> <LEFT> Reward: <LINE> - M14 <LINE> - 20 ammo <BR> Failure Conditions: <LINE> -Death"
+local text2 = "<H1> I need medical supply ! <BR> <SIZE:small> Please someone come to xx to help me ! I need a doctor or I'm gonna die. <BR> <LEFT> Reward: <LINE> - Everything I have"
+local text3 = "<H1> Help me clean my neighborhood <BR> <SIZE:small> I need someone to help me fight a group of zombie near xx, there is around xx of them and I don't want to do it alone. <BR> <LEFT> Reward: <LINE> - 100$"
+local text4 = "<H1> Looking for seed <BR> <SIZE:small> I'm looking for seed, every type of seed. I can pay or exchange. Contact me on my public frequencies xx.x."
+local items = {};
+items["EVENT - The longest night"] = text1;
+items["URGENT - Medical delivery"] = text2;
+items["Help me clean my neighborhood"] = text3;
+items["Looking for seed"] = text4;
+items["item5"] = "";
+items["item6"] = "";
+items["item7"] = "";
+items["item8"] = "";
+items["item9"] = "";
+items["item10"] = "";
+items["item11"] = "";
+
+local function choose(button, args)
+    getPlayer():Say("I accepted this mission !");
+    listUI:close();
+end
+
+local function openJobDesc(_, item)
+    descUI:open();
+    descUI:setPositionPixel(listUI:getX() + listUI:getWidth(), listUI:getY());
+    descUI["rtext"]:setText(item);
+end
+    
+function onCreateUI()
+    -- List UI
+    listUI = NewUI(); -- Create UI
+    listUI:setTitle("Job board");
+    listUI:setMarginPixel(10, 10);
+    listUI:setWidthPercent(0.15);
+
+    listUI:addScrollList("list", items); -- Create list
+    listUI["list"]:setOnMouseDownFunction(_, openJobDesc)
+
+    listUI:saveLayout(); -- Create window
+
+    -- Description UI
+    descUI = NewUI();
+    descUI:setTitle("Job desc");
+    descUI:isSubUIOf(listUI);
+    descUI:setWidthPercent(0.1);
+
+    descUI:addEmpty(_, _, _, 10); -- Margin only for rich text
+    descUI:addRichText("rtext", ""); 
+    descUI:setLineHeightPercent(0.2); 
+    descUI:addEmpty(_, _, _, 10); -- Margin only for rich text
+    descUI:nextLine();
+
+    descUI:addButton("b1", "Accept ?", choose);
+
+    descUI:saveLayout();
+    descUI:close();
 end
 
 Events.OnCreateUI.Add(onCreateUI)
