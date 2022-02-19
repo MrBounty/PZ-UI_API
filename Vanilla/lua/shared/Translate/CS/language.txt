@@ -1,3 +1,0 @@
-VERSION = 1,
-text = Czech,
-charset = Cp1250,
