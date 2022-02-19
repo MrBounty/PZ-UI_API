@@ -39,7 +39,7 @@ UI:setXPixel(x)                 -- Position of x of the top left corner of the w
 UI:setYPercent(y)               -- Position of y of the top left corner of the window in % of the screen [0-1]
 UI:setYPixel(y)                 -- Position of y of the top left corner of the window in pixel
 
-UI:setInCenter()                -- Set in center of the screen
+UI:setInCenterOfScreen()        -- Set in center of the screen
 ```
 
 ## Call before saveLayout()
