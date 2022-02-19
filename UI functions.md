@@ -20,6 +20,13 @@ UI:setYPixel(y)                 -- Position of y of the top left corner of the w
 UI:setInCenterOfScreen()        -- Set in center of the screen
 ```
 
+## Call before creating elements
+```lua
+-- This function can be used after element creation and before saveLayout() if there is no image or button image as elements.
+UI:setColumnWidthPercent(column, pctW)  -- Set the default width of elements for a column. column is an int
+UI:setColumnWidthPixel(column, pxlW)
+```
+
 ## Call before nextLine()
 ```lua
 UI:setLineHeightPercent(pctH)   -- Force height of actual line in % of the screen [0-1]
@@ -30,9 +37,6 @@ UI:setLineHeightPixel(pxlH)     -- Force height of actual line in pixel
 ```lua
 UI:setWidthPercent(pctW)                -- Set width of window in % of the screen [0-1]
 UI:setWidthPixel(pxlW)                  -- Set width of window in pixel
-
-UI:setColumnWidthPercent(column, pctW)  -- Set the default width of elements for a column. column is an int
-UI:setColumnWidthPixel(column, pxlW)
 
 UI:setDefaultLineHeightPercent(h)       -- Set default height of elements that follow this function (can be call at the beginning or in the middle of an UI)
 UI:setDefaultLineHeightPixel(h)
