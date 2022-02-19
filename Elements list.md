@@ -32,6 +32,7 @@ UI["text1"]:setVisible(bool);
 ```
 
 ## Empty space  
+Derived from `ISUIElement`  
 ```lua
 -- @name: Variable name of the element, if nb > 1, name gonna be name1, name2, name3, ect
 -- @nb:   Number of empty space to make (Optional, 1 by default)
@@ -39,6 +40,7 @@ UI:addEmpty(name, nb)
 ```
 
 ## Text
+Derived from `ISUIElement`  
 ```lua
 -- @name:     variable name of the element  
 -- @text:     Text to display  
@@ -60,6 +62,7 @@ UI["text1"]:setPosition("Right")
 [All fonts and position](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
 ## Rich Text
+Derived from `ISUIElement` with a `RichTextLayout` element  
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display   
@@ -74,6 +77,7 @@ UI["rich1"]:setText("", "My new text")
 [Text formating](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
 ## Button
+Derived from `ISButton`  
 ```lua
 -- @name: variable name of the element  
 -- @text: Text to display in the button  
@@ -95,6 +99,7 @@ UI["button1"]:addArg("index", 1);
 ```
 
 ## Tick box
+Derived from `ISUIElement` with a `ISTickBox` element  
 ```lua
 -- @name: variable name of the element
 -- @position: variable name of the element (Optional, Centre by default)
@@ -108,6 +113,7 @@ UI["tick1"]:getValue()
 ```
 
 ## Entry
+Derived from `ISTextEntryBox`  
 ```lua
 -- @name:     variable name of the element  
 -- @default:  Default text/value
@@ -123,7 +129,7 @@ UI["entry1"]:getValue()
 ```
 
 ## Combo box
-Combo box use a numerical table. All value need to be text and getValue return the selected text.  
+Derived from `ISComboBox`  
 ```lua
 -- @name:   variable name of the element  
 -- @items:  List of items to add in the list, need to be string
@@ -139,7 +145,7 @@ UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 ```
 
 ## Scrolling list
-Scrolling list use a table with string as key and anything as item. GetValue return the selected text and item.  
+Derived from `ISScrollingListBox`  
 ```lua
 -- @name:  variable name of the element  
 -- @items: List of items to add in the list, key need to be string
@@ -159,6 +165,7 @@ UI["scroll1"]:setItems({"item 4", "item 5", "item 6"})
 ```
 
 ## Image
+Derived from `ISImage`  
 ```lua
 -- @name: variable name of the element  
 -- @path: path of the image file
@@ -169,6 +176,7 @@ UI:addImage("image1", "ui/myImage.png", 10)
 ```
 
 ## Image button
+Derived from `ISButton`  
 ```lua
 -- @name: variable name of the element
 -- @path: path of the image file
@@ -178,3 +186,5 @@ UI:addImageButton(name, path, func)
 -- Exemple: 
 UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
 ```
+
+All original class can be found in `media/lua/client/ISUI`
