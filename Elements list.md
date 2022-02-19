@@ -24,8 +24,8 @@ UI["text1"]:setWidthPixel(pxlW)
 ### After saveLayout()
 Can be call everywhere
 ```lua
--- Add a border to the element
-UI["text1"]:addBorder()
+-- Add or remove a border to the element
+UI["text1"]:setBorder(boolean)
 
 -- To show it or hide it, disable button, list, ect.
 UI["text1"]:setVisible(bool);
