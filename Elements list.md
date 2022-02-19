@@ -202,7 +202,7 @@ UI:addProgressBar("pbar1", 20, 0, 50)
 
 -- Change the value
 UI["pbar1"]:setValue(v)
--- Change the color
+-- Change the color (white by default)
 UI["pbar1"]:setColor(a, r, g, b)
 ```
 
