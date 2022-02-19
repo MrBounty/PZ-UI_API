@@ -122,7 +122,7 @@ Events.OnCreateUI.Add(onCreateUI)
 ```
 
 ## Choose a job
-![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/exemple1.gif)  
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/jobChoice.gif)  
 ```lua
 local UI
 local jobSelect = "";
