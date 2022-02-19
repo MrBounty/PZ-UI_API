@@ -20,12 +20,11 @@ Check example in `media/lua/shared/Translate`
 ```
 - <LEFT>, <RIGHT>, <CENTER>: Position.
 - <SIZE:small>, <SIZE:medium>, <SIZE:large>: Change font
-- <LINE>: New line
-- <BR>: 2x <LINE>
-- <H1>, <H2>, <TEXT>: To make title
-- <RGB: r,g,b>, <RED>, <ORANGE>, <GREEN>, <
+- <LINE>, <BR>: New line (br = 2x line)
+- <H1>, <H2>, <TEXT>: To make title (change position size and color)
+- <RGB: r,g,b>, <RED>, <ORANGE>, <GREEN>: Change color
 - <IMAGECENTER:media/ui/myFolder/myImage.png>: Add an image to the text.
-- <IMAGE:media/ui/backbutton.png,28,28>: Add an image to the text.
+- <IMAGE:media/ui/backbutton.png,28,28>: Add an image to the text at custom position.
 - <SETX:x>: Set x position
 - <INDENT:x>: no idea
 ```
