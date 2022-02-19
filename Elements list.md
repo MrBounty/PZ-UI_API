@@ -210,6 +210,8 @@ UI:addImage("image1", "ui/myImage.png", 10)
 
 -- Change image
 UI["image1"]:setPath(path)
+-- Change color
+UI["image1"]:setColor(r, g, b)
 ```
 
 ## Image button
@@ -229,6 +231,8 @@ UI["ibutton1"]:setPath(path)
 UI["ibutton1"]:setOnClick(func)
 -- Add an argument to the args table to use in the function
 UI["ibutton1"]:addArg("index", 1);
+-- Change color
+UI["image1"]:setColor(a, r, g, b)
 ```
 
 All original class can be found in `media/lua/client/ISUI`
