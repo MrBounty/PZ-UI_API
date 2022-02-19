@@ -16,6 +16,7 @@
 Need to be call before saveLayout()
 ```lua
 -- To force the width of an element. Can make an error if width total is higher that with of window
+-- For image and image buton, need to be call before nextLine() otherwise the image will not have the correct ratio
 UI["text1"]:setWidthPercent(pctW)
 UI["text1"]:setWidthPixel(pxlW)
 ```
