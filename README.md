@@ -39,7 +39,7 @@ Percent is to simplify and allow compatibility between different screen sizes. F
 ## Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
 ```lua
-function onCreateUI()
+local function onCreateUI()
     local UI = NewUI();
     UI:addText("", "Hello world", "Small", "Center")
     UI:saveLayout()
@@ -62,7 +62,7 @@ local function choose(button, args)
     UI:close();
 end
 
-function onCreateUI()
+local function onCreateUI()
     UI = NewUI();
 
     UI:addRichText("rtext", text1); 
@@ -101,7 +101,7 @@ local function choose(button, args)
     UI:close();
 end
     
-function onCreateUI()
+local function onCreateUI()
     UI = NewUI();
     UI:addText("", "Choose your team", "Large", "Center");
     UI:nextLine();
@@ -162,7 +162,7 @@ local function ok()
 end
 
 -- Create the UI
-function onCreateUI()
+local function onCreateUI()
     UI = NewUI(0.15);
 
     -- Add window title
@@ -232,7 +232,7 @@ local function openJobDesc(_, item)
     descUI["rtext"]:setText(item);
 end
     
-function onCreateUI()
+local function onCreateUI()
     -- List UI
     listUI = NewUI(); -- Create UI
     listUI:setTitle("Job board");
