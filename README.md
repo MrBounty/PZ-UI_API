@@ -50,6 +50,9 @@ Events.OnCreateUI.Add(onCreateUI)
 
 ## Quest
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/quest.jpg)  
+<details>
+    <summary>See code</summary>
+    
 ```lua
 local UI
 local text1 = "<H1> The longest night <BR> <SIZE:small> In this mission, you gonna need to survivre all night. <BR> <LEFT> Reward: <LINE> - M14 <LINE> - 20 ammo <BR> Failure Conditions: <LINE> -Death"
@@ -58,7 +61,7 @@ local function choose(button, args)
     getPlayer():Say(args.choice);
     UI:close();
 end
-    
+
 function onCreateUI()
     UI = NewUI();
 
@@ -68,10 +71,10 @@ function onCreateUI()
 
     UI:addText("t1", "Accept ?", _, "Center");
     UI["t1"]:setBorder(true);
-    
+
     UI:addButton("b1", "Yes", choose);
     UI:addButton("b2", "No", choose);
-    
+
     UI["b1"]:addArg("choice", "yes");
     UI["b2"]:addArg("choice", "no");
 
@@ -80,9 +83,13 @@ end
 
 Events.OnCreateUI.Add(onCreateUI)
 ```
+</details>
 
 ## Choose your team
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/team.jpg)  
+<details>
+    <summary>See code</summary>
+    
 ```lua
 local UI
 
@@ -122,9 +129,13 @@ end
 
 Events.OnCreateUI.Add(onCreateUI)
 ```
+</details>
 
 ## Choose a job
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/jobChoice.gif)  
+<details>
+    <summary>See code</summary>
+    
 ```lua
 local UI
 local jobSelect = "";
@@ -183,10 +194,14 @@ end
 
 Events.OnCreateUI.Add(onCreateUI)
 ```
+</details>
 
 ## Job list
 Example with 2 UI  
-![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/jobBoard.gif)
+![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/jobBoard.gif)  
+<details>
+    <summary>See code</summary>
+    
 ```lua
 local listUI, descUI
 local text1 = "<H1> The longest night <BR> <SIZE:small> In this mission, you gonna need to survivre all night. <BR> <LEFT> Reward: <LINE> - M14 <LINE> - 20 ammo <BR> Failure Conditions: <LINE> -Death"
@@ -249,3 +264,4 @@ end
 
 Events.OnCreateUI.Add(onCreateUI)
 ```
+</details>
