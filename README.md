@@ -11,16 +11,21 @@ Want to make a simple menu for your mod to :
 This mod is for you !  
 
 My mod is only an overlay of what the base game does to simplify placement, initializations and get the most useful functions of UIs.  
-This means that all elements are vanilla elements. So for example, the button has access to all the functions of `ISButton` and `ISUIElement`.  
+This means that all elements are vanilla elements. So for example, buttons has access to all functions of `ISButton` and `ISUIElement`.  
 The windows itself is a derivate of `ISCollapsableWindow`.  
-Files is in `media/lua/client/ISUI`.  
+Found all vanilla files in `media/lua/client/ISUI` of the game folder.  
+Note, an UI is the whole (window + elements) and the window is just the window object, without the elements.  
 
 # Make my first window
-First you create a new UI with the `NewUI()` function.  
+A window created with my mod is composed of lines. On each line, there are elements. Elements are anything that can be in a UI like text or a button.  
+1. Create a new UI with the `NewUI()` function. Here you have a window without elements. 
+2. Add elements to the first line. You can add as many elements as you want per line, the mod will take care of sizing them.  
+3. Jump to the next line. When you added your elements, you jump to the next line with the function `ui:nextLine()`.  
+4. Repet.
+5. Once all line create, you just call `ui:saveLayout()` to finish creating the ui.  
+
 Find all useable function of UI [here](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20functions.md).  
-After that it's easy, you just add [elements](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md) for the first line.  
-When you added your elements, you jump to the next line with the function `ui:nextLine()` and you continu like that.  
-Once all line create, you just call `ui:saveLayout()` to finish creating the ui.  
+And all elements [here](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md)  
 
 As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/preview%20perso.png)
@@ -28,10 +33,11 @@ As in the following diagram:
 I highly recommend doing the UIs in event `OnCreateUI` but you can do it anywhere.  
 
 # Understand coordinates
-Menus are in 2d.  
-Dimensions of 2d object are its **position in x and y** as well as its **size in width and height**.  
-x and y are coordinates of the left top corner.  
-Positions and sizes are in percentage of screen or in pixel.   
+- Menus are in 2d.  
+- Dimensions of 2d object are its **position in x and y** as well as its **size in width and height**.  
+- x and y are coordinates of the left top corner.  
+- Positions and sizes are in percentage of screen or in pixel.   
+
 Percent is to simplify and allow compatibility between different screen sizes. For example a width of 0.2 will take 20% of the screen.    
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/schema2d%20(1).png)
 
