@@ -26,10 +26,6 @@ UI:setColumnWidthPercent(column, pctW)  -- Set the default width of elements for
 UI:setColumnWidthPixel(column, pxlW)
 -- Note: This function can be used after element creation and before saveLayout() if there is no image or button image as elements.
 
--- Set margin/offset of elements
-UI:setMarginPercent(pctW, pctH)
-UI:setMarginPixel(pxlW, pxlH)
-
 -- Set default height of elements that follow this function (can be call at the beginning or in the middle of an UI)
 UI:setDefaultLineHeightPercent(h)
 UI:setDefaultLineHeightPixel(h)
