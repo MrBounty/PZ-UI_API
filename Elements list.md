@@ -12,6 +12,8 @@
 - [Image button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image-button)
 - [Progress bar](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#progress-bar)
 
+All original class can be found in `media/lua/client/ISUI`  
+
 ## Common functions
 ### Before saveLayout()
 Need to be call before saveLayout()
@@ -206,7 +208,7 @@ Derived from `ISImage`
 UI:addImage(name, path) 
 
 -- Exemple: 
-UI:addImage("image1", "ui/myImage.png", 10)
+UI:addImage("image1", "ui/myImage.png")
 
 -- Change image
 UI["image1"]:setPath(path)
@@ -234,5 +236,3 @@ UI["ibutton1"]:addArg("index", 1);
 -- Change color
 UI["ibutton1"]:setColor(a, r, g, b)
 ```
-
-All original class can be found in `media/lua/client/ISUI`
