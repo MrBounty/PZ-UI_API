@@ -21,8 +21,9 @@ items2["name13"] = "item13"
 
 -- Create the UI with all element exept image and image button
 function onCreateUI()
-	UI = NewUI();
+    UI = NewUI();
     UI:addTitle("All elements UI test")
+    UI:setColumnWidthPixel(1, 100);
 
     UI:addText("", "Empty:", _, "Center");
     UI:addEmpty();
