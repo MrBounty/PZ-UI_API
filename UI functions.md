@@ -29,6 +29,10 @@ UI:setColumnWidthPixel(column, pxlW)
 -- Set margin/offset of elements
 UI:setMarginPercent(pctW, pctH)
 UI:setMarginPixel(pxlW, pxlH)
+
+-- Set default height of elements that follow this function (can be call at the beginning or in the middle of an UI)
+UI:setDefaultLineHeightPercent(h)
+UI:setDefaultLineHeightPixel(h)
 ```
 
 ## Call before nextLine()
@@ -41,11 +45,6 @@ UI:setLineHeightPixel(pxlH)     -- Force height of actual line in pixel
 ```lua
 UI:setWidthPercent(pctW)                -- Set width of window in % of the screen [0-1]
 UI:setWidthPixel(pxlW)                  -- Set width of window in pixel
-
-UI:setDefaultLineHeightPercent(h)       -- Set default height of elements that follow this function (can be call at the beginning or in the middle of an UI)
-UI:setDefaultLineHeightPixel(h)
-UI:getDefaultLineHeightPercent()        -- Can be usefull for rich text and list like that UI:setLineHeightPixel(UI:getDefaultLineHeightPixel())
-UI:getDefaultLineHeightPixel()
 ```
 
 ## Other
@@ -60,5 +59,8 @@ UI:setBorderToAllElements(bool)         -- Add/remove border to all elements of 
 UI:setTitle(string)                     -- Add a title to the top bar of the UI
 UI:setKey(key)                          -- Key to toggle the UI
 UI:setCollapse(boolean)                 -- If the window can collapse when click outside of it, default false
+
+UI:getDefaultLineHeightPercent()        -- Can be usefull for rich text and list like that UI:setLineHeightPixel(UI:getDefaultLineHeightPixel())
+UI:getDefaultLineHeightPixel()
 ```
 Find all key value [here](https://theindiestone.com/forums/index.php?/topic/9799-key-code-reference/)
