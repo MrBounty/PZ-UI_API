@@ -43,6 +43,8 @@ I highly recommend doing the UIs in event `OnCreateUI` but you can do it anywher
 Percent is to simplify and allow compatibility between different screen sizes. For example a width of 0.2 will take 20% of the screen.    
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/schema2d%20(1).png)
 
+You can also try to make your UI from scratch, I made a [guide](https://github.com/MrBounty/PZ-Mod---Doc/blob/main/Make%20an%20custom%20UI.md) to understand the base.
+
 # Examples
 ## Hello world
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/HelloWorld.jpg)
