@@ -157,10 +157,14 @@ UI["entry1"]:getValue()
 ```
 
 ## Combo box
+Note for combo box and scrolling list:  
+items table can use number as key, in that case value is the text to display.  
+Or string as key, in that case the text display is the key and the value get with getValue is the variable of the key.  
+
 Derived from `ISComboBox`  
 ```lua
 -- @name:   variable name of the element  
--- @items:  List of items to add in the list, can be a list of string or a table with string as key and everything as value
+-- @items:  List of items to add in the list
 UI:addComboBox(name, items)
 
 -- Exemple: 
@@ -182,7 +186,7 @@ UI["combo1"]:setItems({"item 4", "item 5", "item 6"})
 Derived from `ISScrollingListBox`  
 ```lua
 -- @name:  variable name of the element  
--- @items: List of items to add in the list, can be a list of string or a table with string as key and everything as value
+-- @items: List of items to add in the list
 UI:addScrollList(name, items) 
 
 -- Exemple: 
