@@ -158,7 +158,7 @@ UI["entry1"]:getValue()
 
 ## Combo box
 Note for combo box and scrolling list:  
-items table can use number as key (list of string), in that case value and text to display is the same.  
+items table can use number as key from 1 to x with a step of 1 (list of string), in that case value and text to display is the same.  
 Or string as key, in that case the text display is the key and the value get with getValue is the variable of the key.  
 
 Derived from `ISComboBox`  
