@@ -18,10 +18,12 @@ Note, an UI is the whole (window + elements) and the window is just the window o
 
 # Make my first window
 A window created with my mod is composed of lines. On each line, there are elements. Elements are anything that can be in a UI like text or a button.  
+
+Step by step:
 1. Create a new UI with the `NewUI()` function. Here you have a window without elements. 
-2. Add elements to the first line. You can add as many elements as you want per line, the mod will take care of sizing them.  
+2. Add elements to the line. You can add as many elements as you want per line, the mod will take care of sizing them.  
 3. Jump to the next line. When you added your elements, you jump to the next line with the function `ui:nextLine()`.  
-4. Repet.
+4. Repet 2.
 5. Once all line create, you just call `ui:saveLayout()` to finish creating the ui.  
 
 Find all useable function of UI [here](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20functions.md).  
