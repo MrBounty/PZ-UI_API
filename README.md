@@ -1,4 +1,4 @@
-# PZ-Simple UI API
+# PZ-Simple UI library
 Want to make a simple menu for your mod to :  
 - Ask the player to choose between two things?
 - Ask the player a nickname, age, height, weight, etc ?
