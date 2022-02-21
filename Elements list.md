@@ -212,7 +212,7 @@ Derived from `ISImage`
 UI:addImage(name, path) 
 
 -- Exemple: 
-UI:addImage("image1", "ui/myImage.png")
+UI:addImage("image1", "media/ui/myImage.png")
 
 -- Change image
 UI["image1"]:setPath(path)
@@ -229,7 +229,7 @@ Derived from `ISButton`
 UI:addImageButton(name, path, func)  
 
 -- Exemple: 
-UI:addImageButton("ibutton1", "ui/myImage.png", toDo)
+UI:addImageButton("ibutton1", "media/ui/myImage.png", toDo)
 
 -- Change image
 UI["ibutton1"]:setPath(path)
