@@ -26,8 +26,10 @@ Step by step:
 4. Repet 2.
 5. Once all line create, you just call `ui:saveLayout()` to finish creating the ui.  
 
-Find all useable function of UI [here](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20functions.md).  
-And all elements [here](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md)  
+All useable function of UI [here](https://github.com/MrBounty/PZ-UI_API/blob/main/UI%20functions.md).  
+All elements [here](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md).  
+List of usefull vanilla function [here](https://github.com/MrBounty/PZ-UI_API/blob/main/Vanilla%20functions.md).  
+
 
 As in the following diagram:
 ![alt text](https://github.com/MrBounty/PZ-UI_API/blob/main/images/preview%20perso.png)
