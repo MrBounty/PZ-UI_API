@@ -42,6 +42,9 @@ Derived from `ISUIElement`
 -- @pctW: Width of element in percent of screen [0-1] (Optional)
 -- @pxlW: Width of element in pixel (Optional)
 UI:addEmpty(name, nb, pctW, pxlW)
+
+-- Change background color
+UI["empty1"]:setColor(a, r, g, b) -- Next update
 ```
 
 ## Text
