@@ -13,6 +13,7 @@ This mod is for you !
 My mod is only an overlay of what the base game does to simplify placement, initializations and get the most useful functions of UIs.  
 This means that all elements are vanilla elements. So for example, buttons has access to all functions of `ISButton` and `ISUIElement`.  
 The windows itself is a derivate of `ISCollapsableWindow`.  
+It means you can add whatever you want to my UI like for the vanilla game if you want something specific. Here is a [guide](https://github.com/MrBounty/PZ-Mod---Doc/blob/main/Make%20an%20custom%20UI.md) to understanding the basics of how the game does UIs. You can also copy an `ISSimpleElement.lua` to make a custom one.  
 Found all vanilla files in `media/lua/client/ISUI` of the game folder.  
 Note, an UI is the whole (window + elements) and the window is just the window object, without the elements.  
 
