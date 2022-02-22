@@ -15,10 +15,22 @@ ui:bringToTop() -- put the ui in front of all the others
 
 # Other
 ```lua
-getCore():getScreenWidth()    -- Get the screen resolution
-getCore():getScreenHeight()   -- Get the screen resolution
-getMouseX()                   -- Get position of the mouse on the screen
-getMouseY()                   -- Get position of the mouse on the screen
-isShiftKeyDown()              -- True if the shift key is down
-isCtrlKeyDown()               -- True if the ctrl key is down
+-- Find size of text
+getTextManager():getFontHeight(UIFont.Small) -- get height of a font
+getTextManager():MeasureStringX(UIFont.Small, "My text") -- get width in pixel of a text for a font
+
+-- Screen size
+getCore():getScreenWidth()
+getCore():getScreenHeight()
+
+-- Mouse position
+getMouseX()
+getMouseY()
+
+-- Key
+isShiftKeyDown()  -- True if the shift key is down
+isCtrlKeyDown()   -- True if the ctrl key is down
 ```
+
+# Font size
+```lua
