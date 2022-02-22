@@ -3,16 +3,31 @@
 - [Empty](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#empty-space)
 - [Text](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#text)
 - [Rich Text](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#rich-text)
+- [Progress bar](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#progress-bar)
 - [Button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#button)
 - [Tick box](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#tick-box)
 - [Entry](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#entry)
 - [Combo box](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#combo-box)
 - [Scrolling list](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#scrolling-list)
 - [Image](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image)
-- [Image button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image-button)
-- [Progress bar](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#progress-bar)
+- [Image button](https://github.com/MrBounty/PZ-UI_API/blob/main/Elements%20list.md#image-button)  
 
 All original class can be found in `media/lua/client/ISUI`  
+
+-------------------------
+
+# Note about name
+You will see that when we add an element, there is a variable name.  
+This variable is useful to have access to the element from the UI object. For example if I add text with `UI:addText("text1", "My text")`, you could access the text1 element with `UI["text1"]` or `UI.text1`.  
+
+If you never neeed to acces the element, you can add an empty name (`""`) or a nil. Like that the element is put in the `noNameElements` table.  
+
+**Otherwise you have to be a little careful when choosing a name !**  
+Because you can rewrite a variable already used by the UI. The best example being if you make a title and use "title" as the variable name. You are going to rewrite the "title" variable which already exists. It will create errors.  
+If this happens, the console will output an error "UI API - ERROR: element name '" .. name .. "' is already a variable name. Change it !"  
+To avoid this problem **I strongly recommend using a number in each variable name.** So "title" becomes "title1", even if there is only one.
+
+-------------------------
 
 ## Common functions
 ### Before saveLayout()
