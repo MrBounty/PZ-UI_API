@@ -17,8 +17,8 @@ All original class can be found in `media/lua/client/ISUI`
 -------------------------
 
 # Note about name
-You will see that when we add an element, there is a variable name.  
-This variable is useful to have access to the element from the UI object. For example if I add text with `UI:addText("text1", "My text")`, you could access the text1 element with `UI["text1"]` or `UI.text1`.  
+You will see that when you add an element, there is a variable name.  
+This variable is useful to have access to the element from the UI object. For example if you add text with `UI:addText("text1", "My text")`, you could access the text1 element with `UI["text1"]` or `UI.text1`.  
 
 If you never neeed to acces the element, you can add an empty name (`""`) or a nil. Like that the element is put in the `noNameElements` table.  
 
