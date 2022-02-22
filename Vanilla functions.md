@@ -30,6 +30,8 @@ getMouseY()
 -- Key
 isShiftKeyDown()  -- True if the shift key is down
 isCtrlKeyDown()   -- True if the ctrl key is down
+
+getPlayerInfoPanel(0) -- The main vanilla panel (health, protection...)
 ```
 
 # Font size
