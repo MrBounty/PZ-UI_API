@@ -96,6 +96,8 @@ UI:addRichText("rich1", text)
 
 -- Change the text: 
 UI["rich1"]:setText("", "My new text")
+-- Change the background color: 
+UI["rich1"]:setColor(a, r, g, b)
 ```
 [Text formating](https://github.com/MrBounty/PZ-UI_API/blob/main/Variables.md)
 
