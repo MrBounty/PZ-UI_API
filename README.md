@@ -248,7 +248,6 @@ local function onCreateUI()
     -- List UI
     listUI = NewUI(); -- Create UI
     listUI:setTitle("Job board");
-    listUI:setMarginPixel(10, 10);
     listUI:setWidthPercent(0.15);
 
     listUI:addScrollList("list", items); -- Create list
