@@ -174,11 +174,23 @@ UI:addEntry("entry2", 100, true)
 UI["entry1"]:getValue()
 ```
 
-## Combo box
-Note for combo box and scrolling list:  
+-------------------------
+
+# Note about combo box and scrolling list
 items table can use number as key from 1 to x with a step of 1 (list of string), in that case value and text to display is the same.  
 Or string as key, in that case the text display is the key and the value get with getValue is the variable of the key.  
+```lua
+-- Both work:
+local items = {"item 1", "item 2", "item 3"}
+ 
+local items = {}
+items["text1"] = "item1"
+items["text2"] = "item2"
+items["text3"] = "item3"
+ ```
+-------------------------
 
+## Combo box
 Derived from `ISComboBox`  
 ```lua
 -- @name:   variable name of the element  
@@ -187,12 +199,6 @@ UI:addComboBox(name, items)
 
 -- Exemple: 
 UI:addComboBox("combo1", {"item 1", "item 2", "item 3"})
-
-local items = {}
-items["name1"] = "item1"
-items["name2"] = "item2"
-items["name3"] = "item3"
-UI:addComboBox("combo2", items)
 
 -- Get selected value: 
 text = UI["combo1"]:getValue()
@@ -209,12 +215,6 @@ UI:addScrollList(name, items)
 
 -- Exemple: 
 UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
-
-local items = {}
-items["name1"] = "item1"
-items["name2"] = "item2"
-items["name3"] = "item3"
-UI:addScrollList("scroll2", items)
 
 -- Get selected value or false if not selected: 
 text, item = UI["scroll1"]:getValue()
