@@ -9,6 +9,8 @@ ui:getY()
 -- Get size
 ui:getWidth()
 ui:getHeight()
+
+ui:bringToTop() -- put the ui in front of all the others
 ```
 
 # Other
