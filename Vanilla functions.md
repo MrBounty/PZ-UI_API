@@ -5,6 +5,8 @@ I will try to put a list of usefull function from the vanilla game.
 -- Get position
 ui:getX()
 ui:getY()
+ui:getRight()  -- ui:getX() + ui:getWidth()
+ui:getBottom() -- ui:getY() + ui:getHeight()
 
 -- Get size
 ui:getWidth()
