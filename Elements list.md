@@ -174,6 +174,10 @@ UI:addEntry("entry2", 100, true)
 
 -- To get the value: 
 UI["entry1"]:getValue()
+-- Add a func when enter is press, function take 3 arg: the element, the text and the arg table
+UI["entry1"]:setEnterFunc(func)
+-- Add arg for the func when enter is press
+UI["entry1"]:addArg(name, value)
 ```
 
 -------------------------
