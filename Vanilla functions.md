@@ -12,6 +12,7 @@ ui:getBottom() -- ui:getY() + ui:getHeight()
 ui:getWidth()
 ui:getHeight()
 
+ui:setDrawFrame(false) -- remove the title bar
 ui:bringToTop() -- put the ui in front of all the others
 ```
 
