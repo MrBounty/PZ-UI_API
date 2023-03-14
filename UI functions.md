@@ -29,18 +29,15 @@ UI:setColumnWidthPixel(column, pxlW)
 -- Set default height of elements that follow this function (can be call at the beginning or in the middle of an UI)
 UI:setDefaultLineHeightPercent(h)
 UI:setDefaultLineHeightPixel(h)
+
+UI:setWidthPercent(pctW)                -- Set width of window in % of the screen [0-1]
+UI:setWidthPixel(pxlW)                  -- Set width of window in pixel
 ```
 
 ## Call before nextLine()
 ```lua
 UI:setLineHeightPercent(pctH)   -- Force height of actual line in % of the screen [0-1]
 UI:setLineHeightPixel(pxlH)     -- Force height of actual line in pixel
-```
-
-## Call before saveLayout()
-```lua
-UI:setWidthPercent(pctW)                -- Set width of window in % of the screen [0-1]
-UI:setWidthPixel(pxlW)                  -- Set width of window in pixel
 ```
 
 ## Other
