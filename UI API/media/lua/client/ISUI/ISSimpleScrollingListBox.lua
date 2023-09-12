@@ -79,11 +79,6 @@ function ISSimpleScrollingListBox:getValue()
     return self.items[self.selected].text, self.items[self.selected].item;
 end
 
-function ISSimpleScrollingListBox:setSelected(selected)
-    selected = selected or -1
-    self.selected = selected
-end
-
 function ISSimpleScrollingListBox:setitems(v)
     self:clear();
     self.simpleItems = v;
