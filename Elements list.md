@@ -217,10 +217,11 @@ Derived from `ISScrollingListBox`
 ```lua
 -- @name:  variable name of the element  
 -- @items: List of items to add in the list
-UI:addScrollList(name, items) 
+-- @deselectOnClick: When true, clicking on an already selected entry, will deselect it.
+UI:addScrollList(name, items, deselectOnClick) 
 
 -- Exemple: 
-UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"})
+UI:addScrollList("scroll1", {"item 1", "item 2", "item 3"}, true)
 
 -- Get selected value or false if not selected: 
 text, item = UI["scroll1"]:getValue()
