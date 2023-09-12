@@ -47,7 +47,7 @@ function ISSimpleScrollingListBox:doDrawItem(y, item, alt)
 
 end
 
-function ISSimpleScrollingListBox:new(parentUI, simpleItems)
+function ISSimpleScrollingListBox:new(parentUI, simpleItems, deselectOnClick)
     local o = {};
     o = ISScrollingListBox:new(0, 0, 1, 1);
     setmetatable(o, self);
@@ -64,7 +64,7 @@ function ISSimpleScrollingListBox:new(parentUI, simpleItems)
     o.column = parentUI.columnAct;
     o.pxlY = parentUI.yAct;
     o.simpleItems = simpleItems;
-
+    o.deselectOnClick = deselectOnClick or false
     return o;
 end
 
@@ -79,9 +79,15 @@ function ISSimpleScrollingListBox:getValue()
     return self.items[self.selected].text, self.items[self.selected].item;
 end
 
+function ISSimpleScrollingListBox:setSelected(selected)
+    selected = selected or -1
+    self.selected = selected
+end
+
 function ISSimpleScrollingListBox:setitems(v)
     self:clear();
     self.simpleItems = v;
+    self.selected = -1
     for index, value in ipairs(self.simpleItems) do
         self:addItem(value);
     end
@@ -95,4 +101,34 @@ end
 function ISSimpleScrollingListBox:setWidthPixel(w)
     self.isWidthForce = true;
     self.pxlW = w;
+end
+
+--FIX FOR BUG: when clicking in the list area with no entries, the script would select the first entry.
+function ISScrollingListBox.onMouseDown(self, x, y)
+	if #self.items == 0 then return end
+	local row = self:rowAt(x, y)
+    
+    local playUiSound = true
+
+	if row > #self.items then
+		row = #self.items;
+	end
+
+    if row > -1 and self.selected > -1 and self.deselectOnClick and row == self.selected then
+        self.selected = -1
+        playUiSound = false
+    elseif row < 1 then
+		row = self.selected;
+        playUiSound = false
+	end
+
+    if playUiSound then
+	    getSoundManager():playUISound("UISelectListItem")
+    end
+
+	self.selected = row;
+
+	if self.onmousedown then
+		self.onmousedown(self.target, self.items[self.selected].item);
+	end
 end

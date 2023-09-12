@@ -251,7 +251,7 @@ local function onCreateUI()
     listUI:setTitle("Job board");
     listUI:setWidthPercent(0.15);
 
-    listUI:addScrollList("list", items); -- Create list
+    listUI:addScrollList("list", items, true); -- Create list
     listUI["list"]:setOnMouseDownFunction(_, openJobDesc)
 
     listUI:saveLayout(); -- Create window
